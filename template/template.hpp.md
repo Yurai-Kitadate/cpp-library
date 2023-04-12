@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_A.test.cpp
     title: test/aoj/NTL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B.test.cpp
     title: test/aoj/NTL_1_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing\
@@ -178,7 +178,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2023-04-13 02:33:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/NTL_1_A.test.cpp
   - test/aoj/NTL_1_B.test.cpp

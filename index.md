@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/factor.hpp
       title: math/factor.hpp
     - icon: ':heavy_check_mark:'
@@ -12,13 +12,13 @@ data:
         \u6CD5)"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/aoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_A.test.cpp
       title: test/aoj/NTL_1_A.test.cpp
     - icon: ':heavy_check_mark:'

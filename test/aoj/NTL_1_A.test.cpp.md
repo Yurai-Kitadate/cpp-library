@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/factor.hpp
     title: math/factor.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
-  bundledCode: "#line 1 \"test/aoj/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
+  bundledCode: "#line 1 \"test/aoj/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing pii = pair<int, int>;\nusing pll = pair<ll,\
@@ -105,7 +105,7 @@ data:
     \ = factor(n);\n    print(n);\n    print(\": \");\n    vector<ll> res;\n    for\
     \ (auto i : factors)\n    {\n        rep(_, i.second)\n        {\n           \
     \ res.push_back(i.first);\n        }\n    }\n    out(res);\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../math/factor.hpp\"\
     \nint main()\n{\n    LL(n);\n    auto factors = factor(n);\n    print(n);\n  \
     \  print(\": \");\n    vector<ll> res;\n    for (auto i : factors)\n    {\n  \
@@ -117,8 +117,8 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 08:51:38+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-13 08:58:17+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_A.test.cpp
 layout: document
