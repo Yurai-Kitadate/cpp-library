@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_1_B.test.cpp
+    title: test/aoj/NTL_1_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing\
@@ -172,8 +175,9 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2023-04-13 02:33:52+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/NTL_1_B.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:
