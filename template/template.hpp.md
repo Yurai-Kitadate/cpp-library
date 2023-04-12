@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/modpow.test.cpp
-    title: test/modpow.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing\
@@ -175,9 +172,8 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2023-04-13 02:33:52+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/modpow.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: template/template.hpp
 layout: document
 redirect_from:
