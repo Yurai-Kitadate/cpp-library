@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/modpow.hpp
     title: math/modpow.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
@@ -100,18 +100,18 @@ data:
     \ a, ll b, ll p)\n{\n    ll ans = 1;\n    while (b)\n    {\n        if (b & 1)\n\
     \            (ans *= a) %= p;\n        (a *= a) %= p;\n        b /= 2;\n    }\n\
     \    return ans;\n}\n#line 4 \"test/modpow.test.cpp\"\n\nint main()\n{\n    LL(n,\
-    \ m);\n    out(modpow(n, m, 1000000007));\n}\n"
+    \ m);\n    out(modpow(n, m, 1000000005));\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
     \n#include \"../template/template.hpp\"\n#include \"../math/modpow.hpp\"\n\nint\
-    \ main()\n{\n    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
+    \ main()\n{\n    LL(n, m);\n    out(modpow(n, m, 1000000005));\n}\n"
   dependsOn:
   - template/template.hpp
   - math/modpow.hpp
   isVerificationFile: true
   path: test/modpow.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 02:58:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-13 03:15:05+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/modpow.test.cpp
 layout: document
