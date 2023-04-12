@@ -1,24 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/modpow.hpp
-    title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
-      )"
+  - icon: ':x:'
+    path: math/factor.hpp
+    title: math/factor.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
-  bundledCode: "#line 1 \"test/aoj/NTL_1_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
+  bundledCode: "#line 1 \"test/aoj/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing pii = pair<int, int>;\nusing pll = pair<ll,\
@@ -97,27 +96,34 @@ data:
     \  {                      \\\n    out(#no);            \\\n  }\nYESNO(first, second)\n\
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
-    {\n  return min(initializer_list{a...});\n}\n#line 1 \"math/modpow.hpp\"\nll modpow(ll\
-    \ a, ll b, ll p)\n{\n    ll ans = 1;\n    while (b)\n    {\n        if (b & 1)\n\
-    \            (ans *= a) %= p;\n        (a *= a) %= p;\n        b /= 2;\n    }\n\
-    \    return ans;\n}\n#line 4 \"test/aoj/NTL_1_B.test.cpp\"\n\nint main()\n{\n\
-    \    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
+    {\n  return min(initializer_list{a...});\n}\n#line 1 \"math/factor.hpp\"\nvector<pll>\
+    \ factor(ull x)\n{\n    vector<pll> ans;\n    for (ull i = 2; i * i <= x; i++)\n\
+    \        if (x % i == 0)\n        {\n            ans.push_back({i, 1});\n    \
+    \        while ((x /= i) % i == 0)\n                ans.back().second++;\n   \
+    \     }\n    if (x != 1)\n        ans.push_back({x, 1});\n    return ans;\n}\n\
+    #line 4 \"test/aoj/NTL_1_A.test.cpp\"\nint main()\n{\n    LL(n);\n    auto factors\
+    \ = factor(n);\n    print(n);\n    print(\": \");\n    vector<ll> res;\n    for\
+    \ (auto i : factors)\n    {\n        rep(_, i.second)\n        {\n           \
+    \ res.push_back(i.first);\n        }\n    }\n    out(res);\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/modpow.hpp\"\
-    \n\nint main()\n{\n    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
+    \n#include \"../../template/template.hpp\"\n#include \"../../math/factor.hpp\"\
+    \nint main()\n{\n    LL(n);\n    auto factors = factor(n);\n    print(n);\n  \
+    \  print(\": \");\n    vector<ll> res;\n    for (auto i : factors)\n    {\n  \
+    \      rep(_, i.second)\n        {\n            res.push_back(i.first);\n    \
+    \    }\n    }\n    out(res);\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/modpow.hpp
+  - math/factor.hpp
   isVerificationFile: true
-  path: test/aoj/NTL_1_B.test.cpp
+  path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 04:02:42+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-13 08:51:38+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/NTL_1_B.test.cpp
+documentation_of: test/aoj/NTL_1_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/NTL_1_B.test.cpp
-- /verify/test/aoj/NTL_1_B.test.cpp.html
-title: test/aoj/NTL_1_B.test.cpp
+- /verify/test/aoj/NTL_1_A.test.cpp
+- /verify/test/aoj/NTL_1_A.test.cpp.html
+title: test/aoj/NTL_1_A.test.cpp
 ---
