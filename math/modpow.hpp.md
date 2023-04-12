@@ -27,7 +27,8 @@ data:
   - test/modpow.test.cpp
 documentation_of: math/modpow.hpp
 layout: document
-title: Modpow
+title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
+  )"
 ---
 
 ## 説明
