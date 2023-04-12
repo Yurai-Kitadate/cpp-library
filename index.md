@@ -3,18 +3,18 @@ data:
   libraryCategories:
   - name: math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/modpow.hpp
       title: math/modpow.hpp
   - name: template
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/modpow.test.cpp
       title: test/modpow.test.cpp
 layout: toppage
