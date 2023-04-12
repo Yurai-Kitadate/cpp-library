@@ -12,6 +12,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: test/aoj
+    pages:
+    - icon: ':warning:'
+      path: test/aoj/NTL_1_B.cpp
+      title: test/aoj/NTL_1_B.cpp
   verificationCategories:
   - name: test
     pages:
