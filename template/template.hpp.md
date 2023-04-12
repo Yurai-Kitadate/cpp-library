@@ -48,22 +48,12 @@ data:
     \ name, h, ...) vector name(h, vector<type>(__VA_ARGS__))\n#define VV(type, name,\
     \ h, w)       \\\n  vector name(h, vector<type>(w)); \\\n  in(name)\n#define vvv(type,\
     \ name, h, w, ...) vector name(h, vector(w, vector<type>(__VA_ARGS__)))\ntemplate\
-    \ <class T>\nauto min(const T &a)\n{\n  return *min_element(all(a));\n}\nll intpow(ll\
-    \ a, ll b)\n{\n  ll ans = 1;\n  while (b)\n  {\n    if (b & 1)\n      ans *= a;\n\
-    \    a *= a;\n    b /= 2;\n  }\n  return ans;\n}\nll modpow(ll a, ll b, ll p)\n\
-    {\n  ll ans = 1;\n  while (b)\n  {\n    if (b & 1)\n      (ans *= a) %= p;\n \
-    \   (a *= a) %= p;\n    b /= 2;\n  }\n  return ans;\n}\n\nvector<pll> factor(ull\
-    \ x)\n{\n  vector<pll> ans;\n  for (ull i = 2; i * i <= x; i++)\n    if (x % i\
-    \ == 0)\n    {\n      ans.push_back({i, 1});\n      while ((x /= i) % i == 0)\n\
-    \        ans.back().second++;\n    }\n  if (x != 1)\n    ans.push_back({x, 1});\n\
-    \  return ans;\n}\nvector<ll> divisor(ull x)\n{\n  vector<ll> ans;\n  for (ull\
-    \ i = 1; i * i <= x; i++)\n    if (x % i == 0)\n      ans.push_back(i);\n  rrep(ans.size()\
-    \ - (ans.back() * ans.back() == x)) ans.push_back(x / ans[i]);\n  return ans;\n\
-    }\ntemplate <class... Ts>\nvoid in(Ts &...t);\n[[maybe_unused]] void print() {}\n\
-    template <class T, class... Ts>\nvoid print(const T &t, const Ts &...ts);\ntemplate\
-    \ <class... Ts>\nvoid out(const Ts &...ts)\n{\n  print(ts...);\n  cout << '\\\
-    n';\n}\nnamespace IO\n{\n#define VOID(a) decltype(void(a))\n  struct S\n  {\n\
-    \    S()\n    {\n      cin.tie(nullptr)->sync_with_stdio(0);\n      fixed(cout).precision(12);\n\
+    \ <class T>\nauto min(const T &a)\n{\n  return *min_element(all(a));\n}\n\ntemplate\
+    \ <class... Ts>\nvoid in(Ts &...t);\n[[maybe_unused]] void print() {}\ntemplate\
+    \ <class T, class... Ts>\nvoid print(const T &t, const Ts &...ts);\ntemplate <class...\
+    \ Ts>\nvoid out(const Ts &...ts)\n{\n  print(ts...);\n  cout << '\\n';\n}\nnamespace\
+    \ IO\n{\n#define VOID(a) decltype(void(a))\n  struct S\n  {\n    S()\n    {\n\
+    \      cin.tie(nullptr)->sync_with_stdio(0);\n      fixed(cout).precision(12);\n\
     \    }\n  } S;\n  template <int I>\n  struct P : P<I - 1>\n  {\n  };\n  template\
     \ <>\n  struct P<0>\n  {\n  };\n  template <class T>\n  void i(T &t) { i(t, P<3>{});\
     \ }\n  void i(vector<bool>::reference t, P<3>)\n  {\n    int a;\n    i(a);\n \
@@ -97,12 +87,7 @@ data:
     \  {                      \\\n    out(#no);            \\\n  }\nYESNO(first, second)\n\
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
-    {\n  return min(initializer_list{a...});\n}\nvoid dfs(vector<vector<ll>> &graph,\
-    \ vector<ll> &cnt, vector<bool> &visited, ll now)\n{\n  visited[now] = true;\n\
-    \  rep(graph[now].size())\n  {\n    if (visited[graph[now][i]] == false)\n   \
-    \ {\n      cnt[graph[now][i]] += cnt[now];\n      dfs(graph, cnt, visited, graph[now][i]);\n\
-    \    }\n  }\n}\nll mod_abs(ll a, ll mod)\n{\n  if (a < 0)\n    return a + mod;\n\
-    \  return a % mod;\n}\n"
+    {\n  return min(initializer_list{a...});\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
     \ ld = long double;\nusing ull = unsigned long long;\nusing uint = unsigned;\n\
     using pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nusing pdd = pair<ld, ld>;\n\
@@ -143,21 +128,11 @@ data:
     #define VV(type, name, h, w)       \\\n  vector name(h, vector<type>(w)); \\\n\
     \  in(name)\n#define vvv(type, name, h, w, ...) vector name(h, vector(w, vector<type>(__VA_ARGS__)))\n\
     template <class T>\nauto min(const T &a)\n{\n  return *min_element(all(a));\n\
-    }\nll intpow(ll a, ll b)\n{\n  ll ans = 1;\n  while (b)\n  {\n    if (b & 1)\n\
-    \      ans *= a;\n    a *= a;\n    b /= 2;\n  }\n  return ans;\n}\nll modpow(ll\
-    \ a, ll b, ll p)\n{\n  ll ans = 1;\n  while (b)\n  {\n    if (b & 1)\n      (ans\
-    \ *= a) %= p;\n    (a *= a) %= p;\n    b /= 2;\n  }\n  return ans;\n}\n\nvector<pll>\
-    \ factor(ull x)\n{\n  vector<pll> ans;\n  for (ull i = 2; i * i <= x; i++)\n \
-    \   if (x % i == 0)\n    {\n      ans.push_back({i, 1});\n      while ((x /= i)\
-    \ % i == 0)\n        ans.back().second++;\n    }\n  if (x != 1)\n    ans.push_back({x,\
-    \ 1});\n  return ans;\n}\nvector<ll> divisor(ull x)\n{\n  vector<ll> ans;\n  for\
-    \ (ull i = 1; i * i <= x; i++)\n    if (x % i == 0)\n      ans.push_back(i);\n\
-    \  rrep(ans.size() - (ans.back() * ans.back() == x)) ans.push_back(x / ans[i]);\n\
-    \  return ans;\n}\ntemplate <class... Ts>\nvoid in(Ts &...t);\n[[maybe_unused]]\
-    \ void print() {}\ntemplate <class T, class... Ts>\nvoid print(const T &t, const\
-    \ Ts &...ts);\ntemplate <class... Ts>\nvoid out(const Ts &...ts)\n{\n  print(ts...);\n\
-    \  cout << '\\n';\n}\nnamespace IO\n{\n#define VOID(a) decltype(void(a))\n  struct\
-    \ S\n  {\n    S()\n    {\n      cin.tie(nullptr)->sync_with_stdio(0);\n      fixed(cout).precision(12);\n\
+    }\n\ntemplate <class... Ts>\nvoid in(Ts &...t);\n[[maybe_unused]] void print()\
+    \ {}\ntemplate <class T, class... Ts>\nvoid print(const T &t, const Ts &...ts);\n\
+    template <class... Ts>\nvoid out(const Ts &...ts)\n{\n  print(ts...);\n  cout\
+    \ << '\\n';\n}\nnamespace IO\n{\n#define VOID(a) decltype(void(a))\n  struct S\n\
+    \  {\n    S()\n    {\n      cin.tie(nullptr)->sync_with_stdio(0);\n      fixed(cout).precision(12);\n\
     \    }\n  } S;\n  template <int I>\n  struct P : P<I - 1>\n  {\n  };\n  template\
     \ <>\n  struct P<0>\n  {\n  };\n  template <class T>\n  void i(T &t) { i(t, P<3>{});\
     \ }\n  void i(vector<bool>::reference t, P<3>)\n  {\n    int a;\n    i(a);\n \
@@ -191,17 +166,12 @@ data:
     \  {                      \\\n    out(#no);            \\\n  }\nYESNO(first, second)\n\
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
-    {\n  return min(initializer_list{a...});\n}\nvoid dfs(vector<vector<ll>> &graph,\
-    \ vector<ll> &cnt, vector<bool> &visited, ll now)\n{\n  visited[now] = true;\n\
-    \  rep(graph[now].size())\n  {\n    if (visited[graph[now][i]] == false)\n   \
-    \ {\n      cnt[graph[now][i]] += cnt[now];\n      dfs(graph, cnt, visited, graph[now][i]);\n\
-    \    }\n  }\n}\nll mod_abs(ll a, ll mod)\n{\n  if (a < 0)\n    return a + mod;\n\
-    \  return a % mod;\n}\n"
+    {\n  return min(initializer_list{a...});\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2023-04-12 23:21:28+09:00'
+  timestamp: '2023-04-13 02:33:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
