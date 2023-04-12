@@ -85,54 +85,7 @@ auto min(const T &a)
 {
   return *min_element(all(a));
 }
-ll intpow(ll a, ll b)
-{
-  ll ans = 1;
-  while (b)
-  {
-    if (b & 1)
-      ans *= a;
-    a *= a;
-    b /= 2;
-  }
-  return ans;
-}
-ll modpow(ll a, ll b, ll p)
-{
-  ll ans = 1;
-  while (b)
-  {
-    if (b & 1)
-      (ans *= a) %= p;
-    (a *= a) %= p;
-    b /= 2;
-  }
-  return ans;
-}
 
-vector<pll> factor(ull x)
-{
-  vector<pll> ans;
-  for (ull i = 2; i * i <= x; i++)
-    if (x % i == 0)
-    {
-      ans.push_back({i, 1});
-      while ((x /= i) % i == 0)
-        ans.back().second++;
-    }
-  if (x != 1)
-    ans.push_back({x, 1});
-  return ans;
-}
-vector<ll> divisor(ull x)
-{
-  vector<ll> ans;
-  for (ull i = 1; i * i <= x; i++)
-    if (x % i == 0)
-      ans.push_back(i);
-  rrep(ans.size() - (ans.back() * ans.back() == x)) ans.push_back(x / ans[i]);
-  return ans;
-}
 template <class... Ts>
 void in(Ts &...t);
 [[maybe_unused]] void print() {}
@@ -268,22 +221,4 @@ template <class... T>
 constexpr auto min(T... a)
 {
   return min(initializer_list{a...});
-}
-void dfs(vector<vector<ll>> &graph, vector<ll> &cnt, vector<bool> &visited, ll now)
-{
-  visited[now] = true;
-  rep(graph[now].size())
-  {
-    if (visited[graph[now][i]] == false)
-    {
-      cnt[graph[now][i]] += cnt[now];
-      dfs(graph, cnt, visited, graph[now][i]);
-    }
-  }
-}
-ll mod_abs(ll a, ll mod)
-{
-  if (a < 0)
-    return a + mod;
-  return a % mod;
 }
