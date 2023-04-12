@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/modpow.test.cpp
+    title: test/modpow.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/modpow.hpp\"\nll modpow(ll a, ll b, ll p)\n{\n    ll\
@@ -19,8 +22,9 @@ data:
   path: math/modpow.hpp
   requiredBy: []
   timestamp: '2023-04-13 02:52:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/modpow.test.cpp
 documentation_of: math/modpow.hpp
 layout: document
 redirect_from:
