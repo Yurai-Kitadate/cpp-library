@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: math/modpow.hpp
-      title: math/modpow.hpp
+      title: Modpow
   - name: template
     pages:
     - icon: ':heavy_check_mark:'

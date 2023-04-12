@@ -27,8 +27,9 @@ data:
   - test/modpow.test.cpp
 documentation_of: math/modpow.hpp
 layout: document
-redirect_from:
-- /library/math/modpow.hpp
-- /library/math/modpow.hpp.html
-title: math/modpow.hpp
+title: Modpow
 ---
+
+## 説明
+
+このファイルでは、……

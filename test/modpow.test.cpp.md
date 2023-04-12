@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/modpow.hpp
-    title: math/modpow.hpp
+    title: Modpow
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
