@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: math
+    pages:
+    - icon: ':warning:'
+      path: math/modpow.hpp
+      title: math/modpow.hpp
   - name: template
     pages:
     - icon: ':warning:'
@@ -17,5 +22,10 @@ data:
     - icon: ':x:'
       path: math/test/modpow.test.cpp
       title: math/test/modpow.test.cpp
+  - name: test
+    pages:
+    - icon: ':x:'
+      path: test/modpow.test.cpp
+      title: test/modpow.test.cpp
 layout: toppage
 ---
