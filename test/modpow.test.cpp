@@ -5,5 +5,5 @@
 int main()
 {
     LL(n, m);
-    out(modpow(n, m, 1000000005));
+    out(modpow(n, m, 1000000007));
 }
