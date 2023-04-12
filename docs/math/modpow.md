@@ -4,5 +4,8 @@ documentation_of: //math/modpow.hpp
 ---
 
 ## 説明
+法p上で繰り返し二乗法をします。
 
-このファイルでは、……
+## 計算量
+* $O(log n)$
+
