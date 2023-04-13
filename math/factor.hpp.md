@@ -31,8 +31,12 @@ data:
   - test/aoj/NTL_1_A.test.cpp
 documentation_of: math/factor.hpp
 layout: document
-redirect_from:
-- /library/math/factor.hpp
-- /library/math/factor.hpp.html
-title: math/factor.hpp
+title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
 ---
+
+## 説明
+正整数$n$を素因数分解をして(素因数の種類,その素因数の数)のpairを返します。
+
+## 計算量
+* $O(\sqrt n)$
+
