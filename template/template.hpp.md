@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B.test.cpp
     title: test/aoj/NTL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/NTL_1_C.test.cpp
+    title: test/aoj/NTL_1_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -182,6 +185,7 @@ data:
   verifiedWith:
   - test/aoj/NTL_1_A.test.cpp
   - test/aoj/NTL_1_B.test.cpp
+  - test/aoj/NTL_1_C.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:
