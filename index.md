@@ -14,6 +14,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
+  - name: math/combinatorics
+    pages:
+    - icon: ':x:'
+      path: math/combinatorics/combination.hpp
+      title: math/combinatorics/combination.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -34,10 +39,15 @@ data:
         \u6CD5)"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
+  - name: test/aoj/DPL
+    pages:
+    - icon: ':x:'
+      path: test/aoj/DPL/DPL_5_E.test.cpp
+      title: test/aoj/DPL/DPL_5_E.test.cpp
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'

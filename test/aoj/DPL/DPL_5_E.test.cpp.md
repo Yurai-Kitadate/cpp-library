@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/divisor.hpp
-    title: math/divisor.hpp
+  - icon: ':x:'
+    path: math/combinatorics/combination.hpp
+    title: math/combinatorics/combination.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
-  bundledCode: "#line 1 \"test/aoj/ITP_1_3_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
+  bundledCode: "#line 1 \"test/aoj/DPL/DPL_5_E.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -98,34 +98,36 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/divisor.hpp\"\
-    \nvll divisor(ll x)\n{\n\n    vll lower_divisors, upper_divisors;\n    for (ll\
-    \ i = 1; i * i <= x; i++)\n    {\n        if (x % i == 0)\n        {\n       \
-    \     lower_divisors.push_back(i);\n            if (i != x / i)\n            \
-    \    upper_divisors.push_back(x / i);\n        }\n    }\n    reverse(all(upper_divisors));\n\
-    \    for (auto divisor : upper_divisors)\n        lower_divisors.push_back(divisor);\n\
-    \    return lower_divisors;\n}\n#line 4 \"test/aoj/ITP_1_3_D.test.cpp\"\n\nint\
-    \ main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
-    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
-    }\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/divisor.hpp\"\
-    \n\nint main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
-    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
-    }\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/combinatorics/combination.hpp\"\
+    \nstruct Combination\n{\n    ll size;\n    ll mod;\n    ll f = 1;\n    vector<ll>\
+    \ fac = {f};\n    vector<ll> facinv;\n    Combination(ll size, ll p)\n    {\n\
+    \        mod = p;\n        rep(i, 1, size + 1)\n        {\n            f = f *\
+    \ i % mod;\n            fac.push_back(f);\n        }\n        f = modpow(f, mod\
+    \ - 2, mod);\n        facinv.push_back(f);\n        for (ll i = size; i > 0; i--)\n\
+    \        {\n            // out(i);\n            f = f * i % mod;\n           \
+    \ facinv.push_back(f);\n        }\n        reverse(all(facinv));\n    }\n    ll\
+    \ c(ll n, ll r)\n    {\n        if (!(0 <= r && r <= n))\n            return 0;\n\
+    \        return (((fac[n] * facinv[r]) % mod) * facinv[n - r]) % mod;\n    }\n\
+    };\n#line 4 \"test/aoj/DPL/DPL_5_E.test.cpp\"\nint main()\n{\n    LL(n, k);\n\
+    \    ll mod = 1000000007;\n    auto c = Combination(2000000, mod);\n    out(c.c(k,\
+    \ n));\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/combinatorics/combination.hpp\"\
+    \nint main()\n{\n    LL(n, k);\n    ll mod = 1000000007;\n    auto c = Combination(2000000,\
+    \ mod);\n    out(c.c(k, n));\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/divisor.hpp
+  - math/combinatorics/combination.hpp
   isVerificationFile: true
-  path: test/aoj/ITP_1_3_D.test.cpp
+  path: test/aoj/DPL/DPL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 10:39:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-13 16:07:56+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/ITP_1_3_D.test.cpp
+documentation_of: test/aoj/DPL/DPL_5_E.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/ITP_1_3_D.test.cpp
-- /verify/test/aoj/ITP_1_3_D.test.cpp.html
-title: test/aoj/ITP_1_3_D.test.cpp
+- /verify/test/aoj/DPL/DPL_5_E.test.cpp
+- /verify/test/aoj/DPL/DPL_5_E.test.cpp.html
+title: test/aoj/DPL/DPL_5_E.test.cpp
 ---
