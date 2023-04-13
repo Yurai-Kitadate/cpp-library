@@ -3,12 +3,12 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math
@@ -37,7 +37,7 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'

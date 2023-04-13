@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_A.test.cpp
+    title: test/aoj/GRL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/ITP_1_3_D.test.cpp
     title: test/aoj/ITP_1_3_D.test.cpp
   - icon: ':heavy_check_mark:'
@@ -194,6 +197,7 @@ data:
   - test/aoj/NTL_1_D.test.cpp
   - test/aoj/NTL_1_A.test.cpp
   - test/aoj/ITP_1_3_D.test.cpp
+  - test/aoj/GRL_1_A.test.cpp
   - test/aoj/NTL_1_B.test.cpp
   - test/aoj/NTL_1_C.test.cpp
 documentation_of: template/template.hpp
