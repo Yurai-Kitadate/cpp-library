@@ -1,3 +1,5 @@
+#include "../structure/union-find.hpp"
+#include "../graph/graph-template/graph-template.hpp"
 template <typename T>
 T kruskal(vector<Edge<T>> g, ll n)
 {
