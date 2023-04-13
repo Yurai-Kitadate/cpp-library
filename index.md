@@ -4,6 +4,9 @@ data:
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
+      path: math/euler-phi.hpp
+      title: math/euler-phi.hpp
+    - icon: ':heavy_check_mark:'
       path: math/factor.hpp
       title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
     - icon: ':heavy_check_mark:'
@@ -30,5 +33,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_C.test.cpp
       title: test/aoj/NTL_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/NTL_1_D.test.cpp
+      title: test/aoj/NTL_1_D.test.cpp
 layout: toppage
 ---
