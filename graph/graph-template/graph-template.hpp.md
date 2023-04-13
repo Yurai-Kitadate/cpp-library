@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: graph/bellman-ford.hpp
+    title: graph/bellman-ford.hpp
+  - icon: ':heavy_check_mark:'
+    path: graph/dijkstra.hpp
+    title: graph/dijkstra.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_1_A.test.cpp
@@ -21,7 +27,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/graph-template/graph-template.hpp
-  requiredBy: []
+  requiredBy:
+  - graph/dijkstra.hpp
+  - graph/bellman-ford.hpp
   timestamp: '2023-04-13 14:43:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
