@@ -1,6 +1,6 @@
 ---
 title: lcm
-documentation_of: //math/modpow.hpp
+documentation_of: //math/lcm.hpp
 ---
 
 ## 説明
