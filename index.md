@@ -3,12 +3,15 @@ data:
   libraryCategories:
   - name: graph
     pages:
+    - icon: ':x:'
+      path: graph/bellman-ford.hpp
+      title: graph/bellman-ford.hpp
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math
@@ -31,7 +34,7 @@ data:
         \u6CD5)"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -40,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
+    - icon: ':x:'
+      path: test/aoj/GRL_1_B.test.cpp
+      title: test/aoj/GRL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ITP_1_3_D.test.cpp
       title: test/aoj/ITP_1_3_D.test.cpp
