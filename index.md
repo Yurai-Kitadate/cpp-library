@@ -21,7 +21,7 @@ data:
       title: math/combinatorics/combination.hpp
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/divisor.hpp
       title: math/divisor.hpp
     - icon: ':heavy_check_mark:'
@@ -58,7 +58,7 @@ data:
       title: test/aoj/GRL/GRL_1_B.test.cpp
   - name: test/aoj/ITP
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/ITP/ITP_1_3_D.test.cpp
       title: test/aoj/ITP/ITP_1_3_D.test.cpp
   - name: test/aoj/NTL

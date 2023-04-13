@@ -13,6 +13,9 @@ data:
     path: test/aoj/GRL/GRL_1_B.test.cpp
     title: test/aoj/GRL/GRL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP/ITP_1_3_D.test.cpp
+    title: test/aoj/ITP/ITP_1_3_D.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL/NTL_1_A.test.cpp
     title: test/aoj/NTL/NTL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -198,6 +201,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DPL/DPL_5_E.test.cpp
+  - test/aoj/ITP/ITP_1_3_D.test.cpp
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
   - test/aoj/NTL/NTL_1_D.test.cpp

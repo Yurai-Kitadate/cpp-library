@@ -120,7 +120,7 @@ data:
     \     out(\"INF\");\n        else\n            out(i);\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\"\n#include\
     \ \"../../../template/template.hpp\"\n#include \"../../../graph/graph-template/graph-template.hpp\"\
-    \n#include \"../../..//graph/dijkstra.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
+    \n#include \"../../../graph/dijkstra.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
     \    vector<vector<Edge<ll>>> g(v);\n    rep(e)\n    {\n        LL(s, t, d);\n\
     \        Edge<ll> m;\n        m.to = t;\n        m.cost = d;\n        g[s].emplace_back(m);\n\
     \    }\n    auto shortest = dijkstra(g, r, v);\n    for (auto i : shortest)\n\
@@ -133,7 +133,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 16:14:21+09:00'
+  timestamp: '2023-04-13 16:23:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_1_A.test.cpp

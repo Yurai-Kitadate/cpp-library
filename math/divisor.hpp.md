@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ITP/ITP_1_3_D.test.cpp
+    title: test/aoj/ITP/ITP_1_3_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/divisor.hpp\"\nvll divisor(ll x)\n{\n\n    vll lower_divisors,\
@@ -25,8 +28,9 @@ data:
   path: math/divisor.hpp
   requiredBy: []
   timestamp: '2023-04-13 10:39:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/ITP/ITP_1_3_D.test.cpp
 documentation_of: math/divisor.hpp
 layout: document
 redirect_from:
