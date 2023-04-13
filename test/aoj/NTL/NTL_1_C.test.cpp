@@ -1,6 +1,6 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C"
-#include "../../template/template.hpp"
-#include "../../math/lcm.hpp"
+#include "../../../template/template.hpp"
+#include "../../../math/lcm.hpp"
 
 int main()
 {
