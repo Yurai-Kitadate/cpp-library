@@ -1,12 +1,12 @@
 template <typename T>
-pair<bool, vector<T>> bellman_ford(vector<Edge<T>> g, ll st)
+pair<bool, vector<T>> bellman_ford(vector<Edge<T>> g, ll v, ll st)
 {
-    vector<ll> d(g.size(), LINF);
+    vector<ll> d(v, LINF);
     d[st] = 0;
-    rep(g.size() + 1)
+    rep(v + 1)
     {
         bool update = false;
-        if (i >= g.size())
+        if (i >= v)
         {
             return {false, d};
         }
