@@ -6,9 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL/DSL_1_A.test.cpp
     title: test/aoj/DSL/DSL_1_A.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/aoj/GRL/GRL_2_A.test.cpp
+    title: test/aoj/GRL/GRL_2_A.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"structure/union-find.hpp\"\nstruct UnionFind\n{\n    vector<ll>\
@@ -31,8 +34,9 @@ data:
   path: structure/union-find.hpp
   requiredBy: []
   timestamp: '2023-04-14 01:09:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/aoj/GRL/GRL_2_A.test.cpp
   - test/aoj/DSL/DSL_1_A.test.cpp
 documentation_of: structure/union-find.hpp
 layout: document

@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/divisor.hpp
-    title: math/divisor.hpp
+  - icon: ':question:'
+    path: graph/graph-template/graph-template.hpp
+    title: graph/graph-template/graph-template.hpp
+  - icon: ':question:'
+    path: structure/union-find.hpp
+    title: structure/union-find.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
-  bundledCode: "#line 1 \"test/aoj/ITP/ITP_1_3_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A
+  bundledCode: "#line 1 \"test/aoj/GRL/GRL_2_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -98,34 +101,40 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/divisor.hpp\"\
-    \nvll divisor(ll x)\n{\n\n    vll lower_divisors, upper_divisors;\n    for (ll\
-    \ i = 1; i * i <= x; i++)\n    {\n        if (x % i == 0)\n        {\n       \
-    \     lower_divisors.push_back(i);\n            if (i != x / i)\n            \
-    \    upper_divisors.push_back(x / i);\n        }\n    }\n    reverse(all(upper_divisors));\n\
-    \    for (auto divisor : upper_divisors)\n        lower_divisors.push_back(divisor);\n\
-    \    return lower_divisors;\n}\n#line 4 \"test/aoj/ITP/ITP_1_3_D.test.cpp\"\n\n\
-    int main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
-    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
-    }\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
-    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/divisor.hpp\"\
-    \n\nint main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
-    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
-    }\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"structure/union-find.hpp\"\
+    \nstruct UnionFind\n{\n    vector<ll> p;\n    vector<ll> r;\n    UnionFind(ll\
+    \ n)\n    {\n        p.resize(n, -1);\n        r.resize(n, 1);\n    }\n    ll\
+    \ find(ll x)\n    {\n        if (p[x] == -1)\n            return x;\n        return\
+    \ p[x] = find(p[x]);\n    }\n    void unite(ll x, ll y)\n    {\n        ll xp\
+    \ = find(x);\n        ll yp = find(y);\n\n        if (r[xp] > r[yp])\n       \
+    \     swap(xp, yp);\n        if (r[xp] == r[yp])\n            r[yp]++;\n     \
+    \   if (xp == yp)\n            return;\n        p[xp] = yp;\n    }\n};\n#line\
+    \ 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename T>\nstruct\
+    \ Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const Edge\
+    \ &o) const\n    {\n        return cost < o.cost;\n    }\n};\n#line 5 \"test/aoj/GRL/GRL_2_A.test.cpp\"\
+    \ntemplate <typename T>\nint main()\n{\n    LL(v, e);\n    vector<Edge<ll>> edges;\n\
+    \    rep(e)\n    {\n        LL(s, t, w);\n        Edge<ll> edge{s, t, w};\n  \
+    \      edges.push_back(edge);\n    }\n    out(kruskal(edges, v));\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A\"\
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../structure/union-find.hpp\"\
+    \n#include \"../../../graph/graph-template/graph-template.hpp\"\ntemplate <typename\
+    \ T>\nint main()\n{\n    LL(v, e);\n    vector<Edge<ll>> edges;\n    rep(e)\n\
+    \    {\n        LL(s, t, w);\n        Edge<ll> edge{s, t, w};\n        edges.push_back(edge);\n\
+    \    }\n    out(kruskal(edges, v));\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/divisor.hpp
+  - structure/union-find.hpp
+  - graph/graph-template/graph-template.hpp
   isVerificationFile: true
-  path: test/aoj/ITP/ITP_1_3_D.test.cpp
+  path: test/aoj/GRL/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 16:23:52+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-14 02:16:54+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/ITP/ITP_1_3_D.test.cpp
+documentation_of: test/aoj/GRL/GRL_2_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/ITP/ITP_1_3_D.test.cpp
-- /verify/test/aoj/ITP/ITP_1_3_D.test.cpp.html
-title: test/aoj/ITP/ITP_1_3_D.test.cpp
+- /verify/test/aoj/GRL/GRL_2_A.test.cpp
+- /verify/test/aoj/GRL/GRL_2_A.test.cpp.html
+title: test/aoj/GRL/GRL_2_A.test.cpp
 ---

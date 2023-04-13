@@ -9,9 +9,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
+    - icon: ':warning:'
+      path: graph/kruskal.hpp
+      title: graph/kruskal.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math/combinatorics
@@ -39,12 +42,12 @@ data:
         \u6CD5)"
   - name: structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/union-find.hpp
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -66,6 +69,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_1_B.test.cpp
       title: test/aoj/GRL/GRL_1_B.test.cpp
+    - icon: ':x:'
+      path: test/aoj/GRL/GRL_2_A.test.cpp
+      title: test/aoj/GRL/GRL_2_A.test.cpp
   - name: test/aoj/ITP
     pages:
     - icon: ':heavy_check_mark:'

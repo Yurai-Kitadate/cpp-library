@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/bellman-ford.hpp
     title: graph/bellman-ford.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -103,15 +103,16 @@ data:
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
     \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\
     \ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
-    };\n#line 2 \"graph/bellman-ford.hpp\"\n\ntemplate <typename T>\npair<bool, vector<T>>\
-    \ bellman_ford(vector<Edge<T>> g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n\
-    \    d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n       \
-    \ if (i >= v)\n        {\n            return {false, d};\n        }\n        for\
-    \ (auto next : g)\n        {\n            if (d[next.from] == LINF)\n        \
-    \        continue;\n            if (d[next.to] > d[next.from] + next.cost)\n \
-    \           {\n                d[next.to] = d[next.from] + next.cost;\n      \
-    \          update = true;\n            }\n        }\n        if (!update)\n  \
-    \          break;\n    }\n    return {true, d};\n}\n#line 4 \"test/aoj/GRL/GRL_1_B.test.cpp\"\
+    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
+    \    }\n};\n#line 2 \"graph/bellman-ford.hpp\"\n\ntemplate <typename T>\npair<bool,\
+    \ vector<T>> bellman_ford(vector<Edge<T>> g, ll v, ll st)\n{\n    vector<ll> d(v,\
+    \ LINF);\n    d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n\
+    \        if (i >= v)\n        {\n            return {false, d};\n        }\n \
+    \       for (auto next : g)\n        {\n            if (d[next.from] == LINF)\n\
+    \                continue;\n            if (d[next.to] > d[next.from] + next.cost)\n\
+    \            {\n                d[next.to] = d[next.from] + next.cost;\n     \
+    \           update = true;\n            }\n        }\n        if (!update)\n \
+    \           break;\n    }\n    return {true, d};\n}\n#line 4 \"test/aoj/GRL/GRL_1_B.test.cpp\"\
     \nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>> edges;\n    rep(e)\n \
     \   {\n        LL(s, t, d);\n        Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n\
     \    }\n    auto bell = bellman_ford(edges, v, r);\n    if (bell.first)\n    {\n\
@@ -133,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 16:29:29+09:00'
+  timestamp: '2023-04-14 02:16:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_1_B.test.cpp
