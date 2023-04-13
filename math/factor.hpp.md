@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/euler-phi.hpp
+    title: math/euler-phi.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_A.test.cpp
@@ -29,7 +32,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/factor.hpp
-  requiredBy: []
+  requiredBy:
+  - math/euler-phi.hpp
   timestamp: '2023-04-13 09:33:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
