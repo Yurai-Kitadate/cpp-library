@@ -1,3 +1,4 @@
+template <typename T>
 T kruskal(vector<Edge<T>> g, ll n)
 {
     sort(all(g));
