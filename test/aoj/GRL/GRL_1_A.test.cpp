@@ -1,6 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A"
 #include "../../../template/template.hpp"
-#include "../../../graph/graph-template/graph-template.hpp"
 #include "../../../graph/dijkstra.hpp"
 int main()
 {

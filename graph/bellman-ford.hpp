@@ -1,3 +1,5 @@
+#include "../graph/graph-template/graph-template.hpp"
+
 template <typename T>
 pair<bool, vector<T>> bellman_ford(vector<Edge<T>> g, ll v, ll st)
 {

@@ -1,3 +1,5 @@
+#include "../graph/graph-template/graph-template.hpp"
+
 template <typename T>
 vector<T> dijkstra(vector<vector<Edge<T>>> g, ll s, ll v)
 {
