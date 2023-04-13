@@ -114,16 +114,16 @@ data:
     \ 5 \"test/aoj/GRL_1_B.test.cpp\"\nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>>\
     \ edges;\n    rep(e)\n    {\n        LL(s, t, d);\n        Edge<ll> edge{s, t,\
     \ d};\n\n        edges.push_back(edge);\n    }\n    auto bell = bellman_ford(edges,\
-    \ r);\n    if (bell.first)\n    {\n        for (auto i : bell.second)\n      \
-    \  {\n            if (i >= LINF)\n                out(\"INF\");\n            else\n\
-    \                out(i);\n        }\n    }\n    else\n    {\n        out(\"NEGATIVE\
-    \ CYCLE\");\n    }\n}\n"
+    \ v, r);\n    if (bell.first)\n    {\n        for (auto i : bell.second)\n   \
+    \     {\n            if (i >= LINF)\n                out(\"INF\");\n         \
+    \   else\n                out(i);\n        }\n    }\n    else\n    {\n       \
+    \ out(\"NEGATIVE CYCLE\");\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../graph/graph-template/graph-template.hpp\"\
     \n#include \"../../graph/bellman-ford.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
     \    vector<Edge<ll>> edges;\n    rep(e)\n    {\n        LL(s, t, d);\n      \
     \  Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n    }\n    auto\
-    \ bell = bellman_ford(edges, r);\n    if (bell.first)\n    {\n        for (auto\
+    \ bell = bellman_ford(edges, v, r);\n    if (bell.first)\n    {\n        for (auto\
     \ i : bell.second)\n        {\n            if (i >= LINF)\n                out(\"\
     INF\");\n            else\n                out(i);\n        }\n    }\n    else\n\
     \    {\n        out(\"NEGATIVE CYCLE\");\n    }\n}\n"
@@ -134,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 14:58:59+09:00'
+  timestamp: '2023-04-13 15:03:42+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp
