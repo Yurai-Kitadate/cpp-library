@@ -1,3 +1,4 @@
+#include "../math/factor.hpp"
 ll euler_phi(ll n)
 {
     ll res = n;
