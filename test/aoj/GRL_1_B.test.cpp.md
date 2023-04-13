@@ -104,23 +104,23 @@ data:
     \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\
     \ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
     };\n#line 1 \"graph/bellman-ford.hpp\"\ntemplate <typename T>\npair<bool, vector<T>>\
-    \ bellman_ford(vector<Edge<T>> g, ll st)\n{\n    vector<ll> d(g.size(), LINF);\n\
-    \    d[st] = 0;\n    rep(g.size() + 1)\n    {\n        bool update = false;\n\
-    \        if (i >= g.size())\n        {\n            return {false, d};\n     \
-    \   }\n        for (auto next : g)\n        {\n            if (next.from < LINF\
-    \ && d[next.to] > d[next.from] + next.cost)\n            {\n                d[next.to]\
-    \ = d[next.from] + next.cost;\n                update = true;\n            }\n\
-    \        }\n        if (!update)\n            break;\n    }\n    return {true,\
-    \ d};\n}\n#line 5 \"test/aoj/GRL_1_B.test.cpp\"\nint main()\n{\n    LL(v, e, r);\n\
-    \    vector<Edge<ll>> edges;\n    rep(e)\n    {\n        LL(s, t, d);\n      \
-    \  Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n    }\n    auto\
-    \ bell = bellman_ford(edges, r);\n    if (bell.first)\n    {\n        for (auto\
-    \ i : bell.second)\n        {\n            if (i >= LINF)\n                out(\"\
-    INF\");\n            else\n                out(i);\n        }\n    }\n    else\n\
-    \    {\n        out(\"NEGATIVE CYCLE\");\n    }\n}\n"
+    \ bellman_ford(vector<Edge<T>> g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n\
+    \    d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n       \
+    \ if (i >= v)\n        {\n            return {false, d};\n        }\n        for\
+    \ (auto next : g)\n        {\n            if (next.from < LINF && d[next.to] >\
+    \ d[next.from] + next.cost)\n            {\n                d[next.to] = d[next.from]\
+    \ + next.cost;\n                update = true;\n            }\n        }\n   \
+    \     if (!update)\n            break;\n    }\n    return {true, d};\n}\n#line\
+    \ 5 \"test/aoj/GRL_1_B.test.cpp\"\nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>>\
+    \ edges;\n    rep(e)\n    {\n        LL(s, t, d);\n        Edge<ll> edge{s, t,\
+    \ d};\n\n        edges.push_back(edge);\n    }\n    auto bell = bellman_ford(edges,\
+    \ r);\n    if (bell.first)\n    {\n        for (auto i : bell.second)\n      \
+    \  {\n            if (i >= LINF)\n                out(\"INF\");\n            else\n\
+    \                out(i);\n        }\n    }\n    else\n    {\n        out(\"NEGATIVE\
+    \ CYCLE\");\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../graph/graph-template/graph-template.hpp\"\
-    \n#include \"../..//graph/bellman-ford.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
+    \n#include \"../../graph/bellman-ford.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
     \    vector<Edge<ll>> edges;\n    rep(e)\n    {\n        LL(s, t, d);\n      \
     \  Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n    }\n    auto\
     \ bell = bellman_ford(edges, r);\n    if (bell.first)\n    {\n        for (auto\
@@ -134,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 14:43:59+09:00'
+  timestamp: '2023-04-13 14:58:59+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp
