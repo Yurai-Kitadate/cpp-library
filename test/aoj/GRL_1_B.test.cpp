@@ -13,7 +13,7 @@ int main()
 
         edges.push_back(edge);
     }
-    auto bell = bellman_ford(edges, r);
+    auto bell = bellman_ford(edges, v, r);
     if (bell.first)
     {
         for (auto i : bell.second)
