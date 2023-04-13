@@ -1,25 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/union-find.hpp
     title: structure/union-find.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/atc001/tasks/unionfind_a
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
     links:
-    - https://atcoder.jp/contests/atc001/tasks/unionfind_a
     - https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
-  bundledCode: "#line 1 \"test/aoj/DSL/DSL_1_A.test.cpp\"\n\n// #define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\n#define PROBLEM \"https://atcoder.jp/contests/atc001/tasks/unionfind_a\"\
+  bundledCode: "#line 1 \"test/aoj/DSL/DSL_1_A.test.cpp\"\n\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -108,14 +106,13 @@ data:
     \ = find(x);\n        ll yp = find(y);\n\n        if (r[xp] > r[yp])\n       \
     \     swap(xp, yp);\n        if (r[xp] == r[yp])\n            r[yp]++;\n     \
     \   if (xp == yp)\n            return;\n        p[xp] = yp;\n    }\n};\n#line\
-    \ 6 \"test/aoj/DSL/DSL_1_A.test.cpp\"\nint main()\n{\n    LL(n, q);\n    UnionFind\
+    \ 5 \"test/aoj/DSL/DSL_1_A.test.cpp\"\nint main()\n{\n    LL(n, q);\n    UnionFind\
     \ uf(n);\n    rep(q)\n    {\n        LL(com, x, y);\n        if (com == 0)\n \
     \           uf.unite(x, y);\n        if (com == 1)\n        {\n            if\
     \ (uf.find(x) == uf.find(y))\n                out(1);\n            else\n    \
     \            out(0);\n        }\n    }\n}\n"
-  code: "\n// #define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\
-    \n#define PROBLEM \"https://atcoder.jp/contests/atc001/tasks/unionfind_a\"\n#include\
-    \ \"../../../template/template.hpp\"\n#include \"../../../structure/union-find.hpp\"\
+  code: "\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\n\
+    #include \"../../../template/template.hpp\"\n#include \"../../../structure/union-find.hpp\"\
     \nint main()\n{\n    LL(n, q);\n    UnionFind uf(n);\n    rep(q)\n    {\n    \
     \    LL(com, x, y);\n        if (com == 0)\n            uf.unite(x, y);\n    \
     \    if (com == 1)\n        {\n            if (uf.find(x) == uf.find(y))\n   \
@@ -127,8 +124,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 01:09:04+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-14 01:12:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL/DSL_1_A.test.cpp
 layout: document
