@@ -5,11 +5,11 @@
 int main()
 {
     LL(v, e, r);
-    vector<vector<Graph<ll>>> g(v);
+    vector<vector<Edge<ll>>> g(v);
     rep(e)
     {
         LL(s, t, d);
-        Graph<ll> m;
+        Edge<ll> m;
         m.to = t;
         m.cost = d;
         g[s].emplace_back(m);

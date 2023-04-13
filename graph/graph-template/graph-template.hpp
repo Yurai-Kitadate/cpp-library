@@ -1,6 +1,7 @@
 template <typename T>
-struct Graph
+struct Edge
 {
+    ll from;
     ll to;
     T cost;
 };

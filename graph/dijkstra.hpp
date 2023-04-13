@@ -1,5 +1,5 @@
 template <typename T>
-vector<T> dijkstra(vector<vector<Graph<T>>> g, ll s, ll v)
+vector<T> dijkstra(vector<vector<Edge<T>>> g, ll s, ll v)
 {
     vector<ll> before(v, -1);
     vector<T> dist(v, LINF);
@@ -12,7 +12,7 @@ vector<T> dijkstra(vector<vector<Graph<T>>> g, ll s, ll v)
         auto top = q.top().second;
         q.pop();
         seen[top] = true;
-        for (Graph<ll> next : g[top])
+        for (Edge<ll> next : g[top])
         {
             if (!seen[next.to] && dist[top] + next.cost < dist[next.to])
             {
