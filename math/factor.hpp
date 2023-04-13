@@ -8,7 +8,7 @@ vector<pll> factor(ll x)
             x /= i;
             while (x % i == 0)
             {
-                factors[factors.size() - 1].second += 1;
+                factors[factors.size() - 1].second++;
                 x /= i;
             }
         }
