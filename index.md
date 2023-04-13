@@ -39,12 +39,12 @@ data:
         \u6CD5)"
   - name: structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: structure/union-find.hpp
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -55,7 +55,7 @@ data:
       title: test/aoj/DPL/DPL_5_E.test.cpp
   - name: test/aoj/DSL
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL/DSL_1_A.test.cpp
       title: test/aoj/DSL/DSL_1_A.test.cpp
   - name: test/aoj/GRL

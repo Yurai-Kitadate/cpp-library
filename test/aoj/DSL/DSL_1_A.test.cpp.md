@@ -1,23 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: structure/union-find.hpp
     title: structure/union-find.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
+    PROBLEM: https://atcoder.jp/contests/atc001/tasks/unionfind_a
     links:
+    - https://atcoder.jp/contests/atc001/tasks/unionfind_a
     - https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
-  bundledCode: "#line 1 \"test/aoj/DSL/DSL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\
+  bundledCode: "#line 1 \"test/aoj/DSL/DSL_1_A.test.cpp\"\n\n// #define PROBLEM \"\
+    https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\n#define PROBLEM \"https://atcoder.jp/contests/atc001/tasks/unionfind_a\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -99,17 +101,20 @@ data:
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
     \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"structure/union-find.hpp\"\
-    \nstruct UnionFind\n{\n    vector<ll> p;\n    UnionFind(ll n)\n    {\n       \
-    \ p.resize(n, -1);\n    }\n    ll find(ll x)\n    {\n        if (p[x] == -1)\n\
-    \            return x;\n        return find(p[x]);\n    }\n    void unite(ll x,\
-    \ ll y)\n    {\n        ll xp = find(x);\n        ll yp = find(y);\n        if\
-    \ (xp == yp)\n            return;\n        p[xp] = yp;\n    }\n};\n#line 4 \"\
-    test/aoj/DSL/DSL_1_A.test.cpp\"\nint main()\n{\n    LL(n, q);\n    UnionFind uf(n);\n\
-    \    rep(q)\n    {\n        LL(com, x, y);\n        if (com == 0)\n          \
-    \  uf.unite(x, y);\n        if (com == 1)\n        {\n            if (uf.find(x)\
-    \ == uf.find(y))\n                out(1);\n            else\n                out(0);\n\
-    \        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\n#include\
+    \nstruct UnionFind\n{\n    vector<ll> p;\n    vector<ll> r;\n    UnionFind(ll\
+    \ n)\n    {\n        p.resize(n, -1);\n        r.resize(n, 1);\n    }\n    ll\
+    \ find(ll x)\n    {\n        if (p[x] == -1)\n            return x;\n        return\
+    \ p[x] = find(p[x]);\n    }\n    void unite(ll x, ll y)\n    {\n        ll xp\
+    \ = find(x);\n        ll yp = find(y);\n        if (r[xp] > r[yp])\n         \
+    \   swap(xp, yp);\n        if (r[xp] == r[yp])\n            r[yp]++;\n       \
+    \ if (xp == yp)\n            return;\n        p[xp] = yp;\n    }\n};\n#line 6\
+    \ \"test/aoj/DSL/DSL_1_A.test.cpp\"\nint main()\n{\n    LL(n, q);\n    UnionFind\
+    \ uf(n);\n    rep(q)\n    {\n        LL(com, x, y);\n        if (com == 0)\n \
+    \           uf.unite(x, y);\n        if (com == 1)\n        {\n            if\
+    \ (uf.find(x) == uf.find(y))\n                out(1);\n            else\n    \
+    \            out(0);\n        }\n    }\n}\n"
+  code: "\n// #define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\
+    \n#define PROBLEM \"https://atcoder.jp/contests/atc001/tasks/unionfind_a\"\n#include\
     \ \"../../../template/template.hpp\"\n#include \"../../../structure/union-find.hpp\"\
     \nint main()\n{\n    LL(n, q);\n    UnionFind uf(n);\n    rep(q)\n    {\n    \
     \    LL(com, x, y);\n        if (com == 0)\n            uf.unite(x, y);\n    \
@@ -122,8 +127,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 23:28:24+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-14 00:44:26+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/DSL/DSL_1_A.test.cpp
 layout: document
