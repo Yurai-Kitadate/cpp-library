@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/bellman-ford.hpp
     title: graph/bellman-ford.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B
@@ -107,17 +107,17 @@ data:
     \ bellman_ford(vector<Edge<T>> g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n\
     \    d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n       \
     \ if (i >= v)\n        {\n            return {false, d};\n        }\n        for\
-    \ (auto next : g)\n        {\n            if (next.from < LINF && d[next.to] >\
-    \ d[next.from] + next.cost)\n            {\n                d[next.to] = d[next.from]\
-    \ + next.cost;\n                update = true;\n            }\n        }\n   \
-    \     if (!update)\n            break;\n    }\n    return {true, d};\n}\n#line\
-    \ 5 \"test/aoj/GRL_1_B.test.cpp\"\nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>>\
-    \ edges;\n    rep(e)\n    {\n        LL(s, t, d);\n        Edge<ll> edge{s, t,\
-    \ d};\n\n        edges.push_back(edge);\n    }\n    auto bell = bellman_ford(edges,\
-    \ v, r);\n    if (bell.first)\n    {\n        for (auto i : bell.second)\n   \
-    \     {\n            if (i >= LINF)\n                out(\"INF\");\n         \
-    \   else\n                out(i);\n        }\n    }\n    else\n    {\n       \
-    \ out(\"NEGATIVE CYCLE\");\n    }\n}\n"
+    \ (auto next : g)\n        {\n            if (d[next.from] == LINF)\n        \
+    \        continue;\n            if (d[next.to] > d[next.from] + next.cost)\n \
+    \           {\n                d[next.to] = d[next.from] + next.cost;\n      \
+    \          update = true;\n            }\n        }\n        if (!update)\n  \
+    \          break;\n    }\n    return {true, d};\n}\n#line 5 \"test/aoj/GRL_1_B.test.cpp\"\
+    \nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>> edges;\n    rep(e)\n \
+    \   {\n        LL(s, t, d);\n        Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n\
+    \    }\n    auto bell = bellman_ford(edges, v, r);\n    if (bell.first)\n    {\n\
+    \        for (auto i : bell.second)\n        {\n            if (i >= LINF)\n \
+    \               out(\"INF\");\n            else\n                out(i);\n   \
+    \     }\n    }\n    else\n    {\n        out(\"NEGATIVE CYCLE\");\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../graph/graph-template/graph-template.hpp\"\
     \n#include \"../../graph/bellman-ford.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
@@ -134,8 +134,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 15:03:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-13 15:06:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp
 layout: document

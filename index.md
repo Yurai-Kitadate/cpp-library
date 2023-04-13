@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/bellman-ford.hpp
       title: graph/bellman-ford.hpp
     - icon: ':heavy_check_mark:'
@@ -11,7 +11,7 @@ data:
       title: graph/dijkstra.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math
@@ -34,7 +34,7 @@ data:
         \u6CD5)"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -43,7 +43,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_B.test.cpp
       title: test/aoj/GRL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
