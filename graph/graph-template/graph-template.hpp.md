@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: graph/dijkstra.hpp
+  - icon: ':x:'
+    path: graph/kruskal.hpp
+    title: graph/kruskal.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_1_A.test.cpp
@@ -15,12 +18,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_1_B.test.cpp
     title: test/aoj/GRL/GRL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL/GRL_2_A.test.cpp
     title: test/aoj/GRL/GRL_2_A.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/aoj/GRL/GRL_2_A.test.cpp
+    title: test/aoj/GRL/GRL_2_A.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
@@ -33,13 +39,15 @@ data:
   isVerificationFile: false
   path: graph/graph-template/graph-template.hpp
   requiredBy:
+  - graph/kruskal.hpp
   - graph/dijkstra.hpp
   - graph/bellman-ford.hpp
   timestamp: '2023-04-14 02:16:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
+  - test/aoj/GRL/GRL_2_A.test.cpp
   - test/aoj/GRL/GRL_2_A.test.cpp
 documentation_of: graph/graph-template/graph-template.hpp
 layout: document
