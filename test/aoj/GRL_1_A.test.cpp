@@ -1,3 +1,4 @@
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A"
 #include "../../library/template/template.hpp"
 #include "../../library/graph/graph-template/graph-template.hpp"
 #include "../../library/graph/dijkstra.hpp"
