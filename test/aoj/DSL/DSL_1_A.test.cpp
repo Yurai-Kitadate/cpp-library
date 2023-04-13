@@ -1,6 +1,5 @@
 
-// #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A"
-#define PROBLEM "https://atcoder.jp/contests/atc001/tasks/unionfind_a"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A"
 #include "../../../template/template.hpp"
 #include "../../../structure/union-find.hpp"
 int main()
