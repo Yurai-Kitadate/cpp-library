@@ -100,9 +100,9 @@ data:
     \ factor(ll x)\n{\n    vector<pll> factors;\n    for (ll i = 2; i * i <= x; i++)\n\
     \        if (x % i == 0)\n        {\n            factors.push_back({i, 1});\n\
     \            x /= i;\n            while (x % i == 0)\n            {\n        \
-    \        factors[factors.size() - 1].second += 1;\n                x /= i;\n \
-    \           }\n        }\n    if (x != 1)\n        factors.push_back({x, 1});\n\
-    \    return factors;\n}\n#line 4 \"test/aoj/NTL_1_A.test.cpp\"\nint main()\n{\n\
+    \        factors[factors.size() - 1].second++;\n                x /= i;\n    \
+    \        }\n        }\n    if (x != 1)\n        factors.push_back({x, 1});\n \
+    \   return factors;\n}\n#line 4 \"test/aoj/NTL_1_A.test.cpp\"\nint main()\n{\n\
     \    LL(n);\n    auto factors = factor(n);\n    print(n);\n    print(\": \");\n\
     \    vector<ll> res;\n    for (auto i : factors)\n    {\n        rep(_, i.second)\n\
     \        {\n            res.push_back(i.first);\n        }\n    }\n    out(res);\n\
@@ -119,7 +119,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 09:26:23+09:00'
+  timestamp: '2023-04-13 09:33:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_A.test.cpp
