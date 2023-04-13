@@ -98,10 +98,10 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\n#line 1 \"math/modpow.hpp\"\nll modpow(ll\
-    \ a, ll b, ll p)\n{\n    ll ans = 1;\n    while (b)\n    {\n        if (b & 1)\n\
-    \            (ans *= a) %= p;\n        (a *= a) %= p;\n        b /= 2;\n    }\n\
-    \    return ans;\n}\n#line 4 \"test/aoj/NTL_1_B.test.cpp\"\n\nint main()\n{\n\
-    \    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
+    \ a, ll b, ll p)\n{\n    ll res = 1;\n    while (b)\n    {\n        if (b & 1)\n\
+    \            res = (res * a) % p;\n        a = (a * a) % p;\n        b /= 2;\n\
+    \    }\n    return res;\n}\n#line 4 \"test/aoj/NTL_1_B.test.cpp\"\n\nint main()\n\
+    {\n    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
     \n#include \"../../template/template.hpp\"\n#include \"../../math/modpow.hpp\"\
     \n\nint main()\n{\n    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
@@ -111,7 +111,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 04:02:42+09:00'
+  timestamp: '2023-04-13 09:35:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_B.test.cpp

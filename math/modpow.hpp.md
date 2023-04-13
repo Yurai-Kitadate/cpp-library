@@ -12,16 +12,17 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"math/modpow.hpp\"\nll modpow(ll a, ll b, ll p)\n{\n    ll\
-    \ ans = 1;\n    while (b)\n    {\n        if (b & 1)\n            (ans *= a) %=\
-    \ p;\n        (a *= a) %= p;\n        b /= 2;\n    }\n    return ans;\n}\n"
-  code: "ll modpow(ll a, ll b, ll p)\n{\n    ll ans = 1;\n    while (b)\n    {\n \
-    \       if (b & 1)\n            (ans *= a) %= p;\n        (a *= a) %= p;\n   \
-    \     b /= 2;\n    }\n    return ans;\n}\n"
+    \ res = 1;\n    while (b)\n    {\n        if (b & 1)\n            res = (res *\
+    \ a) % p;\n        a = (a * a) % p;\n        b /= 2;\n    }\n    return res;\n\
+    }\n"
+  code: "ll modpow(ll a, ll b, ll p)\n{\n    ll res = 1;\n    while (b)\n    {\n \
+    \       if (b & 1)\n            res = (res * a) % p;\n        a = (a * a) % p;\n\
+    \        b /= 2;\n    }\n    return res;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/modpow.hpp
   requiredBy: []
-  timestamp: '2023-04-13 02:52:13+09:00'
+  timestamp: '2023-04-13 09:35:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/NTL_1_B.test.cpp
