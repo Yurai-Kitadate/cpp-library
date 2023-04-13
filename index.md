@@ -16,7 +16,7 @@ data:
       title: graph/graph-template/graph-template.hpp
   - name: math/combinatorics
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/combinatorics/combination.hpp
       title: math/combinatorics/combination.hpp
   - name: math
@@ -39,13 +39,13 @@ data:
         \u6CD5)"
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
   - name: test/aoj/DPL
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL/DPL_5_E.test.cpp
       title: test/aoj/DPL/DPL_5_E.test.cpp
   - name: test/aoj

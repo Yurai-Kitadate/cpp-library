@@ -1,17 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/combinatorics/combination.hpp
     title: math/combinatorics/combination.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
+    path: math/modpow.hpp
+    title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
+      )"
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
@@ -98,7 +102,10 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/combinatorics/combination.hpp\"\
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/modpow.hpp\"\
+    \nll modpow(ll a, ll b, ll p)\n{\n    ll res = 1;\n    while (b)\n    {\n    \
+    \    if (b & 1)\n            res = (res * a) % p;\n        a = (a * a) % p;\n\
+    \        b /= 2;\n    }\n    return res;\n}\n#line 1 \"math/combinatorics/combination.hpp\"\
     \nstruct Combination\n{\n    ll size;\n    ll mod;\n    ll f = 1;\n    vector<ll>\
     \ fac = {f};\n    vector<ll> facinv;\n    Combination(ll size, ll p)\n    {\n\
     \        mod = p;\n        rep(i, 1, size + 1)\n        {\n            f = f *\
@@ -108,21 +115,23 @@ data:
     \ facinv.push_back(f);\n        }\n        reverse(all(facinv));\n    }\n    ll\
     \ c(ll n, ll r)\n    {\n        if (!(0 <= r && r <= n))\n            return 0;\n\
     \        return (((fac[n] * facinv[r]) % mod) * facinv[n - r]) % mod;\n    }\n\
-    };\n#line 4 \"test/aoj/DPL/DPL_5_E.test.cpp\"\nint main()\n{\n    LL(n, k);\n\
+    };\n#line 5 \"test/aoj/DPL/DPL_5_E.test.cpp\"\nint main()\n{\n    LL(n, k);\n\
     \    ll mod = 1000000007;\n    auto c = Combination(2000000, mod);\n    out(c.c(k,\
     \ n));\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
-    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/combinatorics/combination.hpp\"\
-    \nint main()\n{\n    LL(n, k);\n    ll mod = 1000000007;\n    auto c = Combination(2000000,\
-    \ mod);\n    out(c.c(k, n));\n}\n"
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/modpow.hpp\"\
+    \n#include \"../../../math/combinatorics/combination.hpp\"\nint main()\n{\n  \
+    \  LL(n, k);\n    ll mod = 1000000007;\n    auto c = Combination(2000000, mod);\n\
+    \    out(c.c(k, n));\n}\n"
   dependsOn:
   - template/template.hpp
+  - math/modpow.hpp
   - math/combinatorics/combination.hpp
   isVerificationFile: true
   path: test/aoj/DPL/DPL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 16:07:56+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-13 16:10:07+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL/DPL_5_E.test.cpp
 layout: document

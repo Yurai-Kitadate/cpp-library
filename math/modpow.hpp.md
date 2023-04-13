@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/DPL/DPL_5_E.test.cpp
+    title: test/aoj/DPL/DPL_5_E.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_B.test.cpp
     title: test/aoj/NTL_1_B.test.cpp
   _isVerificationFailed: false
@@ -25,6 +28,7 @@ data:
   timestamp: '2023-04-13 09:35:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/DPL/DPL_5_E.test.cpp
   - test/aoj/NTL_1_B.test.cpp
 documentation_of: math/modpow.hpp
 layout: document
