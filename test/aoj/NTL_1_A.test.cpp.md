@@ -20,49 +20,50 @@ data:
   bundledCode: "#line 1 \"test/aoj/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
-    \ long;\nusing uint = unsigned;\nusing pii = pair<int, int>;\nusing pll = pair<ll,\
-    \ ll>;\nusing pdd = pair<ld, ld>;\nusing tuplis = array<ll, 3>;\ntemplate <class\
-    \ T>\nusing pq = priority_queue<T, vector<T>, greater<T>>;\nconst ll LINF = 0x1fffffffffffffff;\n\
-    const ll MINF = 0x7fffffffffff;\nconst int INF = 0x3fffffff;\nconst int MOD =\
-    \ 1000000007;\nconst int MODD = 998244353;\nconst ld DINF = numeric_limits<ld>::infinity();\n\
-    const ld EPS = 1e-9;\nconst ld PI = 3.1415926535897932;\nconst ll dx[] = {0, 1,\
-    \ 0, -1, 1, -1, 1, -1};\nconst ll dy[] = {1, 0, -1, 0, 1, 1, -1, -1};\n#define\
-    \ overload5(a, b, c, d, e, name, ...) name\n#define overload4(a, b, c, d, name,\
-    \ ...) name\n#define overload3(a, b, c, name, ...) name\n#define rep1(n) for (ll\
-    \ i = 0; i < n; ++i)\n#define rep2(i, n) for (ll i = 0; i < n; ++i)\n#define rep3(i,\
-    \ a, b) for (ll i = a; i < b; ++i)\n#define rep4(i, a, b, c) for (ll i = a; i\
-    \ < b; i += c)\n#define rep(...) overload4(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define rrep1(n) for (ll i = n; i--;)\n#define rrep2(i, n) for (ll i = n; i--;)\n\
-    #define rrep3(i, a, b) for (ll i = b; i-- > (a);)\n#define rrep4(i, a, b, c) for\
-    \ (ll i = (a) + ((b) - (a)-1) / (c) * (c); i >= (a); i -= c)\n#define rrep(...)\
-    \ overload4(__VA_ARGS__, rrep4, rrep3, rrep2, rrep1)(__VA_ARGS__)\n#define each1(i,\
-    \ a) for (auto &&i : a)\n#define each2(x, y, a) for (auto &&[x, y] : a)\n#define\
-    \ each3(x, y, z, a) for (auto &&[x, y, z] : a)\n#define each4(w, x, y, z, a) for\
-    \ (auto &&[w, x, y, z] : a)\n#define each(...) overload5(__VA_ARGS__, each4, each3,\
-    \ each2, each1)(__VA_ARGS__)\n#define all1(i) begin(i), end(i)\n#define all2(i,\
-    \ a) begin(i), begin(i) + a\n#define all3(i, a, b) begin(i) + a, begin(i) + b\n\
-    #define all(...) overload3(__VA_ARGS__, all3, all2, all1)(__VA_ARGS__)\n#define\
-    \ rall1(i) rbegin(i), rend(i)\n#define rall2(i, a) rbegin(i), rbegin(i) + a\n\
-    #define rall3(i, a, b) rbegin(i) + a, rbegin(i) + b\n#define rall(...) overload3(__VA_ARGS__,\
-    \ rall3, rall2, rall1)(__VA_ARGS__)\n#define sum(...) accumulate(all(__VA_ARGS__),\
-    \ 0LL)\n#define dsum(...) accumulate(all(__VA_ARGS__), 0.0L)\n#define Msum(...)\
-    \ accumulate(all(__VA_ARGS__), Modint{})\n#define elif else if\n#define INT(...)\
-    \   \\\n  int __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define LL(...)   \\\n  ll __VA_ARGS__;\
-    \ \\\n  in(__VA_ARGS__)\n#define ULL(...)   \\\n  ull __VA_ARGS__; \\\n  in(__VA_ARGS__)\n\
-    #define STR(...)      \\\n  string __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define\
-    \ CHR(...)    \\\n  char __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define DBL(...)\
-    \      \\\n  double __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define LD(...)   \\\n\
-    \  ld __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define vec(type, name, ...) vector<type>\
-    \ name(__VA_ARGS__)\n#define VEC(type, name, size) \\\n  vector<type> name(size);\
-    \    \\\n  in(name)\n#define vv(type, name, h, ...) vector name(h, vector<type>(__VA_ARGS__))\n\
-    #define VV(type, name, h, w)       \\\n  vector name(h, vector<type>(w)); \\\n\
-    \  in(name)\n#define vvv(type, name, h, w, ...) vector name(h, vector(w, vector<type>(__VA_ARGS__)))\n\
-    template <class T>\nauto min(const T &a)\n{\n  return *min_element(all(a));\n\
-    }\n\ntemplate <class... Ts>\nvoid in(Ts &...t);\n[[maybe_unused]] void print()\
-    \ {}\ntemplate <class T, class... Ts>\nvoid print(const T &t, const Ts &...ts);\n\
-    template <class... Ts>\nvoid out(const Ts &...ts)\n{\n  print(ts...);\n  cout\
-    \ << '\\n';\n}\nnamespace IO\n{\n#define VOID(a) decltype(void(a))\n  struct S\n\
-    \  {\n    S()\n    {\n      cin.tie(nullptr)->sync_with_stdio(0);\n      fixed(cout).precision(12);\n\
+    \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
+    \ int>;\nusing pll = pair<ll, ll>;\nusing pdd = pair<ld, ld>;\nusing tuplis =\
+    \ array<ll, 3>;\ntemplate <class T>\nusing pq = priority_queue<T, vector<T>, greater<T>>;\n\
+    const ll LINF = 0x1fffffffffffffff;\nconst ll MINF = 0x7fffffffffff;\nconst int\
+    \ INF = 0x3fffffff;\nconst int MOD = 1000000007;\nconst int MODD = 998244353;\n\
+    const ld DINF = numeric_limits<ld>::infinity();\nconst ld EPS = 1e-9;\nconst ld\
+    \ PI = 3.1415926535897932;\nconst ll dx[] = {0, 1, 0, -1, 1, -1, 1, -1};\nconst\
+    \ ll dy[] = {1, 0, -1, 0, 1, 1, -1, -1};\n#define overload5(a, b, c, d, e, name,\
+    \ ...) name\n#define overload4(a, b, c, d, name, ...) name\n#define overload3(a,\
+    \ b, c, name, ...) name\n#define rep1(n) for (ll i = 0; i < n; ++i)\n#define rep2(i,\
+    \ n) for (ll i = 0; i < n; ++i)\n#define rep3(i, a, b) for (ll i = a; i < b; ++i)\n\
+    #define rep4(i, a, b, c) for (ll i = a; i < b; i += c)\n#define rep(...) overload4(__VA_ARGS__,\
+    \ rep4, rep3, rep2, rep1)(__VA_ARGS__)\n#define rrep1(n) for (ll i = n; i--;)\n\
+    #define rrep2(i, n) for (ll i = n; i--;)\n#define rrep3(i, a, b) for (ll i = b;\
+    \ i-- > (a);)\n#define rrep4(i, a, b, c) for (ll i = (a) + ((b) - (a)-1) / (c)\
+    \ * (c); i >= (a); i -= c)\n#define rrep(...) overload4(__VA_ARGS__, rrep4, rrep3,\
+    \ rrep2, rrep1)(__VA_ARGS__)\n#define each1(i, a) for (auto &&i : a)\n#define\
+    \ each2(x, y, a) for (auto &&[x, y] : a)\n#define each3(x, y, z, a) for (auto\
+    \ &&[x, y, z] : a)\n#define each4(w, x, y, z, a) for (auto &&[w, x, y, z] : a)\n\
+    #define each(...) overload5(__VA_ARGS__, each4, each3, each2, each1)(__VA_ARGS__)\n\
+    #define all1(i) begin(i), end(i)\n#define all2(i, a) begin(i), begin(i) + a\n\
+    #define all3(i, a, b) begin(i) + a, begin(i) + b\n#define all(...) overload3(__VA_ARGS__,\
+    \ all3, all2, all1)(__VA_ARGS__)\n#define rall1(i) rbegin(i), rend(i)\n#define\
+    \ rall2(i, a) rbegin(i), rbegin(i) + a\n#define rall3(i, a, b) rbegin(i) + a,\
+    \ rbegin(i) + b\n#define rall(...) overload3(__VA_ARGS__, rall3, rall2, rall1)(__VA_ARGS__)\n\
+    #define sum(...) accumulate(all(__VA_ARGS__), 0LL)\n#define dsum(...) accumulate(all(__VA_ARGS__),\
+    \ 0.0L)\n#define Msum(...) accumulate(all(__VA_ARGS__), Modint{})\n#define elif\
+    \ else if\n#define INT(...)   \\\n  int __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define\
+    \ LL(...)   \\\n  ll __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define ULL(...)   \\\
+    \n  ull __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define STR(...)      \\\n  string\
+    \ __VA_ARGS__; \\\n  in(__VA_ARGS__)\n#define CHR(...)    \\\n  char __VA_ARGS__;\
+    \ \\\n  in(__VA_ARGS__)\n#define DBL(...)      \\\n  double __VA_ARGS__; \\\n\
+    \  in(__VA_ARGS__)\n#define LD(...)   \\\n  ld __VA_ARGS__; \\\n  in(__VA_ARGS__)\n\
+    #define vec(type, name, ...) vector<type> name(__VA_ARGS__)\n#define VEC(type,\
+    \ name, size) \\\n  vector<type> name(size);    \\\n  in(name)\n#define vv(type,\
+    \ name, h, ...) vector name(h, vector<type>(__VA_ARGS__))\n#define VV(type, name,\
+    \ h, w)       \\\n  vector name(h, vector<type>(w)); \\\n  in(name)\n#define vvv(type,\
+    \ name, h, w, ...) vector name(h, vector(w, vector<type>(__VA_ARGS__)))\ntemplate\
+    \ <class T>\nauto min(const T &a)\n{\n  return *min_element(all(a));\n}\n\ntemplate\
+    \ <class... Ts>\nvoid in(Ts &...t);\n[[maybe_unused]] void print() {}\ntemplate\
+    \ <class T, class... Ts>\nvoid print(const T &t, const Ts &...ts);\ntemplate <class...\
+    \ Ts>\nvoid out(const Ts &...ts)\n{\n  print(ts...);\n  cout << '\\n';\n}\nnamespace\
+    \ IO\n{\n#define VOID(a) decltype(void(a))\n  struct S\n  {\n    S()\n    {\n\
+    \      cin.tie(nullptr)->sync_with_stdio(0);\n      fixed(cout).precision(12);\n\
     \    }\n  } S;\n  template <int I>\n  struct P : P<I - 1>\n  {\n  };\n  template\
     \ <>\n  struct P<0>\n  {\n  };\n  template <class T>\n  void i(T &t) { i(t, P<3>{});\
     \ }\n  void i(vector<bool>::reference t, P<3>)\n  {\n    int a;\n    i(a);\n \
@@ -96,13 +97,14 @@ data:
     \  {                      \\\n    out(#no);            \\\n  }\nYESNO(first, second)\n\
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
-    {\n  return min(initializer_list{a...});\n}\n#line 1 \"math/factor.hpp\"\nvector<pll>\
-    \ factor(ll x)\n{\n    vector<pll> factors;\n    for (ll i = 2; i * i <= x; i++)\n\
-    \        if (x % i == 0)\n        {\n            factors.push_back({i, 1});\n\
-    \            x /= i;\n            while (x % i == 0)\n            {\n        \
-    \        factors[factors.size() - 1].second++;\n                x /= i;\n    \
-    \        }\n        }\n    if (x != 1)\n        factors.push_back({x, 1});\n \
-    \   return factors;\n}\n#line 4 \"test/aoj/NTL_1_A.test.cpp\"\nint main()\n{\n\
+    {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/factor.hpp\"\
+    \nvector<pll> factor(ll x)\n{\n    vector<pll> factors;\n    for (ll i = 2; i\
+    \ * i <= x; i++)\n        if (x % i == 0)\n        {\n            factors.push_back({i,\
+    \ 1});\n            x /= i;\n            while (x % i == 0)\n            {\n \
+    \               factors[factors.size() - 1].second++;\n                x /= i;\n\
+    \            }\n        }\n    if (x != 1)\n        factors.push_back({x, 1});\n\
+    \    return factors;\n}\n#line 4 \"test/aoj/NTL_1_A.test.cpp\"\nint main()\n{\n\
     \    LL(n);\n    auto factors = factor(n);\n    print(n);\n    print(\": \");\n\
     \    vector<ll> res;\n    for (auto i : factors)\n    {\n        rep(_, i.second)\n\
     \        {\n            res.push_back(i.first);\n        }\n    }\n    out(res);\n\
@@ -119,7 +121,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 09:33:03+09:00'
+  timestamp: '2023-04-13 10:39:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_A.test.cpp

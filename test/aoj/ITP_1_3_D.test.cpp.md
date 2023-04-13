@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/lcm.hpp
-    title: lcm
+    path: math/divisor.hpp
+    title: math/divisor.hpp
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C
-  bundledCode: "#line 1 \"test/aoj/NTL_1_C.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
+  bundledCode: "#line 1 \"test/aoj/ITP_1_3_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -98,27 +98,34 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/lcm.hpp\"\
-    \nll lcm(ll a, ll b)\n{\n    return a * b / gcd(a, b);\n}\n#line 4 \"test/aoj/NTL_1_C.test.cpp\"\
-    \n\nint main()\n{\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n\
-    \    {\n        res = lcm(res, a[i]);\n    }\n    out(res);\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/lcm.hpp\"\n\n\
-    int main()\n{\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n\
-    \    {\n        res = lcm(res, a[i]);\n    }\n    out(res);\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/divisor.hpp\"\
+    \nvll divisor(ll x)\n{\n\n    vll lower_divisors, upper_divisors;\n    for (ll\
+    \ i = 1; i * i <= x; i++)\n    {\n        if (x % i == 0)\n        {\n       \
+    \     lower_divisors.push_back(i);\n            if (i != x / i)\n            \
+    \    upper_divisors.push_back(x / i);\n        }\n    }\n    reverse(all(upper_divisors));\n\
+    \    for (auto divisor : upper_divisors)\n        lower_divisors.push_back(divisor);\n\
+    \    return lower_divisors;\n}\n#line 4 \"test/aoj/ITP_1_3_D.test.cpp\"\n\nint\
+    \ main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
+    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
+    }\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
+    \n#include \"../../template/template.hpp\"\n#include \"../../math/divisor.hpp\"\
+    \n\nint main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
+    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
+    }\n"
   dependsOn:
   - template/template.hpp
-  - math/lcm.hpp
+  - math/divisor.hpp
   isVerificationFile: true
-  path: test/aoj/NTL_1_C.test.cpp
+  path: test/aoj/ITP_1_3_D.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 10:39:12+09:00'
+  timestamp: '2023-04-13 10:39:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/NTL_1_C.test.cpp
+documentation_of: test/aoj/ITP_1_3_D.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/NTL_1_C.test.cpp
-- /verify/test/aoj/NTL_1_C.test.cpp.html
-title: test/aoj/NTL_1_C.test.cpp
+- /verify/test/aoj/ITP_1_3_D.test.cpp
+- /verify/test/aoj/ITP_1_3_D.test.cpp.html
+title: test/aoj/ITP_1_3_D.test.cpp
 ---

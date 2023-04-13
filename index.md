@@ -4,6 +4,9 @@ data:
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
+      path: math/divisor.hpp
+      title: math/divisor.hpp
+    - icon: ':heavy_check_mark:'
       path: math/euler-phi.hpp
       title: math/euler-phi.hpp
     - icon: ':heavy_check_mark:'
@@ -24,6 +27,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ITP_1_3_D.test.cpp
+      title: test/aoj/ITP_1_3_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_A.test.cpp
       title: test/aoj/NTL_1_A.test.cpp
