@@ -2,6 +2,7 @@
 #include "../../../template/template.hpp"
 #include "../../../structure/union-find.hpp"
 #include "../../../graph/graph-template/graph-template.hpp"
+#include "../../../graph/kruskal.hpp"
 template <typename T>
 int main()
 {
