@@ -1,6 +1,16 @@
 ---
 data:
   libraryCategories:
+  - name: graph
+    pages:
+    - icon: ':warning:'
+      path: graph/dijkstra.hpp
+      title: graph/dijkstra.hpp
+  - name: graph/graph-template
+    pages:
+    - icon: ':warning:'
+      path: graph/graph-template/graph-template.hpp
+      title: graph/graph-template/graph-template.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -27,6 +37,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':x:'
+      path: test/aoj/GRL_1_A.test.cpp
+      title: test/aoj/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ITP_1_3_D.test.cpp
       title: test/aoj/ITP_1_3_D.test.cpp
