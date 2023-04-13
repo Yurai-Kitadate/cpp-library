@@ -17,6 +17,7 @@ struct UnionFind
     {
         ll xp = find(x);
         ll yp = find(y);
+
         if (r[xp] > r[yp])
             swap(xp, yp);
         if (r[xp] == r[yp])
