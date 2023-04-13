@@ -4,6 +4,7 @@ using ll = long long;
 using ld = long double;
 using ull = unsigned long long;
 using uint = unsigned;
+using vll = vector<ll>;
 using pii = pair<int, int>;
 using pll = pair<ll, ll>;
 using pdd = pair<ld, ld>;
@@ -221,4 +222,10 @@ template <class... T>
 constexpr auto min(T... a)
 {
   return min(initializer_list{a...});
+}
+ll mod_abs(ll a, ll mod)
+{
+  if (a < 0)
+    return a + mod;
+  return a % mod;
 }
