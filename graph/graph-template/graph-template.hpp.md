@@ -4,11 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_1_A.test.cpp
-    title: test/aoj/GRL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_1_B.test.cpp
-    title: test/aoj/GRL_1_B.test.cpp
+    path: test/aoj/GRL/GRL_1_A.test.cpp
+    title: test/aoj/GRL/GRL_1_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -25,8 +22,7 @@ data:
   timestamp: '2023-04-13 14:43:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/GRL_1_B.test.cpp
-  - test/aoj/GRL_1_A.test.cpp
+  - test/aoj/GRL/GRL_1_A.test.cpp
 documentation_of: graph/graph-template/graph-template.hpp
 layout: document
 redirect_from:

@@ -7,26 +7,20 @@ data:
     path: test/aoj/DPL/DPL_5_E.test.cpp
     title: test/aoj/DPL/DPL_5_E.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_1_A.test.cpp
-    title: test/aoj/GRL_1_A.test.cpp
+    path: test/aoj/GRL/GRL_1_A.test.cpp
+    title: test/aoj/GRL/GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/GRL_1_B.test.cpp
-    title: test/aoj/GRL_1_B.test.cpp
+    path: test/aoj/NTL/NTL_1_A.test.cpp
+    title: test/aoj/NTL/NTL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/ITP_1_3_D.test.cpp
-    title: test/aoj/ITP_1_3_D.test.cpp
+    path: test/aoj/NTL/NTL_1_B.test.cpp
+    title: test/aoj/NTL/NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_A.test.cpp
-    title: test/aoj/NTL_1_A.test.cpp
+    path: test/aoj/NTL/NTL_1_C.test.cpp
+    title: test/aoj/NTL/NTL_1_C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_B.test.cpp
-    title: test/aoj/NTL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_C.test.cpp
-    title: test/aoj/NTL_1_C.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_D.test.cpp
-    title: test/aoj/NTL_1_D.test.cpp
+    path: test/aoj/NTL/NTL_1_D.test.cpp
+    title: test/aoj/NTL/NTL_1_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -200,14 +194,12 @@ data:
   timestamp: '2023-04-13 10:39:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/NTL_1_D.test.cpp
-  - test/aoj/GRL_1_B.test.cpp
-  - test/aoj/NTL_1_A.test.cpp
   - test/aoj/DPL/DPL_5_E.test.cpp
-  - test/aoj/ITP_1_3_D.test.cpp
-  - test/aoj/GRL_1_A.test.cpp
-  - test/aoj/NTL_1_B.test.cpp
-  - test/aoj/NTL_1_C.test.cpp
+  - test/aoj/GRL/GRL_1_A.test.cpp
+  - test/aoj/NTL/NTL_1_D.test.cpp
+  - test/aoj/NTL/NTL_1_A.test.cpp
+  - test/aoj/NTL/NTL_1_B.test.cpp
+  - test/aoj/NTL/NTL_1_C.test.cpp
 documentation_of: template/template.hpp
 layout: document
 redirect_from:

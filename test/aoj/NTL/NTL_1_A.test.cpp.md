@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/lcm.hpp
-    title: lcm
+    path: math/factor.hpp
+    title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C
-  bundledCode: "#line 1 \"test/aoj/NTL_1_C.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
+  bundledCode: "#line 1 \"test/aoj/NTL/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -98,27 +98,36 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/lcm.hpp\"\
-    \nll lcm(ll a, ll b)\n{\n    return a * b / gcd(a, b);\n}\n#line 4 \"test/aoj/NTL_1_C.test.cpp\"\
-    \n\nint main()\n{\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n\
-    \    {\n        res = lcm(res, a[i]);\n    }\n    out(res);\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/lcm.hpp\"\n\n\
-    int main()\n{\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n\
-    \    {\n        res = lcm(res, a[i]);\n    }\n    out(res);\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/factor.hpp\"\
+    \nvector<pll> factor(ll x)\n{\n    vector<pll> factors;\n    for (ll i = 2; i\
+    \ * i <= x; i++)\n        if (x % i == 0)\n        {\n            factors.push_back({i,\
+    \ 1});\n            x /= i;\n            while (x % i == 0)\n            {\n \
+    \               factors[factors.size() - 1].second++;\n                x /= i;\n\
+    \            }\n        }\n    if (x != 1)\n        factors.push_back({x, 1});\n\
+    \    return factors;\n}\n#line 4 \"test/aoj/NTL/NTL_1_A.test.cpp\"\nint main()\n\
+    {\n    LL(n);\n    auto factors = factor(n);\n    print(n);\n    print(\": \"\
+    );\n    vector<ll> res;\n    for (auto i : factors)\n    {\n        rep(_, i.second)\n\
+    \        {\n            res.push_back(i.first);\n        }\n    }\n    out(res);\n\
+    }\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/factor.hpp\"\
+    \nint main()\n{\n    LL(n);\n    auto factors = factor(n);\n    print(n);\n  \
+    \  print(\": \");\n    vector<ll> res;\n    for (auto i : factors)\n    {\n  \
+    \      rep(_, i.second)\n        {\n            res.push_back(i.first);\n    \
+    \    }\n    }\n    out(res);\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/lcm.hpp
+  - math/factor.hpp
   isVerificationFile: true
-  path: test/aoj/NTL_1_C.test.cpp
+  path: test/aoj/NTL/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 10:39:12+09:00'
+  timestamp: '2023-04-13 16:14:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/NTL_1_C.test.cpp
+documentation_of: test/aoj/NTL/NTL_1_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/NTL_1_C.test.cpp
-- /verify/test/aoj/NTL_1_C.test.cpp.html
-title: test/aoj/NTL_1_C.test.cpp
+- /verify/test/aoj/NTL/NTL_1_A.test.cpp
+- /verify/test/aoj/NTL/NTL_1_A.test.cpp.html
+title: test/aoj/NTL/NTL_1_A.test.cpp
 ---

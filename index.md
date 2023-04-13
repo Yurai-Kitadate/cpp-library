@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: graph/bellman-ford.hpp
       title: graph/bellman-ford.hpp
     - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
       title: math/combinatorics/combination.hpp
   - name: math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: math/divisor.hpp
       title: math/divisor.hpp
     - icon: ':heavy_check_mark:'
@@ -48,28 +48,32 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DPL/DPL_5_E.test.cpp
       title: test/aoj/DPL/DPL_5_E.test.cpp
-  - name: test/aoj
+  - name: test/aoj/GRL
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/aoj/GRL_1_A.test.cpp
-      title: test/aoj/GRL_1_A.test.cpp
+      path: test/aoj/GRL/GRL_1_A.test.cpp
+      title: test/aoj/GRL/GRL_1_A.test.cpp
+    - icon: ':x:'
+      path: test/aoj/GRL/GRL_1_B.test.cpp
+      title: test/aoj/GRL/GRL_1_B.test.cpp
+  - name: test/aoj/ITP
+    pages:
+    - icon: ':x:'
+      path: test/aoj/ITP/ITP_1_3_D.test.cpp
+      title: test/aoj/ITP/ITP_1_3_D.test.cpp
+  - name: test/aoj/NTL
+    pages:
     - icon: ':heavy_check_mark:'
-      path: test/aoj/GRL_1_B.test.cpp
-      title: test/aoj/GRL_1_B.test.cpp
+      path: test/aoj/NTL/NTL_1_A.test.cpp
+      title: test/aoj/NTL/NTL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/ITP_1_3_D.test.cpp
-      title: test/aoj/ITP_1_3_D.test.cpp
+      path: test/aoj/NTL/NTL_1_B.test.cpp
+      title: test/aoj/NTL/NTL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/NTL_1_A.test.cpp
-      title: test/aoj/NTL_1_A.test.cpp
+      path: test/aoj/NTL/NTL_1_C.test.cpp
+      title: test/aoj/NTL/NTL_1_C.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/NTL_1_B.test.cpp
-      title: test/aoj/NTL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/NTL_1_C.test.cpp
-      title: test/aoj/NTL_1_C.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/aoj/NTL_1_D.test.cpp
-      title: test/aoj/NTL_1_D.test.cpp
+      path: test/aoj/NTL/NTL_1_D.test.cpp
+      title: test/aoj/NTL/NTL_1_D.test.cpp
 layout: toppage
 ---

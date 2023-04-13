@@ -7,11 +7,11 @@ data:
     title: math/euler-phi.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_A.test.cpp
-    title: test/aoj/NTL_1_A.test.cpp
+    path: test/aoj/NTL/NTL_1_A.test.cpp
+    title: test/aoj/NTL/NTL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_D.test.cpp
-    title: test/aoj/NTL_1_D.test.cpp
+    path: test/aoj/NTL/NTL_1_D.test.cpp
+    title: test/aoj/NTL/NTL_1_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,8 +37,8 @@ data:
   timestamp: '2023-04-13 09:33:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/NTL_1_D.test.cpp
-  - test/aoj/NTL_1_A.test.cpp
+  - test/aoj/NTL/NTL_1_D.test.cpp
+  - test/aoj/NTL/NTL_1_A.test.cpp
 documentation_of: math/factor.hpp
 layout: document
 title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/NTL_1_C.test.cpp
-    title: test/aoj/NTL_1_C.test.cpp
+    path: test/aoj/NTL/NTL_1_C.test.cpp
+    title: test/aoj/NTL/NTL_1_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
   timestamp: '2023-04-13 09:22:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/NTL_1_C.test.cpp
+  - test/aoj/NTL/NTL_1_C.test.cpp
 documentation_of: math/lcm.hpp
 layout: document
 title: lcm

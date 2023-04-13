@@ -2,9 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/modpow.hpp
-    title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
-      )"
+    path: graph/dijkstra.hpp
+    title: graph/dijkstra.hpp
+  - icon: ':heavy_check_mark:'
+    path: graph/graph-template/graph-template.hpp
+    title: graph/graph-template/graph-template.hpp
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
@@ -15,10 +17,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B
-  bundledCode: "#line 1 \"test/aoj/NTL_1_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
+    - https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
+  bundledCode: "#line 1 \"test/aoj/GRL/GRL_1_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -99,27 +101,45 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/modpow.hpp\"\
-    \nll modpow(ll a, ll b, ll p)\n{\n    ll res = 1;\n    while (b)\n    {\n    \
-    \    if (b & 1)\n            res = (res * a) % p;\n        a = (a * a) % p;\n\
-    \        b /= 2;\n    }\n    return res;\n}\n#line 4 \"test/aoj/NTL_1_B.test.cpp\"\
-    \n\nint main()\n{\n    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_B\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/modpow.hpp\"\
-    \n\nint main()\n{\n    LL(n, m);\n    out(modpow(n, m, 1000000007));\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\
+    \ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
+    };\n#line 1 \"graph/dijkstra.hpp\"\ntemplate <typename T>\nvector<T> dijkstra(vector<vector<Edge<T>>>\
+    \ g, ll s, ll v)\n{\n    vector<ll> before(v, -1);\n    vector<T> dist(v, LINF);\n\
+    \    vector<bool> seen(v, false);\n    dist[s] = 0;\n    priority_queue<pair<ll,\
+    \ T>, vector<pair<ll, T>>, greater<pair<ll, T>>> q;\n    q.push(pair(0, s));\n\
+    \    while (!q.empty())\n    {\n        auto top = q.top().second;\n        q.pop();\n\
+    \        seen[top] = true;\n        for (Edge<ll> next : g[top])\n        {\n\
+    \            if (!seen[next.to] && dist[top] + next.cost < dist[next.to])\n  \
+    \          {\n                before[next.to] = top;\n                dist[next.to]\
+    \ = dist[top] + next.cost;\n                q.push(pair(dist[next.to], next.to));\n\
+    \            }\n        }\n    }\n    return dist;\n}\n#line 5 \"test/aoj/GRL/GRL_1_A.test.cpp\"\
+    \nint main()\n{\n    LL(v, e, r);\n    vector<vector<Edge<ll>>> g(v);\n    rep(e)\n\
+    \    {\n        LL(s, t, d);\n        Edge<ll> m;\n        m.to = t;\n       \
+    \ m.cost = d;\n        g[s].emplace_back(m);\n    }\n    auto shortest = dijkstra(g,\
+    \ r, v);\n    for (auto i : shortest)\n    {\n        if (i >= LINF)\n       \
+    \     out(\"INF\");\n        else\n            out(i);\n    }\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\"\n#include\
+    \ \"../../../template/template.hpp\"\n#include \"../../../graph/graph-template/graph-template.hpp\"\
+    \n#include \"../../..//graph/dijkstra.hpp\"\nint main()\n{\n    LL(v, e, r);\n\
+    \    vector<vector<Edge<ll>>> g(v);\n    rep(e)\n    {\n        LL(s, t, d);\n\
+    \        Edge<ll> m;\n        m.to = t;\n        m.cost = d;\n        g[s].emplace_back(m);\n\
+    \    }\n    auto shortest = dijkstra(g, r, v);\n    for (auto i : shortest)\n\
+    \    {\n        if (i >= LINF)\n            out(\"INF\");\n        else\n    \
+    \        out(i);\n    }\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/modpow.hpp
+  - graph/graph-template/graph-template.hpp
+  - graph/dijkstra.hpp
   isVerificationFile: true
-  path: test/aoj/NTL_1_B.test.cpp
+  path: test/aoj/GRL/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 10:39:12+09:00'
+  timestamp: '2023-04-13 16:14:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/NTL_1_B.test.cpp
+documentation_of: test/aoj/GRL/GRL_1_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/NTL_1_B.test.cpp
-- /verify/test/aoj/NTL_1_B.test.cpp.html
-title: test/aoj/NTL_1_B.test.cpp
+- /verify/test/aoj/GRL/GRL_1_A.test.cpp
+- /verify/test/aoj/GRL/GRL_1_A.test.cpp.html
+title: test/aoj/GRL/GRL_1_A.test.cpp
 ---

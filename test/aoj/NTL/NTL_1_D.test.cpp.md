@@ -20,7 +20,7 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_D
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_D
-  bundledCode: "#line 1 \"test/aoj/NTL_1_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_D\"\
+  bundledCode: "#line 1 \"test/aoj/NTL/NTL_1_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_D\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -110,25 +110,25 @@ data:
     \    return factors;\n}\n#line 2 \"math/euler-phi.hpp\"\nll euler_phi(ll n)\n\
     {\n    ll res = n;\n    auto factors = factor(n);\n    for (auto i : factors)\n\
     \    {\n        res = res / (i.first) * (i.first - 1);\n    }\n    return res;\n\
-    }\n#line 4 \"test/aoj/NTL_1_D.test.cpp\"\nint main()\n{\n    LL(n);\n    out(euler_phi(n));\n\
+    }\n#line 4 \"test/aoj/NTL/NTL_1_D.test.cpp\"\nint main()\n{\n    LL(n);\n    out(euler_phi(n));\n\
     }\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_D\"\
-    \n#include \"../../template/template.hpp\"\n#include \"../../math/euler-phi.hpp\"\
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/euler-phi.hpp\"\
     \nint main()\n{\n    LL(n);\n    out(euler_phi(n));\n}\n"
   dependsOn:
   - template/template.hpp
   - math/euler-phi.hpp
   - math/factor.hpp
   isVerificationFile: true
-  path: test/aoj/NTL_1_D.test.cpp
+  path: test/aoj/NTL/NTL_1_D.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 10:39:12+09:00'
+  timestamp: '2023-04-13 16:14:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/NTL_1_D.test.cpp
+documentation_of: test/aoj/NTL/NTL_1_D.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/NTL_1_D.test.cpp
-- /verify/test/aoj/NTL_1_D.test.cpp.html
-title: test/aoj/NTL_1_D.test.cpp
+- /verify/test/aoj/NTL/NTL_1_D.test.cpp
+- /verify/test/aoj/NTL/NTL_1_D.test.cpp.html
+title: test/aoj/NTL/NTL_1_D.test.cpp
 ---
