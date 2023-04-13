@@ -24,8 +24,12 @@ data:
   - test/aoj/NTL_1_C.test.cpp
 documentation_of: math/lcm.hpp
 layout: document
-redirect_from:
-- /library/math/lcm.hpp
-- /library/math/lcm.hpp.html
-title: math/lcm.hpp
+title: lcm
 ---
+
+## 説明
+最大公約数を計算します。
+
+## 計算量
+* $O(log \,min(a,b))$
+

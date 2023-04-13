@@ -11,21 +11,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/factor.hpp\"\nvector<pll> factor(ull x)\n{\n    vector<pll>\
-    \ ans;\n    for (ull i = 2; i * i <= x; i++)\n        if (x % i == 0)\n      \
-    \  {\n            ans.push_back({i, 1});\n            while ((x /= i) % i == 0)\n\
-    \                ans.back().second++;\n        }\n    if (x != 1)\n        ans.push_back({x,\
-    \ 1});\n    return ans;\n}\n"
-  code: "vector<pll> factor(ull x)\n{\n    vector<pll> ans;\n    for (ull i = 2; i\
-    \ * i <= x; i++)\n        if (x % i == 0)\n        {\n            ans.push_back({i,\
-    \ 1});\n            while ((x /= i) % i == 0)\n                ans.back().second++;\n\
-    \        }\n    if (x != 1)\n        ans.push_back({x, 1});\n    return ans;\n\
-    }\n"
+  bundledCode: "#line 1 \"math/factor.hpp\"\nvector<pll> factor(ll x)\n{\n    vector<pll>\
+    \ factors;\n    for (ll i = 2; i * i <= x; i++)\n        if (x % i == 0)\n   \
+    \     {\n            factors.push_back({i, 1});\n            x /= i;\n       \
+    \     while (x % i == 0)\n            {\n                factors[factors.size()\
+    \ - 1].second += 1;\n                x /= i;\n            }\n        }\n    if\
+    \ (x != 1)\n        factors.push_back({x, 1});\n    return factors;\n}\n"
+  code: "vector<pll> factor(ll x)\n{\n    vector<pll> factors;\n    for (ll i = 2;\
+    \ i * i <= x; i++)\n        if (x % i == 0)\n        {\n            factors.push_back({i,\
+    \ 1});\n            x /= i;\n            while (x % i == 0)\n            {\n \
+    \               factors[factors.size() - 1].second += 1;\n                x /=\
+    \ i;\n            }\n        }\n    if (x != 1)\n        factors.push_back({x,\
+    \ 1});\n    return factors;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/factor.hpp
   requiredBy: []
-  timestamp: '2023-04-13 08:51:38+09:00'
+  timestamp: '2023-04-13 09:26:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/NTL_1_A.test.cpp

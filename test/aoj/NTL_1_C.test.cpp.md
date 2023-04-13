@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/lcm.hpp
-    title: math/lcm.hpp
+    title: lcm
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
