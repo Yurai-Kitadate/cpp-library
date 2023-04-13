@@ -1,14 +1,18 @@
-vector<pll> factor(ull x)
+vector<pll> factor(ll x)
 {
-    vector<pll> ans;
-    for (ull i = 2; i * i <= x; i++)
+    vector<pll> factors;
+    for (ll i = 2; i * i <= x; i++)
         if (x % i == 0)
         {
-            ans.push_back({i, 1});
-            while ((x /= i) % i == 0)
-                ans.back().second++;
+            factors.push_back({i, 1});
+            x /= i;
+            while (x % i == 0)
+            {
+                factors[factors.size() - 1].second += 1;
+                x /= i;
+            }
         }
     if (x != 1)
-        ans.push_back({x, 1});
-    return ans;
+        factors.push_back({x, 1});
+    return factors;
 }
