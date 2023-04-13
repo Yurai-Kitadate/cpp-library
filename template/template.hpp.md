@@ -7,6 +7,9 @@ data:
     path: test/aoj/DPL/DPL_5_E.test.cpp
     title: test/aoj/DPL/DPL_5_E.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL/DSL_1_A.test.cpp
+    title: test/aoj/DSL/DSL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_1_A.test.cpp
     title: test/aoj/GRL/GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -204,6 +207,7 @@ data:
   - test/aoj/ITP/ITP_1_3_D.test.cpp
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
+  - test/aoj/DSL/DSL_1_A.test.cpp
   - test/aoj/NTL/NTL_1_D.test.cpp
   - test/aoj/NTL/NTL_1_A.test.cpp
   - test/aoj/NTL/NTL_1_B.test.cpp

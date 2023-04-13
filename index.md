@@ -37,6 +37,11 @@ data:
       path: math/modpow.hpp
       title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\
         \u6CD5)"
+  - name: structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: structure/union-find.hpp
+      title: structure/union-find.hpp
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
@@ -48,6 +53,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DPL/DPL_5_E.test.cpp
       title: test/aoj/DPL/DPL_5_E.test.cpp
+  - name: test/aoj/DSL
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL/DSL_1_A.test.cpp
+      title: test/aoj/DSL/DSL_1_A.test.cpp
   - name: test/aoj/GRL
     pages:
     - icon: ':heavy_check_mark:'
