@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
-    - icon: ':warning:'
+    - icon: ':x:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
   - name: graph/graph-template

@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/GRL/GRL_2_A.test.cpp
+    title: test/aoj/GRL/GRL_2_A.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/kruskal.hpp\"\nT kruskal(vector<Edge<T>> g, ll n)\n\
@@ -22,8 +25,9 @@ data:
   path: graph/kruskal.hpp
   requiredBy: []
   timestamp: '2023-04-14 02:16:54+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/aoj/GRL/GRL_2_A.test.cpp
 documentation_of: graph/kruskal.hpp
 layout: document
 redirect_from:
