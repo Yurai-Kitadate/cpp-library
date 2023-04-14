@@ -22,8 +22,8 @@ data:
     path: test/aoj/GRL/GRL_3_C.test.cpp
     title: test/aoj/GRL/GRL_3_C.test.cpp
   - icon: ':x:'
-    path: test/aoj/GRL/GRL_4_B.test.cpp
-    title: test/aoj/GRL/GRL_4_B.test.cpp
+    path: test/aoj/GRL/GRL_4_A.test.cpp
+    title: test/aoj/GRL/GRL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/ITP/ITP_1_3_D.test.cpp
     title: test/aoj/ITP/ITP_1_3_D.test.cpp
@@ -221,7 +221,7 @@ data:
   - test/aoj/DPL/DPL_5_E.test.cpp
   - test/aoj/ITP/ITP_1_3_D.test.cpp
   - test/aoj/GRL/GRL_1_B.test.cpp
-  - test/aoj/GRL/GRL_4_B.test.cpp
+  - test/aoj/GRL/GRL_4_A.test.cpp
   - test/aoj/GRL/GRL_3_C.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
   - test/aoj/GRL/GRL_2_A.test.cpp

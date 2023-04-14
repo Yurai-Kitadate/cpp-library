@@ -82,8 +82,8 @@ data:
       path: test/aoj/GRL/GRL_3_C.test.cpp
       title: test/aoj/GRL/GRL_3_C.test.cpp
     - icon: ':x:'
-      path: test/aoj/GRL/GRL_4_B.test.cpp
-      title: test/aoj/GRL/GRL_4_B.test.cpp
+      path: test/aoj/GRL/GRL_4_A.test.cpp
+      title: test/aoj/GRL/GRL_4_A.test.cpp
   - name: test/aoj/ITP
     pages:
     - icon: ':heavy_check_mark:'

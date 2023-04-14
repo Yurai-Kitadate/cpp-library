@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
-    path: test/aoj/GRL/GRL_4_B.test.cpp
-    title: test/aoj/GRL/GRL_4_B.test.cpp
+    path: test/aoj/GRL/GRL_4_A.test.cpp
+    title: test/aoj/GRL/GRL_4_A.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':x:'
@@ -53,7 +53,7 @@ data:
   timestamp: '2023-04-14 20:02:38+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/aoj/GRL/GRL_4_B.test.cpp
+  - test/aoj/GRL/GRL_4_A.test.cpp
 documentation_of: graph/topological-sort.hpp
 layout: document
 redirect_from:

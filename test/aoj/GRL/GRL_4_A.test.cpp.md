@@ -17,10 +17,10 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
-  bundledCode: "#line 1 \"test/aoj/GRL/GRL_4_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_A
+  bundledCode: "#line 1 \"test/aoj/GRL/GRL_4_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -120,12 +120,12 @@ data:
     \                dfs(t);\n        }\n        used1[s] = {true, true};\n      \
     \  order.push_back(s);\n    }\n\n    void setup()\n    {\n        rep(v)\n   \
     \     {\n            if (!used1[i].first)\n                dfs(i);\n        }\n\
-    \        reverse(all(order));\n    }\n};\n#line 4 \"test/aoj/GRL/GRL_4_B.test.cpp\"\
+    \        reverse(all(order));\n    }\n};\n#line 4 \"test/aoj/GRL/GRL_4_A.test.cpp\"\
     \nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n \
     \       LL(a, b);\n        g.push_back(Edge<ll>{a, b, 1});\n    }\n    auto s\
     \ = topological_sort(g, n);\n    s.setup();\n    out(s.has_cycle);\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\n#include\
-    \ \"../../../template/template.hpp\"\n#include \"../../../graph/topological-sort.hpp\"\
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_A\"\
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../graph/topological-sort.hpp\"\
     \nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n \
     \       LL(a, b);\n        g.push_back(Edge<ll>{a, b, 1});\n    }\n    auto s\
     \ = topological_sort(g, n);\n    s.setup();\n    out(s.has_cycle);\n}\n"
@@ -134,15 +134,15 @@ data:
   - graph/topological-sort.hpp
   - graph/graph-template/graph-template.hpp
   isVerificationFile: true
-  path: test/aoj/GRL/GRL_4_B.test.cpp
+  path: test/aoj/GRL/GRL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 20:02:38+09:00'
+  timestamp: '2023-04-14 20:06:12+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/GRL/GRL_4_B.test.cpp
+documentation_of: test/aoj/GRL/GRL_4_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/GRL/GRL_4_B.test.cpp
-- /verify/test/aoj/GRL/GRL_4_B.test.cpp.html
-title: test/aoj/GRL/GRL_4_B.test.cpp
+- /verify/test/aoj/GRL/GRL_4_A.test.cpp
+- /verify/test/aoj/GRL/GRL_4_A.test.cpp.html
+title: test/aoj/GRL/GRL_4_A.test.cpp
 ---

@@ -31,8 +31,8 @@ data:
     path: test/aoj/GRL/GRL_3_C.test.cpp
     title: test/aoj/GRL/GRL_3_C.test.cpp
   - icon: ':x:'
-    path: test/aoj/GRL/GRL_4_B.test.cpp
-    title: test/aoj/GRL/GRL_4_B.test.cpp
+    path: test/aoj/GRL/GRL_4_A.test.cpp
+    title: test/aoj/GRL/GRL_4_A.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -57,7 +57,7 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
-  - test/aoj/GRL/GRL_4_B.test.cpp
+  - test/aoj/GRL/GRL_4_A.test.cpp
   - test/aoj/GRL/GRL_3_C.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
   - test/aoj/GRL/GRL_2_A.test.cpp
