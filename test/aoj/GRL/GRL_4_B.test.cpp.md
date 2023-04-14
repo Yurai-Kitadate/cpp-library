@@ -120,13 +120,14 @@ data:
     \                dfs(i);\n        }\n        reverse(all(order));\n    }\n};\n\
     #line 4 \"test/aoj/GRL/GRL_4_B.test.cpp\"\nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>>\
     \ g;\n    rep(m)\n    {\n        LL(a, b);\n        g.push_back(Edge<ll>{a, b,\
-    \ 1});\n    }\n    auto s = topological_sort(g, n);\n    s.setup();\n    out(s.order);\n\
-    }\n"
+    \ 1});\n    }\n    auto s = topological_sort(g, n);\n    s.setup();\n    for (auto\
+    \ t : s.order)\n    {\n        out(t);\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\n#include\
     \ \"../../../template/template.hpp\"\n#include \"../../../graph/topological-sort.hpp\"\
     \nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n \
     \       LL(a, b);\n        g.push_back(Edge<ll>{a, b, 1});\n    }\n    auto s\
-    \ = topological_sort(g, n);\n    s.setup();\n    out(s.order);\n}\n"
+    \ = topological_sort(g, n);\n    s.setup();\n    for (auto t : s.order)\n    {\n\
+    \        out(t);\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/topological-sort.hpp
@@ -134,7 +135,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 19:12:43+09:00'
+  timestamp: '2023-04-14 19:17:17+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_4_B.test.cpp
