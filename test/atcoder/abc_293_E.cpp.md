@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':warning:'
     path: math/matrix.hpp
-    title: math/matrix.hpp
+    title: "\u884C\u5217\u8A08\u7B97"
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
