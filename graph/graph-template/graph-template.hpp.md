@@ -11,10 +11,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: graph/kruskal.hpp
+  - icon: ':warning:'
+    path: graph/ordered-topological-sort.hpp
+    title: graph/ordered-topological-sort.hpp
   - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: graph/scc.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/topological-sort.hpp
     title: graph/topological-sort.hpp
   _extendedVerifiedWith:
@@ -30,12 +33,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_3_C.test.cpp
     title: test/aoj/GRL/GRL_3_C.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/GRL/GRL_4_A.test.cpp
     title: test/aoj/GRL/GRL_4_A.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
@@ -52,9 +55,10 @@ data:
   - graph/topological-sort.hpp
   - graph/scc.hpp
   - graph/dijkstra.hpp
+  - graph/ordered-topological-sort.hpp
   - graph/bellman-ford.hpp
   timestamp: '2023-04-14 02:16:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_4_A.test.cpp
