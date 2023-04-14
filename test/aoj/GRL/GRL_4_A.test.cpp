@@ -13,7 +13,7 @@ int main()
     auto s = topological_sort(g, n);
     s.setup();
     if (s.has_cycle)
-        out(-1);
+        out(1);
     else
-        out(s.order);
+        out(0);
 }
