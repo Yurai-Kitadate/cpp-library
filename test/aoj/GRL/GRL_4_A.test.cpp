@@ -12,5 +12,8 @@ int main()
     }
     auto s = topological_sort(g, n);
     s.setup();
-    out(s.has_cycle);
+    if (s.has_cycle)
+        out(-1);
+    else
+        out(s.order);
 }
