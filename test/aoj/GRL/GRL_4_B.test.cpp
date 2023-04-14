@@ -12,8 +12,5 @@ int main()
     }
     auto s = topological_sort(g, n);
     s.setup();
-    for (auto t : s.order)
-    {
-        out(t);
-    }
+    out(s.has_cycle);
 }
