@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/divisor.hpp
-    title: math/divisor.hpp
+  - icon: ':question:'
+    path: graph/graph-template/graph-template.hpp
+    title: graph/graph-template/graph-template.hpp
+  - icon: ':x:'
+    path: graph/topological-sort.hpp
+    title: graph/topological-sort.hpp
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
-  bundledCode: "#line 1 \"test/aoj/ITP/ITP_1_3_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
+    - https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
+  bundledCode: "#line 1 \"test/aoj/GRL/GRL_4_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -101,33 +104,43 @@ data:
     \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
-    \  }\n  return res;\n}\n#line 1 \"math/divisor.hpp\"\nvll divisor(ll x)\n{\n\n\
-    \    vll lower_divisors, upper_divisors;\n    for (ll i = 1; i * i <= x; i++)\n\
-    \    {\n        if (x % i == 0)\n        {\n            lower_divisors.push_back(i);\n\
-    \            if (i != x / i)\n                upper_divisors.push_back(x / i);\n\
-    \        }\n    }\n    reverse(all(upper_divisors));\n    for (auto divisor :\
-    \ upper_divisors)\n        lower_divisors.push_back(divisor);\n    return lower_divisors;\n\
-    }\n#line 4 \"test/aoj/ITP/ITP_1_3_D.test.cpp\"\n\nint main()\n{\n    LL(a, b,\
-    \ c);\n    ll res = 0;\n    for (auto i : divisor(c))\n    {\n        if (a <=\
-    \ i && i <= b)\n            res++;\n    }\n    out(res);\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
-    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/divisor.hpp\"\
-    \n\nint main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
-    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
+    \  }\n  return res;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\n\
+    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
+    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
+    \    }\n};\n#line 2 \"graph/topological-sort.hpp\"\nstruct topological_sort\n\
+    {\n    vector<Edge<ll>> edges;\n    ll v;\n    vector<vector<ll>> g;\n    vector<bool>\
+    \ used1;\n    vector<ll> order;\n    topological_sort(vector<Edge<ll>> e, ll n)\n\
+    \    {\n        edges = e;\n        v = n;\n        g.assign(v, vector<ll>());\n\
+    \        used1.assign(v, false);\n        rep(edges.size())\n        {\n     \
+    \       g[edges[i].from].push_back(edges[i].to);\n        }\n        rep(v)\n\
+    \        {\n            sort(all(g[i]));\n        }\n    }\n\n    void dfs(ll\
+    \ s)\n    {\n        used1[s] = true;\n        for (auto t : g[s])\n        {\n\
+    \            if (!used1[t])\n                dfs(t);\n        }\n        order.push_back(s);\n\
+    \    }\n\n    void setup()\n    {\n        rep(v)\n        {\n            if (!used1[i])\n\
+    \                dfs(i);\n        }\n        reverse(all(order));\n    }\n};\n\
+    #line 4 \"test/aoj/GRL/GRL_4_B.test.cpp\"\nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>>\
+    \ g;\n    rep(m)\n    {\n        LL(a, b);\n        g.push_back(Edge<ll>{a, b,\
+    \ 1});\n    }\n    auto s = topological_sort(g, n);\n    s.setup();\n    out(s.order);\n\
     }\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\n#include\
+    \ \"../../../template/template.hpp\"\n#include \"../../../graph/topological-sort.hpp\"\
+    \nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n \
+    \       LL(a, b);\n        g.push_back(Edge<ll>{a, b, 1});\n    }\n    auto s\
+    \ = topological_sort(g, n);\n    s.setup();\n    out(s.order);\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/divisor.hpp
+  - graph/topological-sort.hpp
+  - graph/graph-template/graph-template.hpp
   isVerificationFile: true
-  path: test/aoj/ITP/ITP_1_3_D.test.cpp
+  path: test/aoj/GRL/GRL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 16:19:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-14 19:12:43+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/ITP/ITP_1_3_D.test.cpp
+documentation_of: test/aoj/GRL/GRL_4_B.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/ITP/ITP_1_3_D.test.cpp
-- /verify/test/aoj/ITP/ITP_1_3_D.test.cpp.html
-title: test/aoj/ITP/ITP_1_3_D.test.cpp
+- /verify/test/aoj/GRL/GRL_4_B.test.cpp
+- /verify/test/aoj/GRL/GRL_4_B.test.cpp.html
+title: test/aoj/GRL/GRL_4_B.test.cpp
 ---

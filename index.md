@@ -15,9 +15,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: graph/scc.hpp
+    - icon: ':x:'
+      path: graph/topological-sort.hpp
+      title: graph/topological-sort.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math/combinatorics
@@ -50,7 +53,7 @@ data:
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   verificationCategories:
@@ -78,6 +81,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_3_C.test.cpp
       title: test/aoj/GRL/GRL_3_C.test.cpp
+    - icon: ':x:'
+      path: test/aoj/GRL/GRL_4_B.test.cpp
+      title: test/aoj/GRL/GRL_4_B.test.cpp
   - name: test/aoj/ITP
     pages:
     - icon: ':heavy_check_mark:'

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/factor.hpp
     title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -98,17 +98,19 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/factor.hpp\"\
-    \nvector<pll> factor(ll x)\n{\n    vector<pll> factors;\n    for (ll i = 2; i\
-    \ * i <= x; i++)\n        if (x % i == 0)\n        {\n            factors.push_back({i,\
-    \ 1});\n            x /= i;\n            while (x % i == 0)\n            {\n \
-    \               factors[factors.size() - 1].second++;\n                x /= i;\n\
-    \            }\n        }\n    if (x != 1)\n        factors.push_back({x, 1});\n\
-    \    return factors;\n}\n#line 4 \"test/aoj/NTL/NTL_1_A.test.cpp\"\nint main()\n\
-    {\n    LL(n);\n    auto factors = factor(n);\n    print(n);\n    print(\": \"\
-    );\n    vector<ll> res;\n    for (auto i : factors)\n    {\n        rep(_, i.second)\n\
-    \        {\n            res.push_back(i.first);\n        }\n    }\n    out(res);\n\
-    }\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n#line 1 \"math/factor.hpp\"\nvector<pll> factor(ll x)\n\
+    {\n    vector<pll> factors;\n    for (ll i = 2; i * i <= x; i++)\n        if (x\
+    \ % i == 0)\n        {\n            factors.push_back({i, 1});\n            x\
+    \ /= i;\n            while (x % i == 0)\n            {\n                factors[factors.size()\
+    \ - 1].second++;\n                x /= i;\n            }\n        }\n    if (x\
+    \ != 1)\n        factors.push_back({x, 1});\n    return factors;\n}\n#line 4 \"\
+    test/aoj/NTL/NTL_1_A.test.cpp\"\nint main()\n{\n    LL(n);\n    auto factors =\
+    \ factor(n);\n    print(n);\n    print(\": \");\n    vector<ll> res;\n    for\
+    \ (auto i : factors)\n    {\n        rep(_, i.second)\n        {\n           \
+    \ res.push_back(i.first);\n        }\n    }\n    out(res);\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../math/factor.hpp\"\
     \nint main()\n{\n    LL(n);\n    auto factors = factor(n);\n    print(n);\n  \
@@ -121,7 +123,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 16:14:21+09:00'
+  timestamp: '2023-04-14 16:19:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL/NTL_1_A.test.cpp

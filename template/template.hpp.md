@@ -21,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_3_C.test.cpp
     title: test/aoj/GRL/GRL_3_C.test.cpp
+  - icon: ':x:'
+    path: test/aoj/GRL/GRL_4_B.test.cpp
+    title: test/aoj/GRL/GRL_4_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/ITP/ITP_1_3_D.test.cpp
     title: test/aoj/ITP/ITP_1_3_D.test.cpp
@@ -36,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL/NTL_1_D.test.cpp
     title: test/aoj/NTL/NTL_1_D.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing\
@@ -121,7 +124,10 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\nusing ll = long long;\nusing\
     \ ld = long double;\nusing ull = unsigned long long;\nusing uint = unsigned;\n\
     using vll = vector<ll>;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\
@@ -201,17 +207,21 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2023-04-13 10:39:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-04-14 16:19:46+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DPL/DPL_5_E.test.cpp
   - test/aoj/ITP/ITP_1_3_D.test.cpp
   - test/aoj/GRL/GRL_1_B.test.cpp
+  - test/aoj/GRL/GRL_4_B.test.cpp
   - test/aoj/GRL/GRL_3_C.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
   - test/aoj/GRL/GRL_2_A.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/union-find.hpp
     title: structure/union-find.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -98,19 +98,21 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"structure/union-find.hpp\"\
-    \nstruct UnionFind\n{\n    vector<ll> p;\n    vector<ll> r;\n    UnionFind(ll\
-    \ n)\n    {\n        p.resize(n, -1);\n        r.resize(n, 1);\n    }\n    ll\
-    \ find(ll x)\n    {\n        if (p[x] == -1)\n            return x;\n        return\
-    \ p[x] = find(p[x]);\n    }\n    void unite(ll x, ll y)\n    {\n        ll xp\
-    \ = find(x);\n        ll yp = find(y);\n\n        if (r[xp] > r[yp])\n       \
-    \     swap(xp, yp);\n        if (r[xp] == r[yp])\n            r[yp]++;\n     \
-    \   if (xp == yp)\n            return;\n        p[xp] = yp;\n    }\n};\n#line\
-    \ 5 \"test/aoj/DSL/DSL_1_A.test.cpp\"\nint main()\n{\n    LL(n, q);\n    UnionFind\
-    \ uf(n);\n    rep(q)\n    {\n        LL(com, x, y);\n        if (com == 0)\n \
-    \           uf.unite(x, y);\n        if (com == 1)\n        {\n            if\
-    \ (uf.find(x) == uf.find(y))\n                out(1);\n            else\n    \
-    \            out(0);\n        }\n    }\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n#line 1 \"structure/union-find.hpp\"\nstruct UnionFind\n\
+    {\n    vector<ll> p;\n    vector<ll> r;\n    UnionFind(ll n)\n    {\n        p.resize(n,\
+    \ -1);\n        r.resize(n, 1);\n    }\n    ll find(ll x)\n    {\n        if (p[x]\
+    \ == -1)\n            return x;\n        return p[x] = find(p[x]);\n    }\n  \
+    \  void unite(ll x, ll y)\n    {\n        ll xp = find(x);\n        ll yp = find(y);\n\
+    \n        if (r[xp] > r[yp])\n            swap(xp, yp);\n        if (r[xp] ==\
+    \ r[yp])\n            r[yp]++;\n        if (xp == yp)\n            return;\n \
+    \       p[xp] = yp;\n    }\n};\n#line 5 \"test/aoj/DSL/DSL_1_A.test.cpp\"\nint\
+    \ main()\n{\n    LL(n, q);\n    UnionFind uf(n);\n    rep(q)\n    {\n        LL(com,\
+    \ x, y);\n        if (com == 0)\n            uf.unite(x, y);\n        if (com\
+    \ == 1)\n        {\n            if (uf.find(x) == uf.find(y))\n              \
+    \  out(1);\n            else\n                out(0);\n        }\n    }\n}\n"
   code: "\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\n\
     #include \"../../../template/template.hpp\"\n#include \"../../../structure/union-find.hpp\"\
     \nint main()\n{\n    LL(n, q);\n    UnionFind uf(n);\n    rep(q)\n    {\n    \
@@ -124,7 +126,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL/DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 01:12:12+09:00'
+  timestamp: '2023-04-14 16:19:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL/DSL_1_A.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/lcm.hpp
     title: lcm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -98,10 +98,13 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"math/lcm.hpp\"\
-    \nll lcm(ll a, ll b)\n{\n    return a * b / gcd(a, b);\n}\n#line 4 \"test/aoj/NTL/NTL_1_C.test.cpp\"\
-    \n\nint main()\n{\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n\
-    \    {\n        res = lcm(res, a[i]);\n    }\n    out(res);\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n#line 1 \"math/lcm.hpp\"\nll lcm(ll a, ll b)\n{\n    return\
+    \ a * b / gcd(a, b);\n}\n#line 4 \"test/aoj/NTL/NTL_1_C.test.cpp\"\n\nint main()\n\
+    {\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n    {\n   \
+    \     res = lcm(res, a[i]);\n    }\n    out(res);\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_C\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../math/lcm.hpp\"\
     \n\nint main()\n{\n    LL(n);\n    VEC(ll, a, n);\n    ll res = a[0];\n    rep(n)\n\
@@ -112,7 +115,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL/NTL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2023-04-13 16:14:21+09:00'
+  timestamp: '2023-04-14 16:19:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL/NTL_1_C.test.cpp

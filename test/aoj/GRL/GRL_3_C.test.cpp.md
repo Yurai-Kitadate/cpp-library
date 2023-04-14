@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: graph/scc.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -101,8 +101,11 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\
-    \ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\n\
+    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
     \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
     \    }\n};\n#line 2 \"graph/scc.hpp\"\nstruct scc\n{\n    vector<Edge<ll>> edges;\n\
     \    ll v;\n    vector<vector<ll>> g;\n    vector<vector<ll>> gr;\n    vector<bool>\
@@ -141,7 +144,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 15:54:45+09:00'
+  timestamp: '2023-04-14 16:19:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_3_C.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   - icon: ':heavy_check_mark:'
@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: structure/union-find.hpp
     title: structure/union-find.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -104,25 +104,27 @@ data:
     YESNO(First, Second)\nYESNO(Yes, No)\nYESNO(YES, NO)\nYESNO(possible, impossible)\n\
     YESNO(POSSIBLE, IMPOSSIBLE)\ntemplate <class... T>\nconstexpr auto min(T... a)\n\
     {\n  return min(initializer_list{a...});\n}\nll mod_abs(ll a, ll mod)\n{\n  if\
-    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n#line 1 \"structure/union-find.hpp\"\
-    \nstruct UnionFind\n{\n    vector<ll> p;\n    vector<ll> r;\n    UnionFind(ll\
-    \ n)\n    {\n        p.resize(n, -1);\n        r.resize(n, 1);\n    }\n    ll\
-    \ find(ll x)\n    {\n        if (p[x] == -1)\n            return x;\n        return\
-    \ p[x] = find(p[x]);\n    }\n    void unite(ll x, ll y)\n    {\n        ll xp\
-    \ = find(x);\n        ll yp = find(y);\n\n        if (r[xp] > r[yp])\n       \
-    \     swap(xp, yp);\n        if (r[xp] == r[yp])\n            r[yp]++;\n     \
-    \   if (xp == yp)\n            return;\n        p[xp] = yp;\n    }\n};\n#line\
-    \ 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename T>\nstruct\
-    \ Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const Edge\
-    \ &o) const\n    {\n        return cost < o.cost;\n    }\n};\n#line 3 \"graph/kruskal.hpp\"\
-    \ntemplate <typename T>\nT kruskal(vector<Edge<T>> g, ll n)\n{\n    sort(all(g));\n\
-    \    UnionFind uf(n);\n    ll cost = 0;\n    rep(g.size())\n    {\n        auto\
-    \ e = g[i];\n        if (uf.find(e.from) != uf.find(e.to))\n        {\n      \
-    \      cost += e.cost;\n            uf.unite(e.from, e.to);\n        }\n    }\n\
-    \    return cost;\n}\n#line 4 \"test/aoj/GRL/GRL_2_A.test.cpp\"\nint main()\n\
-    {\n    LL(v, e);\n    vector<Edge<ll>> edges;\n    rep(e)\n    {\n        LL(s,\
-    \ t, w);\n        Edge<ll> edge{s, t, w};\n        edges.push_back(edge);\n  \
-    \  }\n    out(kruskal(edges, v));\n}\n"
+    \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
+    map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
+    \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
+    \  }\n  return res;\n}\n#line 1 \"structure/union-find.hpp\"\nstruct UnionFind\n\
+    {\n    vector<ll> p;\n    vector<ll> r;\n    UnionFind(ll n)\n    {\n        p.resize(n,\
+    \ -1);\n        r.resize(n, 1);\n    }\n    ll find(ll x)\n    {\n        if (p[x]\
+    \ == -1)\n            return x;\n        return p[x] = find(p[x]);\n    }\n  \
+    \  void unite(ll x, ll y)\n    {\n        ll xp = find(x);\n        ll yp = find(y);\n\
+    \n        if (r[xp] > r[yp])\n            swap(xp, yp);\n        if (r[xp] ==\
+    \ r[yp])\n            r[yp]++;\n        if (xp == yp)\n            return;\n \
+    \       p[xp] = yp;\n    }\n};\n#line 1 \"graph/graph-template/graph-template.hpp\"\
+    \ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
+    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
+    \    }\n};\n#line 3 \"graph/kruskal.hpp\"\ntemplate <typename T>\nT kruskal(vector<Edge<T>>\
+    \ g, ll n)\n{\n    sort(all(g));\n    UnionFind uf(n);\n    ll cost = 0;\n   \
+    \ rep(g.size())\n    {\n        auto e = g[i];\n        if (uf.find(e.from) !=\
+    \ uf.find(e.to))\n        {\n            cost += e.cost;\n            uf.unite(e.from,\
+    \ e.to);\n        }\n    }\n    return cost;\n}\n#line 4 \"test/aoj/GRL/GRL_2_A.test.cpp\"\
+    \nint main()\n{\n    LL(v, e);\n    vector<Edge<ll>> edges;\n    rep(e)\n    {\n\
+    \        LL(s, t, w);\n        Edge<ll> edge{s, t, w};\n        edges.push_back(edge);\n\
+    \    }\n    out(kruskal(edges, v));\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../graph/kruskal.hpp\"\
     \nint main()\n{\n    LL(v, e);\n    vector<Edge<ll>> edges;\n    rep(e)\n    {\n\
@@ -136,7 +138,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 02:54:28+09:00'
+  timestamp: '2023-04-14 16:19:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_2_A.test.cpp
