@@ -12,6 +12,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
+    - icon: ':heavy_check_mark:'
+      path: graph/scc.hpp
+      title: graph/scc.hpp
   - name: graph/graph-template
     pages:
     - icon: ':heavy_check_mark:'
@@ -72,6 +75,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_2_A.test.cpp
       title: test/aoj/GRL/GRL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/GRL/GRL_3_C.test.cpp
+      title: test/aoj/GRL/GRL_3_C.test.cpp
   - name: test/aoj/ITP
     pages:
     - icon: ':heavy_check_mark:'

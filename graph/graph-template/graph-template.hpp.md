@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: graph/kruskal.hpp
+  - icon: ':heavy_check_mark:'
+    path: graph/scc.hpp
+    title: graph/scc.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_1_A.test.cpp
@@ -21,6 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_2_A.test.cpp
     title: test/aoj/GRL/GRL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL/GRL_3_C.test.cpp
+    title: test/aoj/GRL/GRL_3_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,12 +43,14 @@ data:
   path: graph/graph-template/graph-template.hpp
   requiredBy:
   - graph/kruskal.hpp
+  - graph/scc.hpp
   - graph/dijkstra.hpp
   - graph/bellman-ford.hpp
   timestamp: '2023-04-14 02:16:54+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
+  - test/aoj/GRL/GRL_3_C.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
   - test/aoj/GRL/GRL_2_A.test.cpp
 documentation_of: graph/graph-template/graph-template.hpp
