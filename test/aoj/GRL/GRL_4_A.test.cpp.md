@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: graph/topological-sort.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_A
@@ -123,13 +123,13 @@ data:
     #line 4 \"test/aoj/GRL/GRL_4_A.test.cpp\"\nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>>\
     \ g;\n    rep(m)\n    {\n        LL(a, b);\n        g.push_back(Edge<ll>{a, b,\
     \ 1});\n    }\n    auto s = topological_sort(g, n);\n    s.setup();\n    if (s.has_cycle)\n\
-    \        out(-1);\n    else\n        out(s.order);\n}\n"
+    \        out(1);\n    else\n        out(0);\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/4/GRL_4_A\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../graph/topological-sort.hpp\"\
     \nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n \
     \       LL(a, b);\n        g.push_back(Edge<ll>{a, b, 1});\n    }\n    auto s\
-    \ = topological_sort(g, n);\n    s.setup();\n    if (s.has_cycle)\n        out(-1);\n\
-    \    else\n        out(s.order);\n}\n"
+    \ = topological_sort(g, n);\n    s.setup();\n    if (s.has_cycle)\n        out(1);\n\
+    \    else\n        out(0);\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/topological-sort.hpp
@@ -137,8 +137,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 23:03:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-14 23:05:58+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_4_A.test.cpp
 layout: document
