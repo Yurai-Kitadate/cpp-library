@@ -229,3 +229,17 @@ ll mod_abs(ll a, ll mod)
     return a + mod;
   return a % mod;
 }
+
+template <typename T>
+map<T, ll> counter(vector<T> a)
+{
+  map<T, ll> res;
+  rep(a.size())
+  {
+    if (res.count(a[i]) == 0)
+      res[a[i]] = 1;
+    else
+      res[a[i]]++;
+  }
+  return res;
+}
