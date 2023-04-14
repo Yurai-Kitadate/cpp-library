@@ -66,4 +66,4 @@ title: "\u884C\u5217\u8A08\u7B97"
 - mat_pow_sum : $ 1 + A^1 + ... + A^{k - 1}$を返します。
 ## 計算量
 - mul $O(n^3)$
-- mat_pow,mat_pow_sum : $O(n^3log \,k)$
+- pow,pow_sum : $O(n^3log \,k)$
