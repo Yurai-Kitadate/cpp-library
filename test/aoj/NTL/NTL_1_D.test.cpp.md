@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/factor.hpp
     title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []

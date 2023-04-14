@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/scc.hpp
     title: graph/scc.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological-sort.hpp
     title: graph/topological-sort.hpp
   _extendedVerifiedWith:
@@ -30,12 +30,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_3_C.test.cpp
     title: test/aoj/GRL/GRL_3_C.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_4_A.test.cpp
     title: test/aoj/GRL/GRL_4_A.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
@@ -54,7 +54,7 @@ data:
   - graph/dijkstra.hpp
   - graph/bellman-ford.hpp
   timestamp: '2023-04-14 02:16:54+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_4_A.test.cpp
