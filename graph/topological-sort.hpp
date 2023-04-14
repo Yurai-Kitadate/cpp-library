@@ -30,7 +30,6 @@ struct topological_sort
         {
             if (used1[t].first && !used1[t].second)
                 has_cycle = true;
-            return;
             if (!used1[t].first)
                 dfs(t);
         }
