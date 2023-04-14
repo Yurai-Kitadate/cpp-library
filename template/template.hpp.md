@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/atcoder/abc_223_D.cpp
+    title: test/atcoder/abc_223_D.cpp
+  - icon: ':warning:'
+    path: test/atcoder/abc_293_E.cpp
+    title: test/atcoder/abc_293_E.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL/DPL_5_E.test.cpp
@@ -214,7 +220,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy: []
+  requiredBy:
+  - test/atcoder/abc_293_E.cpp
+  - test/atcoder/abc_223_D.cpp
   timestamp: '2023-04-14 16:19:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

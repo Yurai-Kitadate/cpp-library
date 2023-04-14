@@ -4,7 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/atcoder/abc_223_D.cpp
+    title: test/atcoder/abc_223_D.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -56,7 +59,8 @@ data:
   - graph/graph-template/graph-template.hpp
   isVerificationFile: false
   path: graph/ordered-topological-sort.hpp
-  requiredBy: []
+  requiredBy:
+  - test/atcoder/abc_223_D.cpp
   timestamp: '2023-04-14 23:02:40+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

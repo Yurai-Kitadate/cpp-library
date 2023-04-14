@@ -45,6 +45,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/lcm.hpp
       title: lcm
+    - icon: ':warning:'
+      path: math/matrix.hpp
+      title: math/matrix.hpp
     - icon: ':heavy_check_mark:'
       path: math/modpow.hpp
       title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\
@@ -59,6 +62,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
+  - name: test/atcoder
+    pages:
+    - icon: ':warning:'
+      path: test/atcoder/abc_223_D.cpp
+      title: test/atcoder/abc_223_D.cpp
+    - icon: ':warning:'
+      path: test/atcoder/abc_293_E.cpp
+      title: test/atcoder/abc_293_E.cpp
   verificationCategories:
   - name: test/aoj/DPL
     pages:
