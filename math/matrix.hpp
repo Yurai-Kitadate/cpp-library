@@ -54,3 +54,16 @@ vector<vector<T>> mat_pow_sum(vector<vector<T>> a, ll n, ll m)
     auto q = mat_mul(p, t, m);
     return q;
 }
+
+vector<vector<ll>> mat_rotate_90(vector<vector<ll>> a)
+{
+    vv(ll, res, a[0].size(), a.size());
+    rep(a.size())
+    {
+        rep(j, a[0].size())
+        {
+            res[i][j] = a[a.size() - 1 - j][i];
+        }
+    }
+    return res;
+}
