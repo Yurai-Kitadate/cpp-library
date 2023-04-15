@@ -8,6 +8,8 @@ documentation_of: //math/matrix.hpp
 - mat_mul : A*Bを返します。
 - mat_pow : A^nを返します。
 - mat_pow_sum : $ 1 + A^1 + ... + A^{k - 1}$を返します。
+
 ## 計算量
+
 - mul $O(n^3)$
 - pow,pow_sum : $O(n^3log \,k)$
