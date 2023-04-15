@@ -28,7 +28,10 @@ data:
     \    mat[i][j] = a[i][j];\n        }\n    }\n    auto p = mat_pow(mat, n, m);\n\
     \    vector<vector<ll>> t(2 * a.size(), vector<ll>(a.size()));\n    rep(a.size())\n\
     \    {\n        t[i][i] = 1;\n    }\n    auto q = mat_mul(p, t, m);\n    return\
-    \ q;\n}\n"
+    \ q;\n}\n\nvector<vector<ll>> mat_rotate_90(vector<vector<ll>> a)\n{\n    vv(ll,\
+    \ res, a[0].size(), a.size());\n    rep(a.size())\n    {\n        rep(j, a[0].size())\n\
+    \        {\n            res[i][j] = a[a.size() - 1 - j][i];\n        }\n    }\n\
+    \    return res;\n}\n"
   code: "template <typename T>\nvector<vector<T>> mat_mul(vector<vector<T>> a, vector<vector<T>>\
     \ b, ll m)\n{\n    vector<vector<T>> c(a.size(), vector<T>(b[0].size()));\n  \
     \  rep(i, a.size())\n    {\n        rep(k, b.size())\n        {\n            rep(j,\
@@ -45,13 +48,16 @@ data:
     \        {\n            mat[i][j] = a[i][j];\n        }\n    }\n    auto p = mat_pow(mat,\
     \ n, m);\n    vector<vector<ll>> t(2 * a.size(), vector<ll>(a.size()));\n    rep(a.size())\n\
     \    {\n        t[i][i] = 1;\n    }\n    auto q = mat_mul(p, t, m);\n    return\
-    \ q;\n}\n"
+    \ q;\n}\n\nvector<vector<ll>> mat_rotate_90(vector<vector<ll>> a)\n{\n    vv(ll,\
+    \ res, a[0].size(), a.size());\n    rep(a.size())\n    {\n        rep(j, a[0].size())\n\
+    \        {\n            res[i][j] = a[a.size() - 1 - j][i];\n        }\n    }\n\
+    \    return res;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: math/matrix.hpp
   requiredBy:
   - test/atcoder/abc_293_E.cpp
-  timestamp: '2023-04-15 01:12:48+09:00'
+  timestamp: '2023-04-15 23:32:32+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/matrix.hpp
