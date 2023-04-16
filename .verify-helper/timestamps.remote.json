@@ -10,5 +10,6 @@
 "test/aoj/NTL/NTL_1_A.test.cpp": "2023-04-14 16:19:46 +0900",
 "test/aoj/NTL/NTL_1_B.test.cpp": "2023-04-14 16:19:46 +0900",
 "test/aoj/NTL/NTL_1_C.test.cpp": "2023-04-14 16:19:46 +0900",
-"test/aoj/NTL/NTL_1_D.test.cpp": "2023-04-14 16:19:46 +0900"
+"test/aoj/NTL/NTL_1_D.test.cpp": "2023-04-14 16:19:46 +0900",
+"test/aoj/other/sieve.test.cpp": "2023-04-16 21:14:37 +0900"
 }
