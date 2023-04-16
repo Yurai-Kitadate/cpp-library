@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/sieve.hpp
     title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/0009
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/0009
-  bundledCode: "#line 1 \"test/aoj/other/sieve.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/0009\"\
+    - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
+  bundledCode: "#line 1 \"test/aoj/other/sieve.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -109,22 +109,22 @@ data:
     \ is_prime;\n}\n\nvector<ll> get_prime_table(ll n)\n{\n    auto table = get_tf_sieve(n);\n\
     \    vector<ll> primes;\n    rep(n)\n    {\n        if (table[i])\n        {\n\
     \            primes.push_back(i);\n        }\n    }\n    return primes;\n}\n#line\
-    \ 4 \"test/aoj/other/sieve.test.cpp\"\n\nint main()\n{\n    ll n;\n    auto primes\
-    \ = get_prime_table(1000000);\n    while (cin >> n)\n    {\n        auto t = upper_bound(all(primes),\
-    \ n);\n        out(t - primes.begin());\n    }\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/0009\"\n#include\
-    \ \"../../../template/template.hpp\"\n#include \"../../../math/sieve.hpp\"\n\n\
-    int main()\n{\n    ll n;\n    auto primes = get_prime_table(1000000);\n    while\
-    \ (cin >> n)\n    {\n        auto t = upper_bound(all(primes), n);\n        out(t\
-    \ - primes.begin());\n    }\n}\n"
+    \ 4 \"test/aoj/other/sieve.test.cpp\"\n\nint main()\n{\n    auto t = get_tf_sieve(100000000);\n\
+    \    ll res = 0;\n    LL(n);\n    rep(n)\n    {\n        LL(a);\n        res +=\
+    \ t[a];\n    }\n    out(res);\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\n\
+    #include \"../../../template/template.hpp\"\n#include \"../../../math/sieve.hpp\"\
+    \n\nint main()\n{\n    auto t = get_tf_sieve(100000000);\n    ll res = 0;\n  \
+    \  LL(n);\n    rep(n)\n    {\n        LL(a);\n        res += t[a];\n    }\n  \
+    \  out(res);\n}\n"
   dependsOn:
   - template/template.hpp
   - math/sieve.hpp
   isVerificationFile: true
   path: test/aoj/other/sieve.test.cpp
   requiredBy: []
-  timestamp: '2023-04-16 21:00:28+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-16 21:14:37+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/other/sieve.test.cpp
 layout: document

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/other/sieve.test.cpp
     title: test/aoj/other/sieve.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/sieve.hpp\"\nvector<bool> get_tf_sieve(ll n)\n{\n \
@@ -32,7 +32,7 @@ data:
   path: math/sieve.hpp
   requiredBy: []
   timestamp: '2023-04-16 21:00:28+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/other/sieve.test.cpp
 documentation_of: math/sieve.hpp
