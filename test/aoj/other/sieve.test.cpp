@@ -1,14 +1,16 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/0009"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C"
 #include "../../../template/template.hpp"
 #include "../../../math/sieve.hpp"
 
 int main()
 {
-    ll n;
-    auto primes = get_prime_table(1000000);
-    while (cin >> n)
+    auto t = get_tf_sieve(100000000);
+    ll res = 0;
+    LL(n);
+    rep(n)
     {
-        auto t = upper_bound(all(primes), n);
-        out(t - primes.begin());
+        LL(a);
+        res += t[a];
     }
+    out(res);
 }
