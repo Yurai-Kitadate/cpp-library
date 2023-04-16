@@ -1,6 +1,6 @@
 ---
 title: 座標圧縮
-documentation_of: //math/factor.hpp
+documentation_of: //other/compress.hpp
 ---
 
 ## 説明
@@ -8,5 +8,5 @@ documentation_of: //math/factor.hpp
 
 ## 計算量
 
-* $O(nlog\,n)$(nはaのサイズ)
+* $O(n\,log\,n)$(nはaのサイズ)
 
