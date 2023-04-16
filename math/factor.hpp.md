@@ -41,12 +41,13 @@ data:
   - test/aoj/NTL/NTL_1_A.test.cpp
 documentation_of: math/factor.hpp
 layout: document
-title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
+title: "\u5EA7\u6A19\u5727\u7E2E"
 ---
 
 ## 説明
-正整数$n$を素因数分解をして(素因数の種類,その素因数の数)のpair配列を返します。
+(key : a[i],value : a[i]の圧縮後の座標)の連想配列を返します。
 
 ## 計算量
-* $O(\sqrt n)$
+
+* $O(nlog\,n)$(nはaのサイズ)
 

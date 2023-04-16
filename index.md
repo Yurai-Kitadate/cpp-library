@@ -41,7 +41,7 @@ data:
       title: math/euler-phi.hpp
     - icon: ':heavy_check_mark:'
       path: math/factor.hpp
-      title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
+      title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
       path: math/lcm.hpp
       title: lcm
@@ -52,6 +52,11 @@ data:
       path: math/modpow.hpp
       title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\
         \u6CD5)"
+  - name: other
+    pages:
+    - icon: ':warning:'
+      path: other/compress.hpp
+      title: other/compress.hpp
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
