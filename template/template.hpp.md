@@ -45,9 +45,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL/NTL_1_D.test.cpp
     title: test/aoj/NTL/NTL_1_D.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/aoj/other/sieve.test.cpp
+    title: test/aoj/other/sieve.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing\
@@ -224,10 +227,11 @@ data:
   - test/atcoder/abc_293_E.cpp
   - test/atcoder/abc_223_D.cpp
   timestamp: '2023-04-14 16:19:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/DPL/DPL_5_E.test.cpp
   - test/aoj/ITP/ITP_1_3_D.test.cpp
+  - test/aoj/other/sieve.test.cpp
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_4_A.test.cpp
   - test/aoj/GRL/GRL_3_C.test.cpp

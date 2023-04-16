@@ -52,6 +52,9 @@ data:
       path: math/modpow.hpp
       title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\
         \u6CD5)"
+    - icon: ':x:'
+      path: math/sieve.hpp
+      title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
   - name: other
     pages:
     - icon: ':warning:'
@@ -64,7 +67,7 @@ data:
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: test/atcoder
@@ -122,5 +125,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL/NTL_1_D.test.cpp
       title: test/aoj/NTL/NTL_1_D.test.cpp
+  - name: test/aoj/other
+    pages:
+    - icon: ':x:'
+      path: test/aoj/other/sieve.test.cpp
+      title: test/aoj/other/sieve.test.cpp
 layout: toppage
 ---
