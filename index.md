@@ -41,7 +41,7 @@ data:
       title: math/euler-phi.hpp
     - icon: ':heavy_check_mark:'
       path: math/factor.hpp
-      title: "\u5EA7\u6A19\u5727\u7E2E"
+      title: "factor(\u7D20\u56E0\u6570\u5206\u89E3)"
     - icon: ':heavy_check_mark:'
       path: math/lcm.hpp
       title: lcm
@@ -56,7 +56,7 @@ data:
     pages:
     - icon: ':warning:'
       path: other/compress.hpp
-      title: other/compress.hpp
+      title: "\u5EA7\u6A19\u5727\u7E2E"
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
