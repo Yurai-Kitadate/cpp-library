@@ -44,12 +44,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
     \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
     \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n"
-  code: "template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
-    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
-    \    }\n};\n"
+  code: "#pragma once\ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll\
+    \ to;\n    T cost;\n    bool operator<(const Edge &o) const\n    {\n        return\
+    \ cost < o.cost;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/graph-template/graph-template.hpp
@@ -61,7 +61,7 @@ data:
   - graph/ordered-topological-sort.hpp
   - graph/bellman-ford.hpp
   - test/atcoder/abc_223_D.cpp
-  timestamp: '2023-04-14 02:16:54+09:00'
+  timestamp: '2023-04-17 11:49:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp

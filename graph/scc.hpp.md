@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
     \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
     \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n#line 2 \"\
     graph/scc.hpp\"\nstruct scc\n{\n    vector<Edge<ll>> edges;\n    ll v;\n    vector<vector<ll>>\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: graph/scc.hpp
   requiredBy: []
-  timestamp: '2023-04-14 15:54:45+09:00'
+  timestamp: '2023-04-17 11:49:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_3_C.test.cpp

@@ -104,7 +104,7 @@ data:
     \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
-    \  }\n  return res;\n}\n#line 1 \"graph/graph-template/graph-template.hpp\"\n\
+    \  }\n  return res;\n}\n#line 2 \"graph/graph-template/graph-template.hpp\"\n\
     template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
     \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
     \    }\n};\n#line 2 \"graph/dijkstra.hpp\"\n\ntemplate <typename T>\nvector<T>\
@@ -137,7 +137,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 16:19:46+09:00'
+  timestamp: '2023-04-17 11:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_1_A.test.cpp

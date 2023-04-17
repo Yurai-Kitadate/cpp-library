@@ -114,7 +114,7 @@ data:
     \  void unite(ll x, ll y)\n    {\n        ll xp = find(x);\n        ll yp = find(y);\n\
     \n        if (r[xp] > r[yp])\n            swap(xp, yp);\n        if (r[xp] ==\
     \ r[yp])\n            r[yp]++;\n        if (xp == yp)\n            return;\n \
-    \       p[xp] = yp;\n    }\n};\n#line 1 \"graph/graph-template/graph-template.hpp\"\
+    \       p[xp] = yp;\n    }\n};\n#line 2 \"graph/graph-template/graph-template.hpp\"\
     \ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
     \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
     \    }\n};\n#line 3 \"graph/kruskal.hpp\"\ntemplate <typename T>\nT kruskal(vector<Edge<T>>\
@@ -138,7 +138,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 16:19:46+09:00'
+  timestamp: '2023-04-17 11:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_2_A.test.cpp

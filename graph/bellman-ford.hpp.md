@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
     \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
     \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n#line 2 \"\
     graph/bellman-ford.hpp\"\n\ntemplate <typename T>\npair<bool, vector<T>> bellman_ford(vector<Edge<T>>\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: graph/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2023-04-14 02:16:54+09:00'
+  timestamp: '2023-04-17 11:49:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
