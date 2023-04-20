@@ -1,5 +1,4 @@
 #pragma once
-using Graph = vector<vector<Edge<ll>>>;
 template <typename T>
 struct Edge
 {
@@ -11,3 +10,5 @@ struct Edge
         return cost < o.cost;
     }
 };
+
+using Graph = vector<vector<Edge<ll>>>;
