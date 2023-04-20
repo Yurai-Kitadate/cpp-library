@@ -1,6 +1,6 @@
 #include "../graph/graph-template/graph-template.hpp"
 
-pair<bool, vector<ll>> bellman_ford(vector<Edge<ll>> g, ll v, ll st)
+pair<bool, vector<ll>> bellman_ford(vector<Edge> g, ll v, ll st)
 {
     vector<ll> d(v, LINF);
     d[st] = 0;

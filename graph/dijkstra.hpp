@@ -13,7 +13,7 @@ vector<ll> dijkstra(Graph g, ll s, ll v)
         auto top = q.top().second;
         q.pop();
         seen[top] = true;
-        for (Edge<ll> next : g[top])
+        for (Edge next : g[top])
         {
             if (!seen[next.to] && dist[top] + next.cost < dist[next.to])
             {

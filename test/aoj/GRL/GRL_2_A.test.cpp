@@ -4,11 +4,11 @@
 int main()
 {
     LL(v, e);
-    vector<Edge<ll>> edges;
+    vector<Edge> edges;
     rep(e)
     {
         LL(s, t, w);
-        Edge<ll> edge{s, t, w};
+        Edge edge{s, t, w};
         edges.push_back(edge);
     }
     out(kruskal(edges, v));

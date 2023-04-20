@@ -1,13 +1,13 @@
 #include "../graph/graph-template/graph-template.hpp"
 struct topological_sort
 {
-    vector<Edge<ll>> edges;
+    vector<Edge> edges;
     ll v;
     vector<vector<ll>> g;
     vector<pair<bool, bool>> used1;
     vector<ll> order;
     bool has_cycle = false;
-    topological_sort(vector<Edge<ll>> e, ll n)
+    topological_sort(vector<Edge> e, ll n)
     {
         edges = e;
         v = n;

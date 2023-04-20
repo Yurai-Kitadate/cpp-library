@@ -1,7 +1,6 @@
 #include "../structure/union-find.hpp"
 #include "../graph/graph-template/graph-template.hpp"
-template <typename T>
-ll kruskal(vector<Edge<ll>> g, ll n)
+ll kruskal(vector<Edge> g, ll n)
 {
     sort(all(g));
     UnionFind uf(n);

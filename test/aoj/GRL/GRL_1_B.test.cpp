@@ -4,11 +4,11 @@
 int main()
 {
     LL(v, e, r);
-    vector<Edge<ll>> edges;
+    vector<Edge> edges;
     rep(e)
     {
         LL(s, t, d);
-        Edge<ll> edge{s, t, d};
+        Edge edge{s, t, d};
 
         edges.push_back(edge);
     }

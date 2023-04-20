@@ -8,7 +8,7 @@ int main()
     rep(e)
     {
         LL(s, t, d);
-        Edge<ll> m;
+        Edge m;
         m.to = t;
         m.cost = d;
         g[s].emplace_back(m);

@@ -4,11 +4,11 @@
 int main()
 {
     LL(v, e);
-    vector<Edge<ll>> edges;
+    vector<Edge> edges;
     rep(e)
     {
         LL(s, t);
-        edges.push_back(Edge<ll>{s, t, 1});
+        edges.push_back(Edge{s, t, 1});
     }
     auto s = scc(edges, v);
     s.setup();

@@ -1,7 +1,7 @@
 #include "../graph/graph-template/graph-template.hpp"
 struct scc
 {
-    vector<Edge<ll>> edges;
+    vector<Edge> edges;
     ll v;
     vector<vector<ll>> g;
     vector<vector<ll>> gr;
@@ -10,7 +10,7 @@ struct scc
     vector<ll> group;
     vector<ll> order;
 
-    scc(vector<Edge<ll>> e, ll n)
+    scc(vector<Edge> e, ll n)
     {
         edges = e;
         v = n;

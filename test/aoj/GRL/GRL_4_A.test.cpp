@@ -4,11 +4,11 @@
 int main()
 {
     LL(n, m);
-    vector<Edge<ll>> g;
+    vector<Edge> g;
     rep(m)
     {
         LL(a, b);
-        g.push_back(Edge<ll>{a, b, 1});
+        g.push_back(Edge{a, b, 1});
     }
     auto s = topological_sort(g, n);
     s.setup();
