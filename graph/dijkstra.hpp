@@ -1,7 +1,7 @@
 #include "../graph/graph-template/graph-template.hpp"
 
 template <typename T>
-vector<T> dijkstra(vector<vector<Edge<T>>> g, ll s, ll v)
+vector<T> dijkstra(Graph g, ll s, ll v)
 {
     vector<ll> before(v, -1);
     vector<T> dist(v, LINF);

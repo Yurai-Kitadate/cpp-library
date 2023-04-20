@@ -1,15 +1,10 @@
 struct UnionFind
 {
     vector<ll> p;
-    vector<ll> r;
-    UnionFind(ll n)
-    {
-        p.resize(n, -1);
-        r.resize(n, 1);
-    }
+    UnionFind(size_t sz) : p(sz, -1) {}
     ll find(ll x)
     {
-        if (p[x] == -1)
+        if (p[x] < 0)
             return x;
         return p[x] = find(p[x]);
     }
@@ -17,13 +12,15 @@ struct UnionFind
     {
         ll xp = find(x);
         ll yp = find(y);
-
-        if (r[xp] > r[yp])
-            swap(xp, yp);
-        if (r[xp] == r[yp])
-            r[yp]++;
         if (xp == yp)
             return;
-        p[xp] = yp;
+        if (p[xp] > p[yp])
+            swap(x, y);
+        p[xp] += p[yp];
+        p[yp] = xp;
+    }
+    ll size(ll x)
+    {
+        return -p[find(x)];
     }
 };

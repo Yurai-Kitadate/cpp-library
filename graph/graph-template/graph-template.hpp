@@ -1,4 +1,5 @@
 #pragma once
+using Graph = vector<vector<Edge<ll>>>;
 template <typename T>
 struct Edge
 {
