@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   _extendedRequiredBy:
@@ -14,13 +14,14 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
-    \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
-    \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n#line 2 \"\
-    graph/ordered-topological-sort.hpp\"\n// https: // atcoder.jp/contests/abc223/tasks/abc223_d\n\
-    \nstruct ordered_topological_sort\n{\n    pq<ll> que;\n    vector<Edge<ll>> edges;\n\
-    \    vector<ll> dig;\n    ll v;\n    vector<vector<ll>> g;\n    vector<pair<bool,\
-    \ bool>> used1;\n    vector<ll> order;\n    bool has_cycle = false;\n    ordered_topological_sort(vector<Edge<ll>>\
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\nusing Graph =\
+    \ vector<vector<Edge<ll>>>;\ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n\
+    \    ll to;\n    T cost;\n    bool operator<(const Edge &o) const\n    {\n   \
+    \     return cost < o.cost;\n    }\n};\n#line 2 \"graph/ordered-topological-sort.hpp\"\
+    \n// https: // atcoder.jp/contests/abc223/tasks/abc223_d\n\nstruct ordered_topological_sort\n\
+    {\n    pq<ll> que;\n    vector<Edge<ll>> edges;\n    vector<ll> dig;\n    ll v;\n\
+    \    vector<vector<ll>> g;\n    vector<pair<bool, bool>> used1;\n    vector<ll>\
+    \ order;\n    bool has_cycle = false;\n    ordered_topological_sort(vector<Edge<ll>>\
     \ e, ll n)\n    {\n        edges = e;\n        v = n;\n        g.assign(v, vector<ll>());\n\
     \        dig.assign(v, 0);\n        used1.assign(v, {false, false});\n       \
     \ rep(edges.size())\n        {\n            g[edges[i].from].push_back(edges[i].to);\n\
@@ -61,7 +62,7 @@ data:
   path: graph/ordered-topological-sort.hpp
   requiredBy:
   - test/atcoder/abc_223_D.cpp
-  timestamp: '2023-04-17 11:49:31+09:00'
+  timestamp: '2023-04-20 16:51:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: graph/ordered-topological-sort.hpp

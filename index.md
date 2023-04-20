@@ -3,27 +3,27 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/bellman-ford.hpp
       title: graph/bellman-ford.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
     - icon: ':warning:'
       path: graph/ordered-topological-sort.hpp
       title: graph/ordered-topological-sort.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/scc.hpp
       title: graph/scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/topological-sort.hpp
       title: graph/topological-sort.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math/combinatorics
@@ -62,12 +62,12 @@ data:
       title: "\u5EA7\u6A19\u5727\u7E2E"
   - name: structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/union-find.hpp
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: test/atcoder
@@ -91,19 +91,19 @@ data:
       title: test/aoj/DSL/DSL_1_A.test.cpp
   - name: test/aoj/GRL
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL/GRL_1_A.test.cpp
       title: test/aoj/GRL/GRL_1_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL/GRL_1_B.test.cpp
       title: test/aoj/GRL/GRL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL/GRL_2_A.test.cpp
       title: test/aoj/GRL/GRL_2_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL/GRL_3_C.test.cpp
       title: test/aoj/GRL/GRL_3_C.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL/GRL_4_A.test.cpp
       title: test/aoj/GRL/GRL_4_A.test.cpp
   - name: test/aoj/ITP

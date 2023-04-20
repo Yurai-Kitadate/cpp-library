@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/scc.hpp
     title: graph/scc.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_3_C
@@ -105,31 +105,32 @@ data:
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
     \  }\n  return res;\n}\n#line 2 \"graph/graph-template/graph-template.hpp\"\n\
-    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
-    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
-    \    }\n};\n#line 2 \"graph/scc.hpp\"\nstruct scc\n{\n    vector<Edge<ll>> edges;\n\
-    \    ll v;\n    vector<vector<ll>> g;\n    vector<vector<ll>> gr;\n    vector<bool>\
-    \ used1;\n    vector<bool> used2;\n    vector<ll> group;\n    vector<ll> order;\n\
-    \n    scc(vector<Edge<ll>> e, ll n)\n    {\n        edges = e;\n        v = n;\n\
-    \        g.assign(v, vector<ll>());\n        gr.assign(v, vector<ll>());\n   \
-    \     used1.assign(v, false);\n        used2.assign(v, false);\n        group.assign(v,\
-    \ -1);\n        rep(edges.size())\n        {\n            g[edges[i].from].push_back(edges[i].to);\n\
-    \            gr[edges[i].to].push_back(edges[i].from);\n        }\n    }\n\n \
-    \   void dfs(ll s)\n    {\n        used1[s] = true;\n        for (auto t : g[s])\n\
-    \        {\n            if (!used1[t])\n                dfs(t);\n        }\n \
-    \       order.push_back(s);\n    }\n    void rdfs(ll s, ll id)\n    {\n      \
-    \  group[s] = id;\n        used2[s] = true;\n        for (auto t : gr[s])\n  \
-    \      {\n            if (!used2[t])\n                rdfs(t, id);\n        }\n\
-    \    }\n\n    void setup()\n    {\n        rep(v)\n        {\n            if (!used1[i])\n\
-    \                dfs(i);\n        }\n        ll label = 0;\n        reverse(all(order));\n\
-    \        for (auto t : order)\n        {\n            if (!used2[t])\n       \
-    \     {\n                rdfs(t, label);\n                label++;\n         \
-    \   }\n        }\n    }\n};\n#line 4 \"test/aoj/GRL/GRL_3_C.test.cpp\"\nint main()\n\
-    {\n    LL(v, e);\n    vector<Edge<ll>> edges;\n    rep(e)\n    {\n        LL(s,\
-    \ t);\n        edges.push_back(Edge<ll>{s, t, 1});\n    }\n    auto s = scc(edges,\
-    \ v);\n    s.setup();\n    auto group = s.group;\n    LL(q);\n    rep(q)\n   \
-    \ {\n        LL(u, v);\n        if (group[u] == group[v])\n            out(1);\n\
-    \        else\n            out(0);\n    }\n}\n"
+    using Graph = vector<vector<Edge<ll>>>;\ntemplate <typename T>\nstruct Edge\n\
+    {\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const Edge &o) const\n\
+    \    {\n        return cost < o.cost;\n    }\n};\n#line 2 \"graph/scc.hpp\"\n\
+    struct scc\n{\n    vector<Edge<ll>> edges;\n    ll v;\n    vector<vector<ll>>\
+    \ g;\n    vector<vector<ll>> gr;\n    vector<bool> used1;\n    vector<bool> used2;\n\
+    \    vector<ll> group;\n    vector<ll> order;\n\n    scc(vector<Edge<ll>> e, ll\
+    \ n)\n    {\n        edges = e;\n        v = n;\n        g.assign(v, vector<ll>());\n\
+    \        gr.assign(v, vector<ll>());\n        used1.assign(v, false);\n      \
+    \  used2.assign(v, false);\n        group.assign(v, -1);\n        rep(edges.size())\n\
+    \        {\n            g[edges[i].from].push_back(edges[i].to);\n           \
+    \ gr[edges[i].to].push_back(edges[i].from);\n        }\n    }\n\n    void dfs(ll\
+    \ s)\n    {\n        used1[s] = true;\n        for (auto t : g[s])\n        {\n\
+    \            if (!used1[t])\n                dfs(t);\n        }\n        order.push_back(s);\n\
+    \    }\n    void rdfs(ll s, ll id)\n    {\n        group[s] = id;\n        used2[s]\
+    \ = true;\n        for (auto t : gr[s])\n        {\n            if (!used2[t])\n\
+    \                rdfs(t, id);\n        }\n    }\n\n    void setup()\n    {\n \
+    \       rep(v)\n        {\n            if (!used1[i])\n                dfs(i);\n\
+    \        }\n        ll label = 0;\n        reverse(all(order));\n        for (auto\
+    \ t : order)\n        {\n            if (!used2[t])\n            {\n         \
+    \       rdfs(t, label);\n                label++;\n            }\n        }\n\
+    \    }\n};\n#line 4 \"test/aoj/GRL/GRL_3_C.test.cpp\"\nint main()\n{\n    LL(v,\
+    \ e);\n    vector<Edge<ll>> edges;\n    rep(e)\n    {\n        LL(s, t);\n   \
+    \     edges.push_back(Edge<ll>{s, t, 1});\n    }\n    auto s = scc(edges, v);\n\
+    \    s.setup();\n    auto group = s.group;\n    LL(q);\n    rep(q)\n    {\n  \
+    \      LL(u, v);\n        if (group[u] == group[v])\n            out(1);\n   \
+    \     else\n            out(0);\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_3_C\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../graph/scc.hpp\"\
     \nint main()\n{\n    LL(v, e);\n    vector<Edge<ll>> edges;\n    rep(e)\n    {\n\
@@ -144,8 +145,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_3_C.test.cpp
   requiredBy: []
-  timestamp: '2023-04-17 11:49:31+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-20 16:51:17+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_3_C.test.cpp
 layout: document

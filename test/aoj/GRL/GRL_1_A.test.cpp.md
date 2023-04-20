@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/dijkstra.hpp
     title: graph/dijkstra.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
@@ -105,12 +105,12 @@ data:
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
     \  }\n  return res;\n}\n#line 2 \"graph/graph-template/graph-template.hpp\"\n\
-    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
-    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
-    \    }\n};\n#line 2 \"graph/dijkstra.hpp\"\n\ntemplate <typename T>\nvector<T>\
-    \ dijkstra(vector<vector<Edge<T>>> g, ll s, ll v)\n{\n    vector<ll> before(v,\
-    \ -1);\n    vector<T> dist(v, LINF);\n    vector<bool> seen(v, false);\n    dist[s]\
-    \ = 0;\n    priority_queue<pair<ll, T>, vector<pair<ll, T>>, greater<pair<ll,\
+    using Graph = vector<vector<Edge<ll>>>;\ntemplate <typename T>\nstruct Edge\n\
+    {\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const Edge &o) const\n\
+    \    {\n        return cost < o.cost;\n    }\n};\n#line 2 \"graph/dijkstra.hpp\"\
+    \n\ntemplate <typename T>\nvector<T> dijkstra(Graph g, ll s, ll v)\n{\n    vector<ll>\
+    \ before(v, -1);\n    vector<T> dist(v, LINF);\n    vector<bool> seen(v, false);\n\
+    \    dist[s] = 0;\n    priority_queue<pair<ll, T>, vector<pair<ll, T>>, greater<pair<ll,\
     \ T>>> q;\n    q.push(pair(0, s));\n    while (!q.empty())\n    {\n        auto\
     \ top = q.top().second;\n        q.pop();\n        seen[top] = true;\n       \
     \ for (Edge<ll> next : g[top])\n        {\n            if (!seen[next.to] && dist[top]\
@@ -137,8 +137,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-17 11:49:31+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-20 16:51:17+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_1_A.test.cpp
 layout: document
