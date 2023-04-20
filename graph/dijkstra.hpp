@@ -1,13 +1,12 @@
 #include "../graph/graph-template/graph-template.hpp"
 
-template <typename T>
-vector<T> dijkstra(Graph g, ll s, ll v)
+vector<ll> dijkstra(Graph g, ll s, ll v)
 {
     vector<ll> before(v, -1);
-    vector<T> dist(v, LINF);
+    vector<ll> dist(v, LINF);
     vector<bool> seen(v, false);
     dist[s] = 0;
-    priority_queue<pair<ll, T>, vector<pair<ll, T>>, greater<pair<ll, T>>> q;
+    priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>>> q;
     q.push(pair(0, s));
     while (!q.empty())
     {

@@ -4,7 +4,7 @@
 int main()
 {
     LL(v, e, r);
-    vector<vector<Edge<ll>>> g(v);
+    Graph g(v);
     rep(e)
     {
         LL(s, t, d);
