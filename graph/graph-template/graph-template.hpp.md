@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: graph/dijkstra.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: graph/kruskal.hpp
   - icon: ':warning:'
@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_1_B.test.cpp
     title: test/aoj/GRL/GRL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_2_A.test.cpp
     title: test/aoj/GRL/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,18 +39,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_4_A.test.cpp
     title: test/aoj/GRL/GRL_4_A.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
-    \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
-    \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph\
-    \ = vector<vector<Edge<ll>>>;\n"
-  code: "#pragma once\ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n    ll\
-    \ to;\n    T cost;\n    bool operator<(const Edge &o) const\n    {\n        return\
-    \ cost < o.cost;\n    }\n};\n\nusing Graph = vector<vector<Edge<ll>>>;\n"
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\nstruct Edge\n\
+    {\n    ll from;\n    ll to;\n    ll cost;\n    bool operator<(const Edge &o) const\n\
+    \    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph = vector<vector<Edge>>;\n"
+  code: "#pragma once\nstruct Edge\n{\n    ll from;\n    ll to;\n    ll cost;\n  \
+    \  bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
+    \    }\n};\n\nusing Graph = vector<vector<Edge>>;\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/graph-template/graph-template.hpp
@@ -62,8 +61,8 @@ data:
   - graph/ordered-topological-sort.hpp
   - graph/bellman-ford.hpp
   - test/atcoder/abc_223_D.cpp
-  timestamp: '2023-04-20 16:58:26+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-04-20 17:13:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp
   - test/aoj/GRL/GRL_4_A.test.cpp

@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/kruskal.hpp
     title: graph/kruskal.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL/DSL_1_A.test.cpp
     title: test/aoj/DSL/DSL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_2_A.test.cpp
     title: test/aoj/GRL/GRL_2_A.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"structure/union-find.hpp\"\nstruct UnionFind\n{\n    vector<ll>\
@@ -37,7 +37,7 @@ data:
   requiredBy:
   - graph/kruskal.hpp
   timestamp: '2023-04-20 16:51:17+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_2_A.test.cpp
   - test/aoj/DSL/DSL_1_A.test.cpp

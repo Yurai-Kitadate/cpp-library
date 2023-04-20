@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
     - icon: ':warning:'
@@ -23,7 +23,7 @@ data:
       title: graph/topological-sort.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math/combinatorics
@@ -62,12 +62,12 @@ data:
       title: "\u5EA7\u6A19\u5727\u7E2E"
   - name: structure
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/union-find.hpp
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: template/template.hpp
   - name: test/atcoder
@@ -97,7 +97,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_1_B.test.cpp
       title: test/aoj/GRL/GRL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_2_A.test.cpp
       title: test/aoj/GRL/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'

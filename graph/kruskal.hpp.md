@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: structure/union-find.hpp
     title: structure/union-find.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_2_A.test.cpp
     title: test/aoj/GRL/GRL_2_A.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"structure/union-find.hpp\"\nstruct UnionFind\n{\n    vector<ll>\
@@ -24,29 +24,27 @@ data:
     \ yp = find(y);\n        if (xp == yp)\n            return;\n        if (p[xp]\
     \ > p[yp])\n            swap(x, y);\n        p[xp] += p[yp];\n        p[yp] =\
     \ xp;\n    }\n    ll size(ll x)\n    {\n        return -p[find(x)];\n    }\n};\n\
-    #line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename T>\nstruct\
-    \ Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const Edge\
-    \ &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph =\
-    \ vector<vector<Edge<ll>>>;\n#line 3 \"graph/kruskal.hpp\"\ntemplate <typename\
-    \ T>\nll kruskal(vector<Edge<ll>> g, ll n)\n{\n    sort(all(g));\n    UnionFind\
-    \ uf(n);\n    ll cost = 0;\n    rep(g.size())\n    {\n        auto e = g[i];\n\
-    \        if (uf.find(e.from) != uf.find(e.to))\n        {\n            cost +=\
-    \ e.cost;\n            uf.unite(e.from, e.to);\n        }\n    }\n    return cost;\n\
-    }\n"
-  code: "#include \"../structure/union-find.hpp\"\n#include \"../graph/graph-template/graph-template.hpp\"\
-    \ntemplate <typename T>\nll kruskal(vector<Edge<ll>> g, ll n)\n{\n    sort(all(g));\n\
+    #line 2 \"graph/graph-template/graph-template.hpp\"\nstruct Edge\n{\n    ll from;\n\
+    \    ll to;\n    ll cost;\n    bool operator<(const Edge &o) const\n    {\n  \
+    \      return cost < o.cost;\n    }\n};\n\nusing Graph = vector<vector<Edge>>;\n\
+    #line 3 \"graph/kruskal.hpp\"\nll kruskal(vector<Edge> g, ll n)\n{\n    sort(all(g));\n\
     \    UnionFind uf(n);\n    ll cost = 0;\n    rep(g.size())\n    {\n        auto\
     \ e = g[i];\n        if (uf.find(e.from) != uf.find(e.to))\n        {\n      \
     \      cost += e.cost;\n            uf.unite(e.from, e.to);\n        }\n    }\n\
     \    return cost;\n}\n"
+  code: "#include \"../structure/union-find.hpp\"\n#include \"../graph/graph-template/graph-template.hpp\"\
+    \nll kruskal(vector<Edge> g, ll n)\n{\n    sort(all(g));\n    UnionFind uf(n);\n\
+    \    ll cost = 0;\n    rep(g.size())\n    {\n        auto e = g[i];\n        if\
+    \ (uf.find(e.from) != uf.find(e.to))\n        {\n            cost += e.cost;\n\
+    \            uf.unite(e.from, e.to);\n        }\n    }\n    return cost;\n}\n"
   dependsOn:
   - structure/union-find.hpp
   - graph/graph-template/graph-template.hpp
   isVerificationFile: false
   path: graph/kruskal.hpp
   requiredBy: []
-  timestamp: '2023-04-20 17:04:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-04-20 17:13:07+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_2_A.test.cpp
 documentation_of: graph/kruskal.hpp

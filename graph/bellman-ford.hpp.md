@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   _extendedRequiredBy: []
@@ -14,22 +14,22 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
-    \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
-    \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph\
-    \ = vector<vector<Edge<ll>>>;\n#line 2 \"graph/bellman-ford.hpp\"\n\npair<bool,\
-    \ vector<ll>> bellman_ford(vector<Edge<ll>> g, ll v, ll st)\n{\n    vector<ll>\
-    \ d(v, LINF);\n    d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n\
-    \        if (i >= v)\n        {\n            return {false, d};\n        }\n \
-    \       for (auto next : g)\n        {\n            if (d[next.from] == LINF)\n\
-    \                continue;\n            if (d[next.to] > d[next.from] + next.cost)\n\
-    \            {\n                d[next.to] = d[next.from] + next.cost;\n     \
-    \           update = true;\n            }\n        }\n        if (!update)\n \
-    \           break;\n    }\n    return {true, d};\n}\n"
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\nstruct Edge\n\
+    {\n    ll from;\n    ll to;\n    ll cost;\n    bool operator<(const Edge &o) const\n\
+    \    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph = vector<vector<Edge>>;\n\
+    #line 2 \"graph/bellman-ford.hpp\"\n\npair<bool, vector<ll>> bellman_ford(vector<Edge>\
+    \ g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n    d[st] = 0;\n    rep(v +\
+    \ 1)\n    {\n        bool update = false;\n        if (i >= v)\n        {\n  \
+    \          return {false, d};\n        }\n        for (auto next : g)\n      \
+    \  {\n            if (d[next.from] == LINF)\n                continue;\n     \
+    \       if (d[next.to] > d[next.from] + next.cost)\n            {\n          \
+    \      d[next.to] = d[next.from] + next.cost;\n                update = true;\n\
+    \            }\n        }\n        if (!update)\n            break;\n    }\n \
+    \   return {true, d};\n}\n"
   code: "#include \"../graph/graph-template/graph-template.hpp\"\n\npair<bool, vector<ll>>\
-    \ bellman_ford(vector<Edge<ll>> g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n\
-    \    d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n       \
-    \ if (i >= v)\n        {\n            return {false, d};\n        }\n        for\
+    \ bellman_ford(vector<Edge> g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n \
+    \   d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n        if\
+    \ (i >= v)\n        {\n            return {false, d};\n        }\n        for\
     \ (auto next : g)\n        {\n            if (d[next.from] == LINF)\n        \
     \        continue;\n            if (d[next.to] > d[next.from] + next.cost)\n \
     \           {\n                d[next.to] = d[next.from] + next.cost;\n      \
@@ -40,7 +40,7 @@ data:
   isVerificationFile: false
   path: graph/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2023-04-20 17:04:12+09:00'
+  timestamp: '2023-04-20 17:13:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_1_B.test.cpp

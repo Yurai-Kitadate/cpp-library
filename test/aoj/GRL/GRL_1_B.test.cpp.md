@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/bellman-ford.hpp
     title: graph/bellman-ford.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -105,27 +105,27 @@ data:
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
     \  }\n  return res;\n}\n#line 2 \"graph/graph-template/graph-template.hpp\"\n\
-    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
-    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
-    \    }\n};\n\nusing Graph = vector<vector<Edge<ll>>>;\n#line 2 \"graph/bellman-ford.hpp\"\
-    \n\npair<bool, vector<ll>> bellman_ford(vector<Edge<ll>> g, ll v, ll st)\n{\n\
-    \    vector<ll> d(v, LINF);\n    d[st] = 0;\n    rep(v + 1)\n    {\n        bool\
-    \ update = false;\n        if (i >= v)\n        {\n            return {false,\
-    \ d};\n        }\n        for (auto next : g)\n        {\n            if (d[next.from]\
-    \ == LINF)\n                continue;\n            if (d[next.to] > d[next.from]\
-    \ + next.cost)\n            {\n                d[next.to] = d[next.from] + next.cost;\n\
-    \                update = true;\n            }\n        }\n        if (!update)\n\
-    \            break;\n    }\n    return {true, d};\n}\n#line 4 \"test/aoj/GRL/GRL_1_B.test.cpp\"\
-    \nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>> edges;\n    rep(e)\n \
-    \   {\n        LL(s, t, d);\n        Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n\
+    struct Edge\n{\n    ll from;\n    ll to;\n    ll cost;\n    bool operator<(const\
+    \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph\
+    \ = vector<vector<Edge>>;\n#line 2 \"graph/bellman-ford.hpp\"\n\npair<bool, vector<ll>>\
+    \ bellman_ford(vector<Edge> g, ll v, ll st)\n{\n    vector<ll> d(v, LINF);\n \
+    \   d[st] = 0;\n    rep(v + 1)\n    {\n        bool update = false;\n        if\
+    \ (i >= v)\n        {\n            return {false, d};\n        }\n        for\
+    \ (auto next : g)\n        {\n            if (d[next.from] == LINF)\n        \
+    \        continue;\n            if (d[next.to] > d[next.from] + next.cost)\n \
+    \           {\n                d[next.to] = d[next.from] + next.cost;\n      \
+    \          update = true;\n            }\n        }\n        if (!update)\n  \
+    \          break;\n    }\n    return {true, d};\n}\n#line 4 \"test/aoj/GRL/GRL_1_B.test.cpp\"\
+    \nint main()\n{\n    LL(v, e, r);\n    vector<Edge> edges;\n    rep(e)\n    {\n\
+    \        LL(s, t, d);\n        Edge edge{s, t, d};\n\n        edges.push_back(edge);\n\
     \    }\n    auto bell = bellman_ford(edges, v, r);\n    if (bell.first)\n    {\n\
     \        for (auto i : bell.second)\n        {\n            if (i >= LINF)\n \
     \               out(\"INF\");\n            else\n                out(i);\n   \
     \     }\n    }\n    else\n    {\n        out(\"NEGATIVE CYCLE\");\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../graph/bellman-ford.hpp\"\
-    \nint main()\n{\n    LL(v, e, r);\n    vector<Edge<ll>> edges;\n    rep(e)\n \
-    \   {\n        LL(s, t, d);\n        Edge<ll> edge{s, t, d};\n\n        edges.push_back(edge);\n\
+    \nint main()\n{\n    LL(v, e, r);\n    vector<Edge> edges;\n    rep(e)\n    {\n\
+    \        LL(s, t, d);\n        Edge edge{s, t, d};\n\n        edges.push_back(edge);\n\
     \    }\n    auto bell = bellman_ford(edges, v, r);\n    if (bell.first)\n    {\n\
     \        for (auto i : bell.second)\n        {\n            if (i >= LINF)\n \
     \               out(\"INF\");\n            else\n                out(i);\n   \
@@ -137,7 +137,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-04-20 17:04:12+09:00'
+  timestamp: '2023-04-20 17:13:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_1_B.test.cpp

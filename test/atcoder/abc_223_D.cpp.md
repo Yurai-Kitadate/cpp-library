@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   - icon: ':warning:'
     path: graph/ordered-topological-sort.hpp
     title: graph/ordered-topological-sort.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
@@ -103,13 +103,13 @@ data:
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
     \  }\n  return res;\n}\n#line 2 \"graph/graph-template/graph-template.hpp\"\n\
-    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
-    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
-    \    }\n};\n\nusing Graph = vector<vector<Edge<ll>>>;\n#line 2 \"graph/ordered-topological-sort.hpp\"\
-    \n// https: // atcoder.jp/contests/abc223/tasks/abc223_d\n\nstruct ordered_topological_sort\n\
-    {\n    pq<ll> que;\n    vector<Edge<ll>> edges;\n    vector<ll> dig;\n    ll v;\n\
+    struct Edge\n{\n    ll from;\n    ll to;\n    ll cost;\n    bool operator<(const\
+    \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph\
+    \ = vector<vector<Edge>>;\n#line 2 \"graph/ordered-topological-sort.hpp\"\n//\
+    \ https: // atcoder.jp/contests/abc223/tasks/abc223_d\n\nstruct ordered_topological_sort\n\
+    {\n    pq<ll> que;\n    vector<Edge> edges;\n    vector<ll> dig;\n    ll v;\n\
     \    vector<vector<ll>> g;\n    vector<pair<bool, bool>> used1;\n    vector<ll>\
-    \ order;\n    bool has_cycle = false;\n    ordered_topological_sort(vector<Edge<ll>>\
+    \ order;\n    bool has_cycle = false;\n    ordered_topological_sort(vector<Edge>\
     \ e, ll n)\n    {\n        edges = e;\n        v = n;\n        g.assign(v, vector<ll>());\n\
     \        dig.assign(v, 0);\n        used1.assign(v, {false, false});\n       \
     \ rep(edges.size())\n        {\n            g[edges[i].from].push_back(edges[i].to);\n\
@@ -125,20 +125,18 @@ data:
     \ && !used1[t].second)\n                has_cycle = true;\n            if (!used1[t].first)\n\
     \                dfs(t);\n        }\n        used1[s] = {true, true};\n      \
     \  order.push_back(s);\n    }\n};\n#line 4 \"test/atcoder/abc_223_D.cpp\"\n\n\
-    int main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n   \
-    \     LL(a, b);\n        a--;\n        b--;\n        g.push_back(Edge<ll>{a, b,\
-    \ 1});\n    }\n    auto s = ordered_topological_sort(g, n);\n    s.setup();\n\
-    \    if (s.has_cycle)\n    {\n        out(-1);\n    }\n    else\n    {\n     \
-    \   rep(n)\n        {\n            s.order[i]++;\n        }\n        out(s.order);\n\
-    \    }\n}\n"
+    int main()\n{\n    LL(n, m);\n    vector<Edge> g;\n    rep(m)\n    {\n       \
+    \ LL(a, b);\n        a--;\n        b--;\n        g.push_back(Edge{a, b, 1});\n\
+    \    }\n    auto s = ordered_topological_sort(g, n);\n    s.setup();\n    if (s.has_cycle)\n\
+    \    {\n        out(-1);\n    }\n    else\n    {\n        rep(n)\n        {\n\
+    \            s.order[i]++;\n        }\n        out(s.order);\n    }\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc223/tasks/abc223_d\"\n#include\
     \ \"../../template/template.hpp\"\n#include \"../../graph/ordered-topological-sort.hpp\"\
-    \n\nint main()\n{\n    LL(n, m);\n    vector<Edge<ll>> g;\n    rep(m)\n    {\n\
-    \        LL(a, b);\n        a--;\n        b--;\n        g.push_back(Edge<ll>{a,\
-    \ b, 1});\n    }\n    auto s = ordered_topological_sort(g, n);\n    s.setup();\n\
-    \    if (s.has_cycle)\n    {\n        out(-1);\n    }\n    else\n    {\n     \
-    \   rep(n)\n        {\n            s.order[i]++;\n        }\n        out(s.order);\n\
-    \    }\n}\n"
+    \n\nint main()\n{\n    LL(n, m);\n    vector<Edge> g;\n    rep(m)\n    {\n   \
+    \     LL(a, b);\n        a--;\n        b--;\n        g.push_back(Edge{a, b, 1});\n\
+    \    }\n    auto s = ordered_topological_sort(g, n);\n    s.setup();\n    if (s.has_cycle)\n\
+    \    {\n        out(-1);\n    }\n    else\n    {\n        rep(n)\n        {\n\
+    \            s.order[i]++;\n        }\n        out(s.order);\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/ordered-topological-sort.hpp
@@ -146,7 +144,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/abc_223_D.cpp
   requiredBy: []
-  timestamp: '2023-04-20 16:58:26+09:00'
+  timestamp: '2023-04-20 17:13:07+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/abc_223_D.cpp
