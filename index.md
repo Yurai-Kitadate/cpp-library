@@ -3,27 +3,27 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/bellman-ford.hpp
       title: graph/bellman-ford.hpp
     - icon: ':x:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
     - icon: ':warning:'
       path: graph/ordered-topological-sort.hpp
       title: graph/ordered-topological-sort.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/scc.hpp
       title: graph/scc.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/topological-sort.hpp
       title: graph/topological-sort.hpp
   - name: graph/graph-template
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
   - name: math/combinatorics
@@ -62,7 +62,7 @@ data:
       title: "\u5EA7\u6A19\u5727\u7E2E"
   - name: structure
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structure/union-find.hpp
       title: structure/union-find.hpp
   - name: template
@@ -94,16 +94,16 @@ data:
     - icon: ':x:'
       path: test/aoj/GRL/GRL_1_A.test.cpp
       title: test/aoj/GRL/GRL_1_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_1_B.test.cpp
       title: test/aoj/GRL/GRL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_2_A.test.cpp
       title: test/aoj/GRL/GRL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_3_C.test.cpp
       title: test/aoj/GRL/GRL_3_C.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_4_A.test.cpp
       title: test/aoj/GRL/GRL_4_A.test.cpp
   - name: test/aoj/ITP

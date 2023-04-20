@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   - icon: ':warning:'
@@ -103,9 +103,9 @@ data:
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
     \  }\n  return res;\n}\n#line 2 \"graph/graph-template/graph-template.hpp\"\n\
-    using Graph = vector<vector<Edge<ll>>>;\ntemplate <typename T>\nstruct Edge\n\
-    {\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const Edge &o) const\n\
-    \    {\n        return cost < o.cost;\n    }\n};\n#line 2 \"graph/ordered-topological-sort.hpp\"\
+    template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
+    \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
+    \    }\n};\n\nusing Graph = vector<vector<Edge<ll>>>;\n#line 2 \"graph/ordered-topological-sort.hpp\"\
     \n// https: // atcoder.jp/contests/abc223/tasks/abc223_d\n\nstruct ordered_topological_sort\n\
     {\n    pq<ll> que;\n    vector<Edge<ll>> edges;\n    vector<ll> dig;\n    ll v;\n\
     \    vector<vector<ll>> g;\n    vector<pair<bool, bool>> used1;\n    vector<ll>\
@@ -146,7 +146,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/abc_223_D.cpp
   requiredBy: []
-  timestamp: '2023-04-20 16:51:17+09:00'
+  timestamp: '2023-04-20 16:58:26+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/abc_223_D.cpp

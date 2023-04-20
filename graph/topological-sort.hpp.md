@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/GRL/GRL_4_A.test.cpp
     title: test/aoj/GRL/GRL_4_A.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\nusing Graph =\
-    \ vector<vector<Edge<ll>>>;\ntemplate <typename T>\nstruct Edge\n{\n    ll from;\n\
-    \    ll to;\n    T cost;\n    bool operator<(const Edge &o) const\n    {\n   \
-    \     return cost < o.cost;\n    }\n};\n#line 2 \"graph/topological-sort.hpp\"\
-    \nstruct topological_sort\n{\n    vector<Edge<ll>> edges;\n    ll v;\n    vector<vector<ll>>\
+  bundledCode: "#line 2 \"graph/graph-template/graph-template.hpp\"\ntemplate <typename\
+    \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
+    \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph\
+    \ = vector<vector<Edge<ll>>>;\n#line 2 \"graph/topological-sort.hpp\"\nstruct\
+    \ topological_sort\n{\n    vector<Edge<ll>> edges;\n    ll v;\n    vector<vector<ll>>\
     \ g;\n    vector<pair<bool, bool>> used1;\n    vector<ll> order;\n    bool has_cycle\
     \ = false;\n    topological_sort(vector<Edge<ll>> e, ll n)\n    {\n        edges\
     \ = e;\n        v = n;\n        g.assign(v, vector<ll>());\n        used1.assign(v,\
@@ -48,8 +48,8 @@ data:
   isVerificationFile: false
   path: graph/topological-sort.hpp
   requiredBy: []
-  timestamp: '2023-04-20 16:51:17+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-04-20 16:58:26+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL/GRL_4_A.test.cpp
 documentation_of: graph/topological-sort.hpp
