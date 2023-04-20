@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: graph/dijkstra.hpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
@@ -108,28 +108,28 @@ data:
     template <typename T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n\
     \    bool operator<(const Edge &o) const\n    {\n        return cost < o.cost;\n\
     \    }\n};\n\nusing Graph = vector<vector<Edge<ll>>>;\n#line 2 \"graph/dijkstra.hpp\"\
-    \n\ntemplate <typename T>\nvector<T> dijkstra(Graph g, ll s, ll v)\n{\n    vector<ll>\
-    \ before(v, -1);\n    vector<T> dist(v, LINF);\n    vector<bool> seen(v, false);\n\
-    \    dist[s] = 0;\n    priority_queue<pair<ll, T>, vector<pair<ll, T>>, greater<pair<ll,\
-    \ T>>> q;\n    q.push(pair(0, s));\n    while (!q.empty())\n    {\n        auto\
+    \n\nvector<ll> dijkstra(Graph g, ll s, ll v)\n{\n    vector<ll> before(v, -1);\n\
+    \    vector<ll> dist(v, LINF);\n    vector<bool> seen(v, false);\n    dist[s]\
+    \ = 0;\n    priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll,\
+    \ ll>>> q;\n    q.push(pair(0, s));\n    while (!q.empty())\n    {\n        auto\
     \ top = q.top().second;\n        q.pop();\n        seen[top] = true;\n       \
     \ for (Edge<ll> next : g[top])\n        {\n            if (!seen[next.to] && dist[top]\
     \ + next.cost < dist[next.to])\n            {\n                before[next.to]\
     \ = top;\n                dist[next.to] = dist[top] + next.cost;\n           \
     \     q.push(pair(dist[next.to], next.to));\n            }\n        }\n    }\n\
     \    return dist;\n}\n#line 4 \"test/aoj/GRL/GRL_1_A.test.cpp\"\nint main()\n\
-    {\n    LL(v, e, r);\n    vector<vector<Edge<ll>>> g(v);\n    rep(e)\n    {\n \
-    \       LL(s, t, d);\n        Edge<ll> m;\n        m.to = t;\n        m.cost =\
-    \ d;\n        g[s].emplace_back(m);\n    }\n    auto shortest = dijkstra(g, r,\
-    \ v);\n    for (auto i : shortest)\n    {\n        if (i >= LINF)\n          \
-    \  out(\"INF\");\n        else\n            out(i);\n    }\n}\n"
+    {\n    LL(v, e, r);\n    Graph g(v);\n    rep(e)\n    {\n        LL(s, t, d);\n\
+    \        Edge<ll> m;\n        m.to = t;\n        m.cost = d;\n        g[s].emplace_back(m);\n\
+    \    }\n    auto shortest = dijkstra(g, r, v);\n    for (auto i : shortest)\n\
+    \    {\n        if (i >= LINF)\n            out(\"INF\");\n        else\n    \
+    \        out(i);\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\"\n#include\
     \ \"../../../template/template.hpp\"\n#include \"../../../graph/dijkstra.hpp\"\
-    \nint main()\n{\n    LL(v, e, r);\n    vector<vector<Edge<ll>>> g(v);\n    rep(e)\n\
-    \    {\n        LL(s, t, d);\n        Edge<ll> m;\n        m.to = t;\n       \
-    \ m.cost = d;\n        g[s].emplace_back(m);\n    }\n    auto shortest = dijkstra(g,\
-    \ r, v);\n    for (auto i : shortest)\n    {\n        if (i >= LINF)\n       \
-    \     out(\"INF\");\n        else\n            out(i);\n    }\n}\n"
+    \nint main()\n{\n    LL(v, e, r);\n    Graph g(v);\n    rep(e)\n    {\n      \
+    \  LL(s, t, d);\n        Edge<ll> m;\n        m.to = t;\n        m.cost = d;\n\
+    \        g[s].emplace_back(m);\n    }\n    auto shortest = dijkstra(g, r, v);\n\
+    \    for (auto i : shortest)\n    {\n        if (i >= LINF)\n            out(\"\
+    INF\");\n        else\n            out(i);\n    }\n}\n"
   dependsOn:
   - template/template.hpp
   - graph/dijkstra.hpp
@@ -137,8 +137,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-20 16:58:26+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-20 17:04:12+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_1_A.test.cpp
 layout: document

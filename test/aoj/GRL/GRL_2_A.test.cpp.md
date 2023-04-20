@@ -4,10 +4,10 @@ data:
   - icon: ':question:'
     path: graph/graph-template/graph-template.hpp
     title: graph/graph-template/graph-template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/kruskal.hpp
     title: graph/kruskal.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: structure/union-find.hpp
     title: structure/union-find.hpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/2/GRL_2_A
@@ -118,7 +118,7 @@ data:
     \ T>\nstruct Edge\n{\n    ll from;\n    ll to;\n    T cost;\n    bool operator<(const\
     \ Edge &o) const\n    {\n        return cost < o.cost;\n    }\n};\n\nusing Graph\
     \ = vector<vector<Edge<ll>>>;\n#line 3 \"graph/kruskal.hpp\"\ntemplate <typename\
-    \ T>\nT kruskal(vector<Edge<T>> g, ll n)\n{\n    sort(all(g));\n    UnionFind\
+    \ T>\nll kruskal(vector<Edge<ll>> g, ll n)\n{\n    sort(all(g));\n    UnionFind\
     \ uf(n);\n    ll cost = 0;\n    rep(g.size())\n    {\n        auto e = g[i];\n\
     \        if (uf.find(e.from) != uf.find(e.to))\n        {\n            cost +=\
     \ e.cost;\n            uf.unite(e.from, e.to);\n        }\n    }\n    return cost;\n\
@@ -139,8 +139,8 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-20 16:58:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-20 17:04:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/GRL/GRL_2_A.test.cpp
 layout: document

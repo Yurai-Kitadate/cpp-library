@@ -6,10 +6,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/bellman-ford.hpp
       title: graph/bellman-ford.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/kruskal.hpp
       title: graph/kruskal.hpp
     - icon: ':warning:'
@@ -62,7 +62,7 @@ data:
       title: "\u5EA7\u6A19\u5727\u7E2E"
   - name: structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/union-find.hpp
       title: structure/union-find.hpp
   - name: template
@@ -91,13 +91,13 @@ data:
       title: test/aoj/DSL/DSL_1_A.test.cpp
   - name: test/aoj/GRL
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_1_A.test.cpp
       title: test/aoj/GRL/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL/GRL_1_B.test.cpp
       title: test/aoj/GRL/GRL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/GRL/GRL_2_A.test.cpp
       title: test/aoj/GRL/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
