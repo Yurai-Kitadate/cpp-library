@@ -28,7 +28,7 @@ data:
       title: graph/graph-template/graph-template.hpp
   - name: math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/combination.hpp
       title: math/combination.hpp
     - icon: ':heavy_check_mark:'
@@ -46,7 +46,7 @@ data:
     - icon: ':warning:'
       path: math/matrix.hpp
       title: "\u884C\u5217\u8A08\u7B97"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/modpow.hpp
       title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\
         \u6CD5)"
@@ -65,7 +65,7 @@ data:
       title: structure/union-find.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: template/template.hpp
   - name: test/atcoder
@@ -79,6 +79,9 @@ data:
   verificationCategories:
   - name: test/aoj/DPL
     pages:
+    - icon: ':x:'
+      path: test/aoj/DPL/DPL_5_A.test.cpp
+      title: test/aoj/DPL/DPL_5_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DPL/DPL_5_E.test.cpp
       title: test/aoj/DPL/DPL_5_E.test.cpp

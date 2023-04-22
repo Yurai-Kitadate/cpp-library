@@ -1,23 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/divisor.hpp
-    title: math/divisor.hpp
+  - icon: ':question:'
+    path: math/combination.hpp
+    title: math/combination.hpp
+  - icon: ':question:'
+    path: math/modpow.hpp
+    title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
+      )"
   - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D
-  bundledCode: "#line 1 \"test/aoj/ITP/ITP_1_3_D.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
+  bundledCode: "#line 1 \"test/aoj/DPL/DPL_5_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -101,33 +105,39 @@ data:
     \ (a < 0)\n    return a + mod;\n  return a % mod;\n}\n\ntemplate <typename T>\n\
     map<T, ll> counter(vector<T> a)\n{\n  map<T, ll> res;\n  rep(a.size())\n  {\n\
     \    if (res.count(a[i]) == 0)\n      res[a[i]] = 1;\n    else\n      res[a[i]]++;\n\
-    \  }\n  return res;\n}\n#line 1 \"math/divisor.hpp\"\nvll divisor(ll x)\n{\n\n\
-    \    vll lower_divisors, upper_divisors;\n    for (ll i = 1; i * i <= x; i++)\n\
-    \    {\n        if (x % i == 0)\n        {\n            lower_divisors.push_back(i);\n\
-    \            if (i != x / i)\n                upper_divisors.push_back(x / i);\n\
-    \        }\n    }\n    reverse(all(upper_divisors));\n    for (auto divisor :\
-    \ upper_divisors)\n        lower_divisors.push_back(divisor);\n    return lower_divisors;\n\
-    }\n#line 4 \"test/aoj/ITP/ITP_1_3_D.test.cpp\"\n\nint main()\n{\n    LL(a, b,\
-    \ c);\n    ll res = 0;\n    for (auto i : divisor(c))\n    {\n        if (a <=\
-    \ i && i <= b)\n            res++;\n    }\n    out(res);\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/3/ITP1_3_D\"\
-    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/divisor.hpp\"\
-    \n\nint main()\n{\n    LL(a, b, c);\n    ll res = 0;\n    for (auto i : divisor(c))\n\
-    \    {\n        if (a <= i && i <= b)\n            res++;\n    }\n    out(res);\n\
-    }\n"
+    \  }\n  return res;\n}\n#line 1 \"math/modpow.hpp\"\nll modpow(ll a, ll b, ll\
+    \ p)\n{\n    ll res = 1;\n    while (b)\n    {\n        if (b & 1)\n         \
+    \   res = (res * a) % p;\n        a = (a * a) % p;\n        b /= 2;\n    }\n \
+    \   return res;\n}\n#line 1 \"math/combination.hpp\"\nstruct Combination\n{\n\
+    \    ll size;\n    ll mod;\n    ll f = 1;\n    vector<ll> fac = {f};\n    vector<ll>\
+    \ facinv;\n    Combination(ll size, ll p)\n    {\n        mod = p;\n        rep(i,\
+    \ 1, size + 1)\n        {\n            f = f * i % mod;\n            fac.push_back(f);\n\
+    \        }\n        f = modpow(f, mod - 2, mod);\n        facinv.push_back(f);\n\
+    \        for (ll i = size; i > 0; i--)\n        {\n            // out(i);\n  \
+    \          f = f * i % mod;\n            facinv.push_back(f);\n        }\n   \
+    \     reverse(all(facinv));\n    }\n    ll c(ll n, ll r)\n    {\n        if (!(0\
+    \ <= r && r <= n))\n            return 0;\n        return (((fac[n] * facinv[r])\
+    \ % mod) * facinv[n - r]) % mod;\n    }\n};\n#line 5 \"test/aoj/DPL/DPL_5_A.test.cpp\"\
+    \nint main()\n{\n    LL(n, k);\n    ll mod = 1000000007;\n    out(modpow(k, n,\
+    \ mod));\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
+    \n#include \"../../../template/template.hpp\"\n#include \"../../../math/modpow.hpp\"\
+    \n#include \"../../../math/combination.hpp\"\nint main()\n{\n    LL(n, k);\n \
+    \   ll mod = 1000000007;\n    out(modpow(k, n, mod));\n}\n"
   dependsOn:
   - template/template.hpp
-  - math/divisor.hpp
+  - math/modpow.hpp
+  - math/combination.hpp
   isVerificationFile: true
-  path: test/aoj/ITP/ITP_1_3_D.test.cpp
+  path: test/aoj/DPL/DPL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 16:19:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-04-22 11:05:01+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/ITP/ITP_1_3_D.test.cpp
+documentation_of: test/aoj/DPL/DPL_5_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/ITP/ITP_1_3_D.test.cpp
-- /verify/test/aoj/ITP/ITP_1_3_D.test.cpp.html
-title: test/aoj/ITP/ITP_1_3_D.test.cpp
+- /verify/test/aoj/DPL/DPL_5_A.test.cpp
+- /verify/test/aoj/DPL/DPL_5_A.test.cpp.html
+title: test/aoj/DPL/DPL_5_A.test.cpp
 ---

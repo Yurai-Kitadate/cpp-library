@@ -3,12 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/DPL/DPL_5_A.test.cpp
+    title: test/aoj/DPL/DPL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/DPL/DPL_5_E.test.cpp
     title: test/aoj/DPL/DPL_5_E.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/combination.hpp\"\nstruct Combination\n{\n    ll size;\n\
@@ -36,8 +39,9 @@ data:
   path: math/combination.hpp
   requiredBy: []
   timestamp: '2023-04-22 11:00:37+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/aoj/DPL/DPL_5_A.test.cpp
   - test/aoj/DPL/DPL_5_E.test.cpp
 documentation_of: math/combination.hpp
 layout: document

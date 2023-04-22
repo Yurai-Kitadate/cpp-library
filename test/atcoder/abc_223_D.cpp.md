@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: graph/ordered-topological-sort.hpp
     title: graph/ordered-topological-sort.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
