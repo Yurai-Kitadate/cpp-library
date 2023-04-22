@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/combination.hpp
     title: math/combination.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/modpow.hpp
     title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
       )"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: template/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
-  bundledCode: "#line 1 \"test/aoj/DPL/DPL_5_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A
+  bundledCode: "#line 1 \"test/aoj/DPL/DPL_5_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A\"\
     \n#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\nusing ll = long long;\nusing ld = long double;\nusing ull = unsigned long\
     \ long;\nusing uint = unsigned;\nusing vll = vector<ll>;\nusing pii = pair<int,\
@@ -120,7 +120,7 @@ data:
     \ % mod) * facinv[n - r]) % mod;\n    }\n};\n#line 5 \"test/aoj/DPL/DPL_5_A.test.cpp\"\
     \nint main()\n{\n    LL(n, k);\n    ll mod = 1000000007;\n    out(modpow(k, n,\
     \ mod));\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_A\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../math/modpow.hpp\"\
     \n#include \"../../../math/combination.hpp\"\nint main()\n{\n    LL(n, k);\n \
     \   ll mod = 1000000007;\n    out(modpow(k, n, mod));\n}\n"
@@ -131,8 +131,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL/DPL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2023-04-22 11:05:01+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-04-22 11:15:50+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL/DPL_5_A.test.cpp
 layout: document
