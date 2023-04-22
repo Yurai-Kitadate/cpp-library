@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/combinatorics/combination.hpp
-    title: math/combinatorics/combination.hpp
+    path: math/combination.hpp
+    title: math/combination.hpp
   - icon: ':heavy_check_mark:'
     path: math/modpow.hpp
     title: "modpow(\u6CD5p\u4E0A\u3067\u306E\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5\
@@ -108,8 +108,8 @@ data:
     \  }\n  return res;\n}\n#line 1 \"math/modpow.hpp\"\nll modpow(ll a, ll b, ll\
     \ p)\n{\n    ll res = 1;\n    while (b)\n    {\n        if (b & 1)\n         \
     \   res = (res * a) % p;\n        a = (a * a) % p;\n        b /= 2;\n    }\n \
-    \   return res;\n}\n#line 1 \"math/combinatorics/combination.hpp\"\nstruct Combination\n\
-    {\n    ll size;\n    ll mod;\n    ll f = 1;\n    vector<ll> fac = {f};\n    vector<ll>\
+    \   return res;\n}\n#line 1 \"math/combination.hpp\"\nstruct Combination\n{\n\
+    \    ll size;\n    ll mod;\n    ll f = 1;\n    vector<ll> fac = {f};\n    vector<ll>\
     \ facinv;\n    Combination(ll size, ll p)\n    {\n        mod = p;\n        rep(i,\
     \ 1, size + 1)\n        {\n            f = f * i % mod;\n            fac.push_back(f);\n\
     \        }\n        f = modpow(f, mod - 2, mod);\n        facinv.push_back(f);\n\
@@ -122,17 +122,17 @@ data:
     \ mod);\n    out(c.c(k, n));\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
     \n#include \"../../../template/template.hpp\"\n#include \"../../../math/modpow.hpp\"\
-    \n#include \"../../../math/combinatorics/combination.hpp\"\nint main()\n{\n  \
-    \  LL(n, k);\n    ll mod = 1000000007;\n    auto c = Combination(2000000, mod);\n\
-    \    out(c.c(k, n));\n}\n"
+    \n#include \"../../../math/combination.hpp\"\nint main()\n{\n    LL(n, k);\n \
+    \   ll mod = 1000000007;\n    auto c = Combination(2000000, mod);\n    out(c.c(k,\
+    \ n));\n}\n"
   dependsOn:
   - template/template.hpp
   - math/modpow.hpp
-  - math/combinatorics/combination.hpp
+  - math/combination.hpp
   isVerificationFile: true
   path: test/aoj/DPL/DPL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2023-04-14 16:19:46+09:00'
+  timestamp: '2023-04-22 11:00:37+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL/DPL_5_E.test.cpp

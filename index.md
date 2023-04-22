@@ -26,13 +26,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/graph-template/graph-template.hpp
       title: graph/graph-template/graph-template.hpp
-  - name: math/combinatorics
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: math/combinatorics/combination.hpp
-      title: math/combinatorics/combination.hpp
   - name: math
     pages:
+    - icon: ':heavy_check_mark:'
+      path: math/combination.hpp
+      title: math/combination.hpp
     - icon: ':heavy_check_mark:'
       path: math/divisor.hpp
       title: math/divisor.hpp
