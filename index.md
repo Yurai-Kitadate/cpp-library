@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: dp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: dp/lcs.hpp
+      title: dp/lcs.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -77,6 +82,11 @@ data:
       path: test/atcoder/abc_293_E.cpp
       title: test/atcoder/abc_293_E.cpp
   verificationCategories:
+  - name: test/aoj/ALDS
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ALDS/ALDS_1_10_C.test.cpp
+      title: test/aoj/ALDS/ALDS_1_10_C.test.cpp
   - name: test/aoj/DPL
     pages:
     - icon: ':heavy_check_mark:'

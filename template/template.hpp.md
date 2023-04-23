@@ -10,6 +10,9 @@ data:
     title: test/atcoder/abc_293_E.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS/ALDS_1_10_C.test.cpp
+    title: test/aoj/ALDS/ALDS_1_10_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL/DPL_5_A.test.cpp
     title: test/aoj/DPL/DPL_5_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -241,6 +244,7 @@ data:
   - test/aoj/GRL/GRL_3_C.test.cpp
   - test/aoj/GRL/GRL_1_A.test.cpp
   - test/aoj/GRL/GRL_2_A.test.cpp
+  - test/aoj/ALDS/ALDS_1_10_C.test.cpp
   - test/aoj/DSL/DSL_1_A.test.cpp
   - test/aoj/NTL/NTL_1_D.test.cpp
   - test/aoj/NTL/NTL_1_A.test.cpp
