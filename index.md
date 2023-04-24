@@ -4,6 +4,9 @@ data:
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
+      path: dp/cumulative_sum_2d.hpp
+      title: dp/cumulative_sum_2d.hpp
+    - icon: ':heavy_check_mark:'
       path: dp/lcs.hpp
       title: dp/lcs.hpp
   - name: graph
@@ -100,6 +103,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL/DSL_1_A.test.cpp
       title: test/aoj/DSL/DSL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL/DSL_5_B.test.cpp
+      title: test/aoj/DSL/DSL_5_B.test.cpp
   - name: test/aoj/GRL
     pages:
     - icon: ':heavy_check_mark:'
